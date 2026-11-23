@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#13302B">
+<meta name="description" content="Rinde: dónde comprar más barato en supermercados y farmacias, con tus tarjetas.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Rinde">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px/1.4 system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Rinde</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: app de una columna tipo celular (máx. 480px), barra superior fija y navegación inferior de 6 secciones */
+:root{
+  --bg:#F4F2EC; --surface:#FFFFFF; --surface-2:#ECEAE2; --fg:#13302B; --muted:#5D6B66; --line:#DCD9CF;
+  --brand:#13302B; --on-brand:#F7F5EF; --coin:#F2A541; --coin-ink:#3B2606; --leaf:#2F7D5B; --leaf-soft:#E2F0E8;
+  --warn:#B4541A; --warn-soft:#FBEADF; --sello:#111111; --on-sello:#FFFFFF;
+  --land:#E9E6D8; --water:#BFD8DE; --road:#FFFFFF; --pin3:#5D6B66;
+  --f-display:"Rubik",system-ui,sans-serif; --f-body:"Inter",system-ui,sans-serif;
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1C19; --surface:#152A26; --surface-2:#1D3631; --fg:#EAF0EC; --muted:#9DB0A9; --line:#2A4540;
+  --brand:#0A1513; --on-brand:#F7F5EF; --coin:#F2A541; --coin-ink:#3B2606; --leaf:#6CC69A; --leaf-soft:#1C3B30;
+  --warn:#F0A070; --warn-soft:#3A2619; --sello:#000000; --on-sello:#FFFFFF;
+  --land:#1A302B; --water:#1E4250; --road:#2C4A44; --pin3:#B9C8C2; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1C19; --surface:#152A26; --surface-2:#1D3631; --fg:#EAF0EC; --muted:#9DB0A9; --line:#2A4540;
+  --brand:#0A1513; --on-brand:#F7F5EF; --coin:#F2A541; --coin-ink:#3B2606; --leaf:#6CC69A; --leaf-soft:#1C3B30;
+  --warn:#F0A070; --warn-soft:#3A2619; --sello:#000000; --on-sello:#FFFFFF;
+  --land:#1A302B; --water:#1E4250; --road:#2C4A44; --pin3:#B9C8C2; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.45}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--brand)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--coin);outline-offset:2px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0}
+.num{font-variant-numeric:tabular-nums}
+.app{max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--brand);color:var(--on-brand);
+  padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:-.02em}
+.loc{display:flex;align-items:center;gap:6px;font-size:13px;min-width:0}
+.loc select{background:transparent;border:1px solid rgba(247,245,239,.35);color:var(--on-brand);border-radius:999px;padding:5px 10px;max-width:190px}
+.loc select option{color:#13302B}
+.demo{background:var(--coin);color:var(--coin-ink);font-size:12px;text-align:center;padding:5px 16px}
+
+main{padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:18px}
+.sec{display:grid;gap:10px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+.sec-h h2{font-size:19px}
+.eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--surface-2);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:8px 6px;font-size:13px;font-weight:600;color:var(--muted)}
+.seg button.on{background:var(--surface);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+
+.items{display:grid}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:10px 12px;border-top:1px solid var(--line)}
+.item:first-child{border-top:0}
+.item .nm{font-weight:600;font-size:14px;min-width:0}
+.item .meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.qty{display:flex;align-items:center;gap:4px;grid-row:span 2;align-self:center}
+.qty button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--surface-2);font-weight:600}
+.qty span{min-width:20px;text-align:center}
+.anyb{border:1px solid var(--line);background:transparent;border-radius:999px;font-size:11px;padding:2px 8px;color:var(--muted)}
+.anyb.on{background:var(--leaf-soft);border-color:var(--leaf);color:var(--leaf);font-weight:600}
+.empty{padding:20px;text-align:center;color:var(--muted)}
+
+.filters{display:grid;gap:8px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:13px;white-space:nowrap}
+.chip.on{background:var(--brand);color:var(--on-brand);border-color:var(--brand)}
+:root[data-theme="dark"] .chip.on{background:var(--leaf);color:#08140F;border-color:var(--leaf)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip.on{background:var(--leaf);color:#08140F;border-color:var(--leaf)}}
+.sel{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 10px;font-size:13px}
+label.lbl{font-size:12px;color:var(--muted);font-weight:600}
+
+.opts{display:grid;gap:10px}
+.opt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:6px}
+.opt.main{border:2px solid var(--leaf)}
+.opt-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px}
+.tag .n{display:inline-flex;width:16px;height:16px;border-radius:50%;align-items:center;justify-content:center;font-size:10px;background:rgba(0,0,0,.15)}
+.tag.cheap{background:var(--coin);color:var(--coin-ink)}
+.tag.near{background:var(--leaf-soft);color:var(--leaf)}
+.tag.close{background:var(--surface-2);color:var(--muted)}
+.store{font-family:var(--f-display);font-weight:600;font-size:17px}
+.total{font-family:var(--f-display);font-weight:700;font-size:24px;text-align:right;line-height:1.1}
+.total small{display:block;font-family:var(--f-body);font-weight:400;font-size:12px;color:var(--muted);text-decoration:line-through}
+.dist{font-size:13px;color:var(--muted)}
+.pay{font-size:13px;background:var(--leaf-soft);color:var(--leaf);border-radius:8px;padding:6px 8px}
+.pay.none{background:var(--surface-2);color:var(--muted)}
+.miss{font-size:12px;color:var(--warn);background:var(--warn-soft);border-radius:8px;padding:5px 8px}
+.save{font-size:13px;font-weight:600}
+.subn{font-size:12px;color:var(--muted);background:var(--surface-2);border-radius:8px;padding:5px 8px}
+.bioq{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--leaf);background:var(--leaf-soft);border-radius:6px;padding:3px 8px;justify-self:start}
+.split-card{border:2px dashed var(--leaf)}
+.split-card .tag{justify-self:start}
+.sp-row{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.sp-row small{display:block;color:var(--muted);font-size:12px}
+.opt-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.same{font-size:13px;color:var(--muted);font-style:italic;margin:4px 0 0}
+details.all{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.all summary{padding:12px 14px;font-weight:600;font-size:14px;cursor:pointer}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 12px;text-align:left;border-top:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.r,th.r{text-align:right}
+
+.ctrl{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px}
+.pill{display:grid;gap:1px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px 10px;min-width:0;cursor:pointer}
+.pill span{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.pill select{border:0;background:transparent;font-weight:600;font-size:14px;padding:0;width:100%;min-width:0;cursor:pointer}
+.orows{display:grid}
+.orow{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:start;padding:12px 14px;border-top:1px solid var(--line)}
+.orow:first-child{border-top:0}
+.orow .n{width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font:700 12px var(--f-display);margin-top:1px}
+.n1{background:var(--coin);color:var(--coin-ink)}.n2{background:var(--leaf);color:var(--surface)}.n3{background:var(--pin3);color:var(--surface)}
+.om{min-width:0;display:grid;gap:2px;font-size:14px}
+.om small{color:var(--muted);font-size:12px}
+.om .miss,.om .subn{margin-top:4px}
+.ot{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.oa{text-align:right;display:grid;gap:6px;justify-items:end;font-size:16px}
+.lnk{border:0;background:none;padding:0;color:var(--leaf);font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.ok-t{color:var(--leaf);font-weight:600}
+.store.big{font-size:21px;margin-top:8px}
+.foot-note{font-size:11px;color:var(--muted);text-align:center;margin:6px 0 0}
+details.listbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+details.listbox summary{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;cursor:pointer;list-style:none}
+details.listbox summary::-webkit-details-marker{display:none}
+.lb-t{min-width:0;display:grid;gap:2px;font-size:14px}
+.lb-t small{color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lnk-t{font-size:13px;font-weight:600;color:var(--leaf);flex:none}
+.listbox .wo,.listbox[open] .wc{display:none}.listbox[open] .wo{display:inline}
+.lb-items{border-top:1px solid var(--line)}
+.tips{display:grid}
+.tip{display:flex;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line);font-size:14px}
+.tip:first-child{border-top:0}
+.tip .ic{width:32px;height:32px;border-radius:9px;background:var(--leaf-soft);color:var(--leaf);display:flex;align-items:center;justify-content:center;flex:none}
+.tip .ic svg{width:18px;height:18px}
+.tip .t{flex:1;min-width:0}
+details.all .days{padding-bottom:0}
+/* mapa */
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--land);position:relative;display:block;color:inherit;text-decoration:none}
+.map-open{position:absolute;top:10px;right:10px;background:var(--surface);color:var(--fg);font-size:12px;font-weight:600;padding:6px 10px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.map svg{display:block;width:100%;height:auto}
+.m-water{fill:var(--water)}
+.m-river{fill:none;stroke:var(--water);stroke-linecap:round;stroke-linejoin:round}
+.m-road{fill:none;stroke:var(--road);stroke-linecap:round}
+.m-lbl{fill:var(--muted);font:600 9px var(--f-body);letter-spacing:.04em;text-transform:uppercase}
+.m-wlbl{fill:var(--muted);font:italic 9px var(--f-body);opacity:.8}
+.m-store{fill:var(--surface);stroke:var(--muted);stroke-width:1.2}
+.m-radius{fill:var(--leaf);fill-opacity:.08;stroke:var(--leaf);stroke-dasharray:4 4;stroke-width:1.2}
+.m-me{fill:#2B6FD6;stroke:#fff;stroke-width:2.5}
+.m-me-halo{fill:#2B6FD6;fill-opacity:.18}
+.m-p1{fill:var(--coin)} .m-p2{fill:var(--leaf)} .m-p3{fill:var(--pin3)}
+.m-pin-t{fill:#fff;font:700 11px var(--f-display);text-anchor:middle}
+.m-p1 + .m-pin-t{fill:var(--coin-ink)}
+.m-name{fill:var(--fg);font:600 10px var(--f-body);paint-order:stroke;stroke:var(--land);stroke-width:3px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;padding:8px 12px;font-size:12px;color:var(--muted);background:var(--surface);border-top:1px solid var(--line)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+
+/* mejor día */
+.days{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;align-items:end;height:150px;padding:14px 12px 0}
+.day{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:100%;min-width:0}
+.bar{width:100%;max-width:38px;border-radius:6px 6px 2px 2px;background:var(--surface-2);border:1px solid var(--line)}
+.day.best .bar{background:var(--coin);border-color:var(--coin)}
+.day.cur .bar{outline:2px solid var(--leaf);outline-offset:1px}
+.day .v{font-size:10px;color:var(--muted)}
+.day .d{font-size:12px;font-weight:600;padding-bottom:10px}
+.bestday{padding:0 14px 14px;font-size:14px;margin:0}
+
+.sellos{display:flex;gap:4px;flex-wrap:wrap}
+.sello{width:34px;height:34px;background:var(--sello);color:var(--on-sello);clip-path:polygon(29% 0,71% 0,100% 29%,100% 71%,71% 100%,29% 100%,0 71%,0 29%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:5.5px;font-weight:700;line-height:1.05;text-align:center;text-transform:uppercase;padding:2px}
+.sello b{font-size:5px;font-weight:600}
+.sello.sm{width:26px;height:26px;font-size:4.3px}
+.ok{font-size:11px;color:var(--leaf);font-weight:600}
+
+.search{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.plist{display:grid}
+.prod{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px;border-top:1px solid var(--line);align-items:center}
+.prod:first-child{border-top:0}
+.prod .open{all:unset;cursor:pointer;display:grid;gap:3px;min-width:0}
+.prod .open:focus-visible{outline:3px solid var(--coin)}
+.prod .from{font-size:12px;color:var(--muted)}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;background:var(--brand);color:var(--on-brand)}
+.btn.coin{background:var(--coin);color:var(--coin-ink)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--fg)}
+.btn.sm{padding:6px 10px;font-size:13px}
+.btn.block{width:100%}
+.btn:disabled{opacity:.45;cursor:default}
+:root[data-theme="dark"] .btn:not(.coin):not(.ghost){background:var(--leaf);color:#08140F}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn:not(.coin):not(.ghost){background:var(--leaf);color:#08140F}}
+
+.finder{aspect-ratio:4/3;max-width:100%;border-radius:var(--r);background:#13302B;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.finder .frame{width:72%;height:44%;border:3px solid var(--coin);border-radius:12px;position:relative}
+.finder .laser{position:absolute;left:6%;right:6%;top:50%;height:2px;background:#FF5A3C;box-shadow:0 0 10px #FF5A3C;animation:scan 2.2s ease-in-out infinite}
+.finder .bars{position:absolute;inset:22% 14%;display:flex;gap:3px;opacity:.25}
+.finder .bars i{flex:1;background:#F7F5EF}
+.finder .bars i:nth-child(3n){flex:.4}.finder .bars i:nth-child(4n){flex:2}
+@keyframes scan{0%,100%{transform:translateY(-34px)}50%{transform:translateY(34px)}}
+@media (prefers-reduced-motion:reduce){.finder .laser{animation:none}}
+.scanmsg{font-size:13px;padding:10px 12px;border-radius:10px;background:var(--surface-2)}
+.scanmsg.err{background:var(--warn-soft);color:var(--warn)}
+.filebtn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center}
+.filebtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.manual{display:flex;gap:8px}
+.manual input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+
+.toggles{display:grid}
+.tg{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;border-top:1px solid var(--line)}
+.tg:first-child{border-top:0}
+.tg small{display:block;color:var(--muted);font-size:12px}
+.sw{appearance:none;width:44px;height:26px;border-radius:999px;background:var(--line);position:relative;flex:none;cursor:pointer;transition:background .15s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .15s}
+.sw:checked{background:var(--leaf)}
+.sw:checked::after{transform:translateX(18px)}
+.swap{display:grid;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+.swap:first-child{border-top:0}
+.swap-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+.swap-row > div{min-width:0;font-size:13px;display:grid;gap:3px}
+.swap-row .arrow{color:var(--leaf);font-weight:700}
+.diff{font-size:12px;color:var(--muted)}
+.banner{display:flex;gap:10px;align-items:center;justify-content:space-between;background:var(--leaf-soft);color:var(--leaf);border-radius:var(--r);padding:12px 14px;font-size:14px}
+.banner b{font-weight:600}
+
+.cards{display:grid}
+.card-row{display:flex;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line)}
+.card-row:first-child{border-top:0}
+.card-chip{width:44px;height:30px;border-radius:6px;flex:none}
+.card-row .txt{flex:1;min-width:0}
+.card-row .txt small{display:block;color:var(--muted);font-size:12px}
+.card-row input{width:22px;height:22px;accent-color:var(--leaf);flex:none}
+
+/* ahorro */
+.hero-save{background:var(--brand);color:var(--on-brand);border-radius:var(--r);padding:18px;display:grid;gap:10px}
+.hero-save .big{font-family:var(--f-display);font-weight:700;font-size:40px;line-height:1;color:var(--coin)}
+.split{display:flex;height:12px;border-radius:6px;overflow:hidden;background:rgba(247,245,239,.15)}
+.split span{display:block;height:100%}
+.split .a{background:var(--coin)} .split .b{background:#6CC69A}
+.kv{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px}
+.kv i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px}
+.hist{display:grid}
+.hrow{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--line)}
+.hrow:first-child{border-top:0}
+.hdate{width:44px;text-align:center;border-radius:10px;background:var(--surface-2);padding:6px 0;line-height:1.1}
+.hdate b{display:block;font-family:var(--f-display);font-size:18px}
+.hdate span{font-size:10px;text-transform:uppercase;color:var(--muted);letter-spacing:.05em}
+.hrow .mid{min-width:0;font-size:13px}
+.hrow .mid small{display:block;color:var(--muted);font-size:12px}
+.hrow .amt{text-align:right;font-size:13px}
+.hrow .amt b{display:block;color:var(--leaf);font-size:15px}
+.badge{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:4px}
+
+/* hoja */
+.sheet-bg{position:fixed;inset:0;background:rgba(5,15,12,.55);z-index:40;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--bg);width:100%;max-width:480px;max-height:88vh;overflow:auto;border-radius:18px 18px 0 0;
+  padding-block:18px calc(20px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:14px}
+.sheet-h{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.x{border:0;background:var(--surface-2);width:34px;height:34px;border-radius:50%;font-size:18px;flex:none}
+.ean{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+/* bienvenida */
+.onb{position:fixed;inset:0;z-index:60;background:var(--bg);overflow:auto}
+.onb-in{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;gap:18px;
+  padding-block:calc(20px + env(safe-area-inset-top,0px)) calc(20px + env(safe-area-inset-bottom,0px));padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.onb-top{display:flex;justify-content:space-between;align-items:center}
+.dots{display:flex;gap:6px}
+.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--leaf);width:22px;border-radius:4px}
+.onb h1{font-size:28px;line-height:1.15;letter-spacing:-.01em}
+.onb .lead{font-size:16px;color:var(--muted);margin:0}
+.onb-body{flex:1;display:grid;gap:14px;align-content:start}
+.onb-foot{display:flex;gap:10px}
+.onb-foot .btn{flex:1;padding:13px}
+.skip{border:0;background:transparent;color:var(--muted);font-size:14px}
+.stat{background:var(--brand);color:var(--on-brand);border-radius:var(--r);padding:18px;display:grid;gap:6px}
+.stat .big{font-family:var(--f-display);font-weight:700;font-size:38px;color:var(--coin);line-height:1}
+.vp{display:grid;gap:10px}
+.vp div{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;font-size:14px}
+.vp svg{width:32px;height:32px;padding:6px;border-radius:9px;background:var(--leaf-soft);color:var(--leaf)}
+.pickgrid{display:flex;flex-wrap:wrap;gap:8px}
+
+nav.bottom{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--surface);border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.bottom .in{max-width:480px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr)}
+nav.bottom button{border:0;background:transparent;padding:8px 0 10px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--muted);min-width:0}
+nav.bottom button svg{width:22px;height:22px}
+nav.bottom button.on{color:var(--fg);font-weight:600}
+nav.bottom button.scan svg{width:34px;height:26px;padding:3px 6px;border-radius:8px;background:var(--coin);color:var(--coin-ink);margin-block:-2px}
+.toast{position:fixed;left:50%;bottom:calc(96px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--brand);color:var(--on-brand);padding:10px 16px;border-radius:999px;font-size:14px;z-index:70;max-width:calc(100% - 32px);text-align:center}
+</style>
+
+<div class="app">
+  <header class="top">
+    <div class="logo">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#F2A541"/><circle cx="16" cy="16" r="11.5" fill="none" stroke="#3B2606" stroke-opacity=".25" stroke-width="1.5"/><path d="M10 18l6-5 6 5" fill="none" stroke="#13302B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 23l6-5 6 5" fill="none" stroke="#13302B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/></svg>
+      rinde
+    </div>
+    <div class="loc">
+      <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>
+      <select id="sector" aria-label="Tu ubicación"></select>
+    </div>
+  </header>
+  <main id="view"></main>
+</div>
+
+<nav class="bottom" aria-label="Secciones"><div class="in" id="nav"></div></nav>
+<div id="sheet"></div>
+<div id="onb"></div>
+<div id="toast" hidden class="toast" role="status"></div>
+
+<script src="https://unpkg.com/@zxing/library@0.21.3/umd/index.min.js"></script>
+<script>
+/* ========= DATOS DE EJEMPLO ========= */
+const DAYS=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const DSHORT=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+const MONTHS=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+// coordenadas en km respecto a la Plaza de Armas de Concepción (x = este, y = norte). Esquemáticas.
+const SECTORS=[
+  {id:'centro',name:'Concepción Centro',x:0,y:0},
+  {id:'baru',name:'Barrio Universitario',x:1.8,y:.6},
+  {id:'collao',name:'Collao',x:2.6,y:2.4},
+  {id:'pdv',name:'Pedro de Valdivia',x:.8,y:-2.2},
+  {id:'lomas',name:'Lomas de San Andrés',x:3.6,y:1.6},
+  {id:'spp',name:'San Pedro de la Paz',x:-2.6,y:-3.6},
+  {id:'thno',name:'Talcahuano',x:-6.5,y:8},
+];
+const CHAINS={lider:'Líder',jumbo:'Jumbo',santaisabel:'Santa Isabel',unimarc:'Unimarc',tottus:'Tottus',acuenta:'aCuenta',
+  cruzverde:'Cruz Verde',salcobrand:'Salcobrand',ahumada:'Ahumada',simi:'Dr. Simi'};
+const CHAIN_F={lider:.97,jumbo:1.06,santaisabel:1.03,unimarc:1.04,tottus:.99,acuenta:.92,cruzverde:1.05,salcobrand:1.03,ahumada:1.04,simi:.8};
+const STORES=[
+  {id:'s1',chain:'lider',name:'Líder Paicaví',type:'super',x:.6,y:.9},
+  {id:'s2',chain:'unimarc',name:'Unimarc Centro',type:'super',x:.1,y:-.2},
+  {id:'s3',chain:'santaisabel',name:'Santa Isabel Barrio U',type:'super',x:1.6,y:.5},
+  {id:'s4',chain:'jumbo',name:'Jumbo Plaza Trébol',type:'super',x:-3.2,y:5.4},
+  {id:'s5',chain:'tottus',name:'Tottus Plaza Trébol',type:'super',x:-3,y:5.6},
+  {id:'s6',chain:'acuenta',name:'aCuenta San Pedro',type:'super',x:-2.4,y:-3.2},
+  {id:'s7',chain:'lider',name:'Líder San Pedro',type:'super',x:-2.9,y:-3.9},
+  {id:'s8',chain:'unimarc',name:'Unimarc Lomas',type:'super',x:3.4,y:1.4},
+  {id:'s9',chain:'unimarc',name:'Unimarc Pedro de Valdivia',type:'super',x:.9,y:-2},
+  {id:'s10',chain:'santaisabel',name:'Santa Isabel San Pedro',type:'super',x:-2.1,y:-3.9},
+  {id:'s11',chain:'lider',name:'Líder Collao',type:'super',x:2.5,y:2.1},
+  {id:'s12',chain:'acuenta',name:'aCuenta Collao',type:'super',x:2.9,y:2.7},
+  {id:'s13',chain:'lider',name:'Líder Talcahuano',type:'super',x:-6.8,y:8.3},
+  {id:'s14',chain:'unimarc',name:'Unimarc Talcahuano',type:'super',x:-6.2,y:7.7},
+  {id:'s15',chain:'jumbo',name:'Jumbo San Pedro',type:'super',x:-3.6,y:-4.6},
+  {id:'f1',chain:'cruzverde',name:'Cruz Verde Barros Arana',type:'farm',x:0,y:.1},
+  {id:'f2',chain:'salcobrand',name:'Salcobrand Centro',type:'farm',x:.3,y:-.1},
+  {id:'f3',chain:'ahumada',name:'Ahumada Barrio U',type:'farm',x:1.7,y:.7},
+  {id:'f4',chain:'simi',name:'Dr. Simi Centro',type:'farm',x:-.2,y:.2},
+  {id:'f5',chain:'cruzverde',name:'Cruz Verde San Pedro',type:'farm',x:-2.6,y:-3.4},
+  {id:'f6',chain:'salcobrand',name:'Salcobrand Barrio U',type:'farm',x:1.5,y:.4},
+  {id:'f7',chain:'cruzverde',name:'Cruz Verde Pedro de Valdivia',type:'farm',x:.9,y:-2.1},
+  {id:'f8',chain:'ahumada',name:'Ahumada Talcahuano',type:'farm',x:-6.5,y:8.1},
+  {id:'f9',chain:'salcobrand',name:'Salcobrand Talcahuano',type:'farm',x:-6.3,y:7.9},
+  {id:'f10',chain:'simi',name:'Dr. Simi San Pedro',type:'farm',x:-2.5,y:-3.7},
+  {id:'f11',chain:'cruzverde',name:'Cruz Verde Lomas',type:'farm',x:3.5,y:1.5},
+  {id:'f12',chain:'ahumada',name:'Ahumada Collao',type:'farm',x:2.6,y:2.3},
+];
+const SBY=Object.fromEntries(STORES.map(s=>[s.id,s]));
+
+// [id, nombre, marca, tamaño, categoría, grupo(null=id), tipo para cambios sanos, precio base, sellos, etiquetas]
+// sellos: azucares, grasas, sodio, calorias
+const P=[
+ ['leche-colun','Leche Entera','Colun','1 L','Lácteos y huevos','leche-entera','leche',1190,[],['lacteo']],
+ ['leche-soprole','Leche Entera','Soprole','1 L','Lácteos y huevos','leche-entera','leche',1150,[],['lacteo']],
+ ['leche-lonco','Leche Entera','Loncoleche','1 L','Lácteos y huevos','leche-entera','leche',1090,[],['lacteo']],
+ ['leche-sl','Leche Semidescremada Sin Lactosa','Colun','1 L','Lácteos y huevos',null,'leche',1390,[],['lacteo','sinLactosa']],
+ ['leche-desc','Leche Descremada','Loncoleche','1 L','Lácteos y huevos',null,'leche',1090,[],['lacteo']],
+ ['leche-choc','Leche Chocolatada','Soprole','1 L','Lácteos y huevos',null,'leche',1590,['azucares'],['lacteo']],
+ ['yog-fru','Yogurt Batido Frutilla','Soprole','125 g','Lácteos y huevos',null,'yogurt',390,['azucares'],['lacteo']],
+ ['yog-gri','Yogurt Griego Natural Sin Azúcar','Quillayes','125 g','Lácteos y huevos',null,'yogurt',590,[],['lacteo']],
+ ['yog-pro','Yogurt Protein Sin Azúcar','Soprole','155 g','Lácteos y huevos',null,'yogurt',790,[],['lacteo']],
+ ['queso-gauda','Queso Gauda Laminado','Colun','250 g','Lácteos y huevos',null,'queso',3490,['grasas','sodio'],['lacteo']],
+ ['quesillo','Quesillo','Colun','250 g','Lácteos y huevos',null,'queso',2290,[],['lacteo']],
+ ['mantequilla','Mantequilla con Sal','Colun','250 g','Lácteos y huevos',null,'untable',2890,['grasas','sodio'],['lacteo']],
+ ['queso-crema','Queso Crema Light','Philadelphia','180 g','Lácteos y huevos',null,'untable',2490,[],['lacteo']],
+ ['huevos1','Huevos Blancos Extra','Super Huevo','12 un','Lácteos y huevos',null,'huevos',3290,[],[]],
+ ['huevos2','Huevos Blancos Extra','Yemita','12 un','Lácteos y huevos',null,'huevos',3190,[],[]],
+ ['coca','Coca-Cola Original','Coca-Cola','1,5 L','Bebidas',null,'bebida',1990,['azucares','calorias'],[]],
+ ['coca-zero','Coca-Cola Sin Azúcar','Coca-Cola','1,5 L','Bebidas',null,'bebida',1990,[],[]],
+ ['fanta','Fanta Naranja','Fanta','1,5 L','Bebidas',null,'bebida-n',1890,['azucares'],[]],
+ ['fanta-zero','Fanta Naranja Sin Azúcar','Fanta','1,5 L','Bebidas',null,'bebida-n',1890,[],[]],
+ ['nectar','Néctar Durazno','Watt\'s','1,5 L','Bebidas',null,'jugo',1490,['azucares'],[]],
+ ['nectar-light','Néctar Durazno Sin Azúcar','Andina','1,5 L','Bebidas',null,'jugo',1390,[],[]],
+ ['zuko','Jugo en Polvo Naranja','Zuko','20 g','Bebidas',null,'jugo',290,[],[]],
+ ['agua','Agua Mineral Sin Gas','Cachantun','1,6 L','Bebidas',null,'agua',990,[],[]],
+ ['agua2','Agua Mineral Sin Gas','Benedictino','1,6 L','Bebidas',null,'agua',950,[],[]],
+ ['te1','Té Negro','Supremo','100 bolsitas','Desayuno',null,'te',3290,[],[]],
+ ['te2','Té Negro','Lipton','100 bolsitas','Desayuno',null,'te',3490,[],[]],
+ ['cafe','Café Instantáneo Tradición','Nescafé','170 g','Desayuno',null,'cafe',5490,[],[]],
+ ['cafe2','Café Instantáneo Clásico','Monterrey','170 g','Desayuno',null,'cafe',3990,[],[]],
+ ['chocapic','Cereal Chocapic','Nestlé','400 g','Desayuno',null,'cereal',3290,['azucares','calorias'],[]],
+ ['fitness','Cereal Fitness','Nestlé','380 g','Desayuno',null,'cereal',3490,['azucares'],[]],
+ ['avena','Avena Instantánea','Quaker','500 g','Desayuno',null,'cereal',2190,[],['integral']],
+ ['granola','Granola Sin Azúcar','Natuber','400 g','Desayuno',null,'cereal',3290,[],['integral']],
+ ['merm','Mermelada Durazno','Watt\'s','250 g','Desayuno',null,'merm',1290,['azucares'],[]],
+ ['merm-sa','Mermelada Durazno Sin Azúcar','Watt\'s','250 g','Desayuno',null,'merm',1590,[],[]],
+ ['manjar1','Manjar','Colun','400 g','Desayuno',null,'merm',2390,['azucares','calorias'],['lacteo']],
+ ['manjar2','Manjar','Nestlé','400 g','Desayuno',null,'merm',2490,['azucares','calorias'],['lacteo']],
+ ['pan','Pan de Molde Blanco','Ideal','560 g','Panadería',null,'pan',2390,['sodio'],[]],
+ ['pan2','Pan de Molde Blanco','Castaño','560 g','Panadería',null,'pan',2190,['sodio'],[]],
+ ['pan-int','Pan de Molde Integral','Ideal','560 g','Panadería',null,'pan',2590,[],['integral']],
+ ['arroz','Arroz Grado 1','Tucapel','1 kg','Abarrotes',null,'arroz',1690,[],[]],
+ ['arroz2','Arroz Grado 1','Miraflores','1 kg','Abarrotes',null,'arroz',1590,[],[]],
+ ['arroz-int','Arroz Integral','Tucapel','1 kg','Abarrotes',null,'arroz',1990,[],['integral']],
+ ['fideos','Spaghetti N°5','Carozzi','400 g','Abarrotes',null,'fideos',990,[],[]],
+ ['fideos2','Spaghetti N°5','Lucchetti','400 g','Abarrotes',null,'fideos',950,[],[]],
+ ['fideos-int','Spaghetti Integral','Carozzi','400 g','Abarrotes',null,'fideos',1290,[],['integral']],
+ ['aceite','Aceite Vegetal','Belmont','1 L','Abarrotes',null,'aceite',2690,[],[]],
+ ['aceite2','Aceite Vegetal','Chef','1 L','Abarrotes',null,'aceite',2490,[],[]],
+ ['oliva','Aceite de Oliva Extra Virgen','Talliani','500 ml','Abarrotes',null,'aceite',5990,[],[]],
+ ['azucar','Azúcar Granulada','Iansa','1 kg','Abarrotes',null,'endulzante',1390,[],['azucar']],
+ ['stevia','Endulzante Líquido Stevia','Iansa','270 ml','Abarrotes',null,'endulzante',2190,[],[]],
+ ['harina','Harina Sin Polvos de Hornear','Selecta','1 kg','Abarrotes',null,'harina',1290,[],[]],
+ ['sal','Sal de Mesa','Lobos','1 kg','Abarrotes',null,'sal',590,[],[]],
+ ['atun1','Atún Lomitos en Agua','Van Camp\'s','160 g','Abarrotes',null,'atun',1990,[],[]],
+ ['atun2','Atún Lomitos en Agua','San José','160 g','Abarrotes',null,'atun',1690,[],[]],
+ ['lentejas','Lentejas','Banquete','1 kg','Abarrotes',null,'legumbre',2390,[],[]],
+ ['porotos','Porotos Hallados','Banquete','1 kg','Abarrotes',null,'legumbre',2690,[],[]],
+ ['salsa1','Salsa de Tomate Italiana','Pomarola','200 g','Abarrotes',null,'salsa',590,[],[]],
+ ['salsa2','Salsa de Tomate Italiana','Malloa','200 g','Abarrotes',null,'salsa',550,[],[]],
+ ['mayo','Mayonesa','Hellmann\'s','372 g','Abarrotes',null,'mayo',2690,['grasas','calorias'],[]],
+ ['mayo-l','Mayonesa Light','Hellmann\'s','372 g','Abarrotes',null,'mayo',2690,[],[]],
+ ['platano','Plátano','Granel','1 kg','Frutas y verduras',null,'platano',1290,[],[]],
+ ['manzana','Manzana Roja','Granel','1 kg','Frutas y verduras',null,'manzana',1490,[],[]],
+ ['tomate','Tomate','Granel','1 kg','Frutas y verduras',null,'tomate',1690,[],[]],
+ ['papa','Papa en Malla','Granel','2 kg','Frutas y verduras',null,'papa',2290,[],[]],
+ ['palta','Palta Hass','Granel','1 kg','Frutas y verduras',null,'palta',4990,[],[]],
+ ['lechuga','Lechuga Escarola','Granel','1 un','Frutas y verduras',null,'lechuga',990,[],[]],
+ ['cebolla','Cebolla','Granel','1 kg','Frutas y verduras',null,'cebolla',990,[],[]],
+ ['limon','Limón','Granel','1 kg','Frutas y verduras',null,'limon',1990,[],[]],
+ ['pollo1','Pechuga de Pollo Deshuesada','Super Pollo','1 kg','Carnes',null,'pollo',6990,[],[]],
+ ['pollo2','Pechuga de Pollo Deshuesada','Ariztía','1 kg','Carnes',null,'pollo',7190,[],[]],
+ ['molida','Carne Molida 4% Grasa','Granel','500 g','Carnes',null,'vacuno',4990,[],[]],
+ ['vienesas','Vienesas','San Jorge','20 un','Carnes',null,'embutido',2990,['grasas','sodio','calorias'],[]],
+ ['vienesas-pavo','Vienesas de Pavo','Sopraval','20 un','Carnes',null,'embutido',2890,['sodio'],[]],
+ ['jamon','Jamón de Pavo','Sopraval','250 g','Carnes',null,'embutido',2690,['sodio'],[]],
+ ['triton','Galletas Tritón Vainilla','McKay','126 g','Snacks',null,'galletas',790,['azucares','grasas','calorias'],[]],
+ ['soda','Galletas de Soda','McKay','180 g','Snacks',null,'galletas',990,['sodio'],[]],
+ ['arroz-gall','Galletas de Arroz Integral','Natuber','120 g','Snacks',null,'galletas',1190,[],['integral']],
+ ['papas','Papas Fritas Corte Americano','Lay\'s','180 g','Snacks',null,'snack',2190,['grasas','sodio','calorias'],[]],
+ ['ramitas','Ramitas Saladas','Evercrisp','250 g','Snacks',null,'snack',1790,['grasas','sodio','calorias'],[]],
+ ['mani','Maní Tostado Sin Sal','Marco Polo','200 g','Snacks',null,'snack',1690,[],[]],
+ ['sahne','Chocolate Sahne-Nuss','Nestlé','180 g','Snacks',null,'dulce',3290,['azucares','grasas','calorias'],[]],
+ ['super8','Super 8','Nestlé','29 g','Snacks',null,'dulce',390,['azucares','grasas','calorias'],[]],
+ ['barra','Barra de Cereal Sin Azúcar','Natuber','6 un','Snacks',null,'dulce',2190,[],['integral']],
+ ['papel','Papel Higiénico Doble Hoja','Elite','12 rollos','Hogar e higiene',null,'papel',6990,[],[]],
+ ['papel2','Papel Higiénico Doble Hoja','Confort','12 rollos','Hogar e higiene',null,'papel',6790,[],[]],
+ ['toalla','Toalla de Papel','Elite','2 rollos','Hogar e higiene',null,'toalla',2290,[],[]],
+ ['deter1','Detergente Líquido','Omo','3 L','Hogar e higiene',null,'detergente',9990,[],[]],
+ ['deter2','Detergente Líquido','Popeye','3 L','Hogar e higiene',null,'detergente',6990,[],[]],
+ ['lavaloza','Lavaloza Limón','Quix','750 ml','Hogar e higiene',null,'lavaloza',1990,[],[]],
+ ['cloro','Cloro Tradicional','Clorinda','2 L','Hogar e higiene',null,'cloro',1490,[],[]],
+ ['pasta','Pasta Dental Total','Colgate','90 g','Hogar e higiene',null,'pasta',2990,[],['ambos']],
+ ['shampoo','Shampoo Classic Clean','Head & Shoulders','375 ml','Hogar e higiene',null,'shampoo',4990,[],['ambos']],
+ ['desodorante','Desodorante Aerosol','Rexona','150 ml','Hogar e higiene',null,'desodorante',2990,[],['ambos']],
+ ['jabon','Jabón Líquido','Dove','221 ml','Hogar e higiene',null,'jabon',2990,[],['ambos']],
+ ['gel','Alcohol Gel','Bactiv','500 ml','Hogar e higiene',null,'gel',2490,[],['ambos']],
+ ['panal1','Pañales Talla G','Babysec','48 un','Hogar e higiene',null,'panal',12990,[],['ambos']],
+ ['panal2','Pañales Talla G','Huggies','48 un','Hogar e higiene',null,'panal',15990,[],['ambos']],
+ ['para-gen','Paracetamol 500 mg · 16 comprimidos','Genérico','16 un','Farmacia',null,'paracetamol',990,[],['farm','generico']],
+ ['kitadol','Kitadol 500 mg · 24 comprimidos','Kitadol','24 un','Farmacia',null,'paracetamol',2990,[],['farm']],
+ ['para-inf','Paracetamol Infantil Jarabe 120 mg/5 ml','Genérico','60 ml','Farmacia',null,'para-inf',1590,[],['farm','generico']],
+ ['ibu-gen','Ibuprofeno 400 mg · 20 comprimidos','Genérico','20 un','Farmacia',null,'ibuprofeno',1490,[],['farm','generico']],
+ ['ibupirac','Ibupirac 400 mg · 20 comprimidos','Ibupirac','20 un','Farmacia',null,'ibuprofeno',3490,[],['farm']],
+ ['lora-gen','Loratadina 10 mg · 30 comprimidos','Genérico','30 un','Farmacia',null,'loratadina',1990,[],['farm','generico']],
+ ['clarityne','Clarityne 10 mg · 30 comprimidos','Clarityne','30 un','Farmacia',null,'loratadina',9990,[],['farm']],
+ ['omepra','Omeprazol 20 mg · 30 cápsulas','Genérico','30 un','Farmacia',null,'omeprazol',1990,[],['farm','generico']],
+ ['losartan','Losartán 50 mg · 30 comprimidos','Genérico','30 un','Farmacia',null,'losartan',1590,[],['farm','generico']],
+ ['tapsin','Tapsin Día y Noche · 12 sobres','Tapsin','12 un','Farmacia',null,'antigripal',3990,[],['farm']],
+ ['vitc','Vitamina C 1 g Efervescente · 10 tabletas','Redoxon','10 un','Farmacia',null,'vitc',3990,[],['farm']],
+ ['mascarilla','Mascarillas Desechables · 50 un','Genérico','50 un','Farmacia',null,'mascarilla',2990,[],['farm','generico']],
+ ['termometro','Termómetro Digital','Omron','1 un','Farmacia',null,'termometro',7990,[],['farm']],
+ ['protector','Protector Solar FPS 50','Eucerin','50 ml','Farmacia',null,'protector',14990,[],['farm']],
+];
+function ean13(i){const b='780'+String(4512000+i*137).padStart(9,'0');let s=0;for(let k=0;k<12;k++)s+=(+b[k])*(k%2?3:1);return b+((10-s%10)%10)}
+const PRODUCTS=P.map((r,i)=>({id:r[0],name:r[1],brand:r[2],size:r[3],cat:r[4],group:r[5]||r[0],swap:r[6],base:r[7],sellos:r[8],tags:r[9],ean:ean13(i),
+  where:r[9].includes('farm')?'farm':r[9].includes('ambos')?'ambos':'super'}));
+const PBY=Object.fromEntries(PRODUCTS.map(p=>[p.id,p]));
+const CATS=[...new Set(PRODUCTS.map(p=>p.cat))];
+
+const CARDS=[
+ {id:'bestado',name:'BancoEstado CuentaRUT',kind:'Débito',color:'#E36A1E'},
+ {id:'bch',name:'Banco de Chile',kind:'Crédito',color:'#1C3F94'},
+ {id:'santander',name:'Santander',kind:'Crédito',color:'#D9231D'},
+ {id:'bci',name:'Lider BCI',kind:'Crédito',color:'#0071CE'},
+ {id:'cmr',name:'CMR Falabella',kind:'Crédito',color:'#3E8E2E'},
+ {id:'cencosud',name:'Tarjeta Cencosud',kind:'Crédito',color:'#5A2D82'},
+ {id:'scotia',name:'Scotiabank',kind:'Crédito',color:'#B5121B'},
+ {id:'tenpo',name:'Tenpo',kind:'Prepago',color:'#00B386'},
+];
+const CBY=Object.fromEntries(CARDS.map(c=>[c.id,c]));
+const ALL=[0,1,2,3,4,5,6];
+const RULES=[
+ {card:'bci',chains:['lider','acuenta'],days:[1,2,3,4,5,6],pct:8,tope:12000,min:0},
+ {card:'bch',chains:['jumbo','santaisabel'],days:[2],pct:20,tope:20000,min:20000},
+ {card:'bestado',chains:['unimarc'],days:[4],pct:15,tope:8000,min:0},
+ {card:'bestado',chains:['ahumada'],days:[3],pct:10,tope:5000,min:0},
+ {card:'santander',chains:['unimarc','santaisabel'],days:[6],pct:15,tope:12000,min:15000},
+ {card:'santander',chains:['salcobrand'],days:[0,6],pct:15,tope:8000,min:0},
+ {card:'cmr',chains:['tottus'],days:[3],pct:20,tope:25000,min:0},
+ {card:'cmr',chains:['tottus'],days:ALL,pct:5,tope:5000,min:0},
+ {card:'cencosud',chains:['jumbo','santaisabel'],days:[5],pct:15,tope:15000,min:0},
+ {card:'scotia',chains:['cruzverde'],days:[1],pct:20,tope:10000,min:0},
+ {card:'tenpo',chains:['salcobrand','cruzverde'],days:[5],pct:12,tope:6000,min:0},
+];
+const SELLO={azucares:'Azúcares',grasas:'Grasas saturadas',sodio:'Sodio',calorias:'Calorías'};
+const PROFILE=[
+ {id:'sinAzucar',name:'Sin azúcar',desc:'Evita productos ALTO EN AZÚCARES y azúcar de mesa'},
+ {id:'bajoCal',name:'Bajo en calorías',desc:'Evita productos ALTO EN CALORÍAS'},
+ {id:'bajoSodio',name:'Bajo en sodio',desc:'Evita productos ALTO EN SODIO'},
+ {id:'bajoGrasa',name:'Bajo en grasas saturadas',desc:'Evita productos ALTO EN GRASAS SATURADAS'},
+ {id:'sinLactosa',name:'Sin lactosa',desc:'Cambia lácteos por versiones sin lactosa'},
+ {id:'integral',name:'Prefiero integral',desc:'Cambia arroz, fideos, pan, cereal y galletas por integrales'},
+];
+const FREQ=['leche-colun','pan','arroz','fideos','aceite','huevos1','azucar','cafe','te1','yog-fru','coca','triton','papel','platano','tomate','pollo1','vienesas','atun2','lavaloza','para-gen'];
+
+/* ========= ESTADO ========= */
+const DEF={tab:'canasta',list:'habitual',sector:'baru',cards:['bestado','cmr'],pay:'best',radius:3,onb:false,
+ profile:{sinAzucar:true,bajoCal:false,bajoSodio:false,bajoGrasa:false,sinLactosa:false,integral:false},diet:false,
+ basket:[{pid:'leche-colun',qty:2,any:true},{pid:'pan',qty:1,any:false},{pid:'arroz',qty:1,any:true},{pid:'coca',qty:1,any:false},
+  {pid:'triton',qty:2,any:false},{pid:'yog-fru',qty:4,any:false},{pid:'aceite',qty:1,any:true},{pid:'cafe',qty:1,any:false},
+  {pid:'huevos1',qty:1,any:true},{pid:'papel',qty:1,any:true},{pid:'para-gen',qty:1,any:true},{pid:'clarityne',qty:1,any:false}],
+ next:[{pid:'nectar',qty:2,any:false},{pid:'shampoo',qty:1,any:false}],
+ history:[],cat:'Todas',q:''};
+const clone=o=>JSON.parse(JSON.stringify(o));
+let S;
+try{S=Object.assign(clone(DEF),JSON.parse(localStorage.getItem('rinde-proto-v3')||'{}'))}catch(e){S=clone(DEF)}
+S.day=new Date().getDay();S.tab=S.tab||'canasta';
+function save(){try{localStorage.setItem('rinde-proto-v3',JSON.stringify({sector:S.sector,cards:S.cards,pay:S.pay,radius:S.radius,profile:S.profile,diet:S.diet,basket:S.basket,next:S.next,history:S.history,onb:S.onb,list:S.list}))}catch(e){}}
+const curList=()=>S.list==='next'?S.next:S.basket;
+
+/* ========= MOTOR ========= */
+function h(s){let x=2166136261;for(const c of s){x^=c.charCodeAt(0);x=Math.imul(x,16777619)}return (x>>>0)/4294967295}
+function sells(p,st){
+  if(p.where==='super'&&st.type!=='super')return false;
+  if(p.where==='farm'&&st.type!=='farm')return false;
+  if(st.chain==='simi'&&p.where==='farm'&&!p.tags.includes('generico'))return false;
+  if(st.type==='super'&&h(p.id+st.id+'na')<.05)return false;
+  return true;
+}
+function priceAt(p,st){
+  if(!sells(p,st))return null;
+  const n=.86+h(p.id+st.chain)*.28, of=h(p.id+st.id+'of')<.16?.72:1;
+  return Math.round(p.base*CHAIN_F[st.chain]*n*of/10)*10;
+}
+const stripName=s=>s.replace(/·.*/,'').trim();
+function sameKind(a,b){
+  if(['paracetamol','ibuprofeno','loratadina'].includes(a.swap))return a.swap===b.swap;
+  return stripName(a.name)===stripName(b.name)&&a.size===b.size;
+}
+function itemAt(it,st){
+  const p=PBY[it.pid];
+  if(!it.any){const v=priceAt(p,st);return v==null?null:{price:v,p}}
+  let best=null;
+  for(const q of PRODUCTS){if(q.group!==p.group&&!sameKind(p,q))continue;
+    const v=priceAt(q,st);if(v!=null&&(!best||v<best.price))best={price:v,p:q}}
+  return best;
+}
+const me=()=>SECTORS.find(x=>x.id===S.sector);
+function comuna(st){return /Talcahuano|Trébol/.test(st.name)?'Talcahuano':/San Pedro/.test(st.name)?'San Pedro de la Paz':'Concepción'}
+// Abre la app de mapas del celular con la ruta desde donde estás hasta la tienda
+function mapsUrl(st){return 'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(CHAINS[st.chain]+' '+st.name.replace(CHAINS[st.chain],'').trim()+', '+comuna(st)+', Chile')}
+const goLink=st=>`<a class="lnk" href="${mapsUrl(st)}" target="_blank" rel="noopener">Cómo llegar</a>`;
+function dist(st){const s=me();return Math.hypot(st.x-s.x,st.y-s.y)*1.3}
+function cardsFor(mode){if(mode==='cash')return[];if(mode==='best')return S.cards;return[mode]}
+function bestDiscount(chain,sub,day,mode){
+  let best={amount:0,rule:null,card:null};
+  for(const c of cardsFor(mode))for(const r of RULES){
+    if(r.card!==c||!r.chains.includes(chain)||!r.days.includes(day))continue;
+    const a=sub>=r.min?Math.min(Math.round(sub*r.pct/1000)*10,r.tope):0;
+    if(a>best.amount)best={amount:a,rule:r,card:c};
+  }
+  return best;
+}
+function unitInfo(p){const m=p.size.replace(',','.').match(/([\d.]+)\s*(kg|g|L|ml|un|bolsitas|rollos)/);if(!m)return null;let v=+m[1],u=m[2];
+  if(u==='g'){v/=1000;u='kg'}else if(u==='ml'){v/=1000;u='L'}else if(u!=='kg'&&u!=='L')u='un';return {v,u}}
+function unitName(p){const u=unitInfo(p);return !u||u.u==='un'?'unidad':u.u==='kg'?'kilo':'litro'}
+function unitTxt(price,p){const u=unitInfo(p);if(!u)return clp(price);const v=price/u.v;return clp(v)+(u.u==='kg'?'/kg':u.u==='L'?'/L':' c/u')}
+// Si la tienda no tiene el producto, propone el más parecido del mismo tipo (y lo marca como sustituto)
+function substituteAt(it,st){const p=PBY[it.pid],u=unitInfo(p);let best=null;
+  if(it.exact||p.where==='farm')return null; // remedios: nunca se cambian solos; se sugiere el bioequivalente aparte
+  for(const q of PRODUCTS){if(q.swap!==p.swap||q.id===p.id)continue;const uq=unitInfo(q);if(u&&uq&&u.u!==uq.u)continue;
+    const v=priceAt(q,st);if(v==null)continue;const sc=Math.abs(q.base-p.base);if(!best||sc<best.sc)best={price:v,p:q,sub:true,sc}}
+  return best}
+function genericFor(p){if(p.where!=='farm'||p.tags.includes('generico'))return null;return PRODUCTS.find(q=>q.swap===p.swap&&q.tags.includes('generico'))||null}
+function evalStores(items,type,day,mode){
+  return STORES.filter(s=>type==='all'||s.type===type).map(st=>{
+    let sub=0,missing=[],subs=[],lines=[];
+    items.forEach(it=>{let r=itemAt(it,st);
+      if(!r){r=substituteAt(it,st);if(r)subs.push({from:PBY[it.pid],to:r.p})}
+      if(!r){missing.push(PBY[it.pid]);lines.push(null);return}
+      sub+=r.price*it.qty;lines.push(r)});
+    const d=bestDiscount(st.chain,sub,day,mode);
+    return {st,sub,disc:d,total:sub-d.amount,missing,subs,lines,km:dist(st)};
+  });
+}
+function splitHTML(items,res,ref){
+  const cand=res.filter(r=>r.km<=Math.max(S.radius,3));let best=null;
+  for(let i=0;i<cand.length;i++)for(let j=i+1;j<cand.length;j++){
+    const A=cand[i],B=cand[j];let a=0,b=0,ia=[],ib=[],ok=true;
+    items.forEach((it,ix)=>{const la=A.lines[ix],lb=B.lines[ix];
+      if(!la&&!lb){ok=false;return}
+      if(!lb||(la&&la.price<=lb.price)){a+=la.price*it.qty;ia.push(la.p)}else{b+=lb.price*it.qty;ib.push(lb.p)}});
+    if(!ok||!ia.length||!ib.length)continue;
+    const da=bestDiscount(A.st.chain,a,S.day,S.pay),db=bestDiscount(B.st.chain,b,S.day,S.pay);
+    const total=a-da.amount+b-db.amount;
+    if(!best||total<best.total)best={A,B,a,b,da,db,ia,ib,total};
+  }
+  if(!best||!ref)return '';const save=ref.total-best.total;if(save<1000)return '';
+  const gap=Math.hypot(best.A.st.x-best.B.st.x,best.A.st.y-best.B.st.y)*1.3;
+  const part=(r,sub,d,list)=>`<div class="sp-row"><div><b>${esc(r.st.name)}</b><small>${list.length} producto${list.length>1?'s':''} · a ${km(r.km)} de ti</small></div><div class="num" style="text-align:right"><b>${clp(sub-d.amount)}</b>${d.amount?`<small>con ${esc(CBY[d.card].name)}</small>`:''}</div></div>`;
+  return `<article class="opt split-card"><span class="tag near">Divide tu compra</span>
+   <div class="save num">Ahorras ${clp(save)} más que la opción 1 comprando en dos tiendas cercanas</div>
+   ${part(best.A,best.a,best.da,best.ia)}${part(best.B,best.b,best.db,best.ib)}
+   <details><summary class="hint">Qué comprar en cada una</summary><p class="hint"><b>${esc(best.A.st.name)}:</b> ${best.ia.map(p=>esc(stripName(p.name))).join(', ')}<br><b>${esc(best.B.st.name)}:</b> ${best.ib.map(p=>esc(stripName(p.name))).join(', ')}</p></details>
+   <p class="hint">Las dos tiendas están a ${km(gap)} una de la otra. Total: <b class="num">${clp(best.total)}</b></p></article>`;
+}
+function bioHTML(p){const g=genericFor(p);if(!g)return '';const a=minPrice(p),b=minPrice(g),ua=a.v/unitInfo(p).v,ub=b.v/unitInfo(g).v,pct=Math.round((1-ub/ua)*100);
+  return `<div class="banner"><span>Genérico bioequivalente: <b>${esc(g.name)}</b> desde ${clp(b.v)} (${unitTxt(b.v,g)} vs. ${unitTxt(a.v,p)}). Hasta ${pct}% menos por unidad.</span><button class="btn sm" data-act="open" data-p="${g.id}">Ver</button></div><p class="hint">Mismo principio activo y dosis. Consulta a tu médico o químico farmacéutico antes de cambiar.</p>`}
+function pick(res){
+  const minMiss=Math.min(...res.map(r=>r.missing.length));
+  const full=res.filter(r=>r.missing.length===minMiss);
+  const byT=(a,b)=>a.total-b.total;
+  const sorted=[...full].sort(byT);
+  const cheap=sorted[0];
+  const near=full.filter(r=>r.km<=S.radius).sort(byT)[0]||null;
+  const close=[...res].sort((a,b)=>a.km-b.km)[0];
+  return {cheap,near,close,priciest:sorted.at(-1)};
+}
+function violates(p){
+  const pr=S.profile, why=[];
+  if(pr.sinAzucar&&(p.sellos.includes('azucares')||p.tags.includes('azucar')))why.push('azúcar');
+  if(pr.bajoCal&&p.sellos.includes('calorias'))why.push('calorías');
+  if(pr.bajoSodio&&p.sellos.includes('sodio'))why.push('sodio');
+  if(pr.bajoGrasa&&p.sellos.includes('grasas'))why.push('grasas saturadas');
+  if(pr.sinLactosa&&p.tags.includes('lacteo')&&!p.tags.includes('sinLactosa'))why.push('lactosa');
+  if(pr.integral&&['arroz','fideos','pan','cereal','galletas'].includes(p.swap)&&!p.tags.includes('integral'))why.push('no es integral');
+  return why;
+}
+function minPrice(p){let b=null;for(const st of STORES){const v=priceAt(p,st);if(v!=null&&(!b||v<b.v))b={v,st}}return b}
+function healthier(p){
+  const u=(unitInfo(p)||{}).u;
+  return PRODUCTS.filter(q=>q.swap===p.swap&&q.id!==p.id&&!violates(q).length&&(unitInfo(q)||{}).u===u)
+    .sort((a,b)=>a.sellos.length-b.sellos.length||minPrice(a).v-minPrice(b).v)[0]||null;
+}
+function splitItems(items){return {sup:items.filter(it=>PBY[it.pid].where!=='farm'),far:items.filter(it=>PBY[it.pid].where==='farm')}}
+
+/* ========= AHORRO ========= */
+// "Tu súper de siempre" = la tienda más cercana, pagando sin descuento. El ahorro se mide contra eso.
+function purchase(items,type,st,day,mode){
+  const res=evalStores(items,type,day,mode);
+  const r=res.find(x=>x.st.id===st.id);
+  const ref=[...res].sort((a,b)=>a.km-b.km)[0];
+  return {store:st.id,type,sub:r.sub,disc:r.disc.amount,card:r.disc.card,total:r.total,ref:ref.st.id,refSub:ref.sub,
+    tienda:Math.max(0,ref.sub-r.sub),n:items.reduce((a,b)=>a+b.qty,0)};
+}
+function seedHistory(){
+  const today=new Date();today.setHours(12,0,0,0);
+  const {sup,far}=splitItems(S.basket);
+  const out=[];
+  [19,13,8,3].forEach((ago,i)=>{
+    const d=new Date(today);d.setDate(d.getDate()-ago);
+    const day=d.getDay();
+    if(sup.length){const c=pick(evalStores(sup,'super',day,'best')).cheap;out.push({...purchase(sup,'super',c.st,day,'best'),date:d.toISOString(),seed:true})}
+    if(i===1&&far.length){const c=pick(evalStores(far,'farm',day,'best')).cheap;out.push({...purchase(far,'farm',c.st,day,'best'),date:d.toISOString(),seed:true})}
+  });
+  return out;
+}
+
+/* ========= UI ========= */
+const $=s=>document.querySelector(s);
+const clp=n=>'$'+Math.round(n).toLocaleString('es-CL');
+const km=k=>k<1?Math.max(100,Math.round(k*1000/50)*50)+' m':k.toFixed(1).replace('.',',')+' km';
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function sellosHTML(p,sm){
+  if(!p.sellos.length)return '<span class="ok">Sin sellos</span>';
+  return '<div class="sellos">'+p.sellos.map(s=>`<div class="sello ${sm?'sm':''}" title="Alto en ${SELLO[s]}"><b>Alto en</b>${SELLO[s]}<b>Minsal</b></div>`).join('')+'</div>';
+}
+function toast(t){const el=$('#toast');el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,2400)}
+
+const ICONS={
+ canasta:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-2 11H5L3 9z"/><path d="M8 9l4-6 4 6"/></svg>',
+ buscar:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>',
+ escanear:'<svg viewBox="0 0 28 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 3v14M9 3v14M12 3v14M16 3v14M20 3v14M23 3v14"/></svg>',
+ saludable:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-5-3-8-7-8-11a4 4 0 018-1 4 4 0 018 1c0 4-3 8-8 11z"/></svg>',
+ ahorro:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13l4-4 4 4"/><path d="M8 17l4-4 4 4" opacity=".5"/></svg>',
+ tarjetas:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>',
+};
+const TABS=[['canasta','Canasta'],['buscar','Buscar'],['escanear','Escanear'],['saludable','Saludable'],['ahorro','Ahorro'],['tarjetas','Tarjetas']];
+function renderNav(){
+  $('#nav').innerHTML=TABS.map(([id,n])=>`<button class="${id==='escanear'?'scan ':''}${S.tab===id?'on':''}" data-tab="${id}" ${S.tab===id?'aria-current="page"':''}>${ICONS[id]}${n}</button>`).join('');
+}
+function payControls(){
+  const mine=S.cards.map(c=>`<option value="${c}" ${S.pay===c?'selected':''}>${esc(CBY[c].name)}</option>`).join('');
+  const today=new Date().getDay();
+  return `<div class="ctrl">
+   <label class="pill" for="pay"><span>Pago</span><select id="pay"><option value="best" ${S.pay==='best'?'selected':''}>Mejor tarjeta</option><option value="cash" ${S.pay==='cash'?'selected':''}>Efectivo</option>${mine}</select></label>
+   <label class="pill" for="day"><span>Día</span><select id="day">${DAYS.map((d,i)=>`<option value="${i}" ${S.day===i?'selected':''}>${i===today?'Hoy':d}</option>`).join('')}</select></label>
+   <label class="pill" for="radius"><span>Cerca</span><select id="radius">${[1,2,3,5].map(r=>`<option value="${r}" ${S.radius==r?'selected':''}>${r} km</option>`).join('')}</select></label>
+  </div>`;
+}
+function payLine(r){
+  if(!r.disc.amount)return `<div class="pay none">${S.pay==='cash'?'Pagando en efectivo':'Tus tarjetas no tienen descuento aquí este día'}</div>`;
+  const rr=r.disc.rule;
+  return `<div class="pay">Paga con <b>${esc(CBY[r.disc.card].name)}</b>: −${clp(r.disc.amount)} (${rr.pct}% ${rr.days.length===7?'todos los días':'los '+DAYS[S.day].toLowerCase()}, tope ${clp(rr.tope)})</div>`;
+}
+function payShort(r){
+  if(!r.disc.amount)return S.pay==='cash'?'efectivo':'sin descuento hoy';
+  return `<span class="ok-t">${esc(CBY[r.disc.card].name)} −${clp(r.disc.amount)}</span>`;
+}
+function notes(r){
+  return (r.missing.length?`<div class="miss">No tiene: ${r.missing.map(p=>esc(stripName(p.name))).join(', ')}</div>`:'')+
+   (r.subs.length?`<div class="subn">Cambia ${r.subs.map(s=>`${esc(stripName(s.from.name))} por <b>${esc(stripName(s.to.name))}</b>`).join(' y ')} (no es el mismo producto)</div>`:'');
+}
+const OPTL={near:['cheap','Más barata cerca',1],cheap:['near','Más barata',2],close:['close','Más cercana',3]};
+function heroOpt(r,extra,type,canBuy){
+  return `<article class="opt main">
+    <div class="opt-top"><div><span class="tag cheap"><span class="n">1</span>Más barata cerca de ti</span>
+      <div class="store big">${esc(r.st.name)}</div><div class="dist">a ${km(r.km)} de ti · ${goLink(r.st)}</div></div>
+      <div class="total num">${r.disc.amount?`<small>${clp(r.sub)}</small>`:''}${clp(r.total)}</div></div>
+    ${payLine(r)}${notes(r)}
+    <div class="opt-foot">${extra||'<span></span>'}${canBuy?`<button class="btn sm" data-act="buy" data-s="${r.st.id}" data-type="${type}">Compré aquí</button>`:''}</div>
+  </article>`;
+}
+function rowOpt(kind,r,note,type,canBuy){
+  const L=OPTL[kind];
+  return `<div class="orow"><span class="n n${L[2]}">${L[2]}</span><div class="om"><span class="ot">${L[1]}</span><b>${esc(r.st.name)}</b><small>a ${km(r.km)} · ${payShort(r)} · ${goLink(r.st)}</small>${note?`<small class="num">${note}</small>`:''}${notes(r)}</div>
+   <div class="oa num"><b>${clp(r.total)}</b>${canBuy?`<button class="lnk" data-act="buy" data-s="${r.st.id}" data-type="${type}">Compré aquí</button>`:''}</div></div>`;
+}
+const sameRow=(n,t,txt)=>`<div class="orow"><span class="n n${n}">${n}</span><div class="om"><span class="ot">${t}</span><small>${txt}</small></div><span></span></div>`;
+function optionsHTML(items,type,canBuy,showMap=true){
+  const res=evalStores(items,type,S.day,S.pay);
+  const pk=pick(res),{cheap,near,close,priciest}=pk;
+  const ref=near||cheap;
+  const saveTxt=near&&priciest&&priciest.total>near.total?`<span class="save num">Ahorras ${clp(priciest.total-near.total)} vs. la más cara</span>`:'';
+  const cheapSame=near&&near.st.id===cheap.st.id;
+  const closeSame=close.st.id===ref.st.id||close.st.id===cheap.st.id;
+  let html=near?heroOpt(near,saveTxt,type,canBuy):`<article class="opt"><p class="same">No hay tiendas a menos de ${S.radius} km. Aumenta la distancia en "Cerca".</p></article>`;
+  html+=`<div class="panel orows">`;
+  html+=cheapSame?sameRow(2,'Más barata','La opción 1 ya es la más barata de todas.')
+    :rowOpt('cheap',cheap,near?`${clp(near.total-cheap.total)} menos que la opción 1, pero más lejos`:'',type,canBuy);
+  html+=closeSame?sameRow(3,'Más cercana',`Es ${esc(close.st.name)}, que ya aparece arriba.`)
+    :rowOpt('close',close,close.total>ref.total?`${clp(close.total-ref.total)} más que la opción 1`:'',type,canBuy);
+  html+=`</div>${showMap?mapHTML(pk,type):''}${canBuy&&type==='super'?splitHTML(items,res,ref):''}
+  <details class="all"><summary>Comparar las ${res.length} tiendas</summary><div class="tbl-wrap"><table>
+   <thead><tr><th>Tienda</th><th class="r">Distancia</th><th class="r">Desc.</th><th class="r">Total</th></tr></thead><tbody>
+   ${[...res].sort((a,b)=>a.missing.length-b.missing.length||a.total-b.total).map(r=>`<tr><td>${esc(r.st.name)}${r.missing.length?` <span style="color:var(--warn)">(faltan ${r.missing.length})</span>`:''}${r.subs.length?` <span style="color:var(--muted)">(${r.subs.length} sustituto${r.subs.length>1?'s':''})</span>`:''}</td><td class="r num">${km(r.km)}</td><td class="r num">${r.disc.amount?'−'+clp(r.disc.amount):'—'}</td><td class="r num"><b>${clp(r.total)}</b></td></tr>`).join('')}
+   </tbody></table></div></details>`;
+  return html;
+}
+
+/* --- mapa esquemático --- */
+const RIVER=[[8,-4.6],[5,-3.7],[2,-3.1],[0,-2.8],[-2,-2.2],[-4,-1.6],[-6,-1.1],[-10,-.4]];
+const SEA=[[-8.6,14],[-8.2,9.5],[-8.8,6],[-9.6,3],[-14,2],[-14,14]];
+const ROADS=[[[0,.3],[-1.5,2.4],[-3.1,5.5],[-5,7],[-6.5,8]],[[0,0],[2.6,2.4]],[[0,-.1],[.8,-2.1],[-.4,-2.9],[-2.6,-3.6]],[[0,0],[1.8,.6],[3.6,1.6]]];
+function mapHTML(pk,type){
+  const pts=[me(),pk.cheap.st,pk.close.st];if(pk.near)pts.push(pk.near.st);
+  let minx=Math.min(...pts.map(p=>p.x))-1.2,maxx=Math.max(...pts.map(p=>p.x))+1.2,
+      miny=Math.min(...pts.map(p=>p.y))-.8,maxy=Math.max(...pts.map(p=>p.y))+1.9;
+  const W=400,H=230,ar=W/H;
+  let w=Math.max(maxx-minx,3.5),hh=Math.max(maxy-miny,3.5/ar);
+  if(w/hh<ar)w=hh*ar;else hh=w/ar;
+  const cx=(minx+maxx)/2,cy=(miny+maxy)/2;minx=cx-w/2;maxy=cy+hh/2;
+  const k=W/w,X=x=>((x-minx)*k).toFixed(1),Y=y=>((maxy-y)*k).toFixed(1);
+  const line=arr=>arr.map(([x,y])=>X(x)+','+Y(y)).join(' ');
+  const m=me(),rr=(S.radius/1.3)*k;
+  const pins={};
+  [['cheap',pk.cheap],['near',pk.near],['close',pk.close]].forEach(([kd,r])=>{if(!r)return;(pins[r.st.id]=pins[r.st.id]||{st:r.st,n:[]}).n.push(OPTL[kd][2])});
+  const dots=STORES.filter(s=>(type==='all'||s.type===type)&&!pins[s.id]).map(s=>`<circle class="m-store" cx="${X(s.x)}" cy="${Y(s.y)}" r="4"/>`).join('');
+  const sect=SECTORS.filter(s=>s.id!==S.sector&&!Object.values(pins).some(({st})=>Math.hypot(st.x-s.x,st.y-s.y)<.5)).map(s=>`<text class="m-lbl" x="${X(s.x)}" y="${Y(s.y)}" text-anchor="middle">${esc(s.name)}</text>`).join('');
+  const pinSvg=Object.values(pins).map(({st,n})=>{const cls='m-p'+n[0],x=+X(st.x),y=+Y(st.y);
+    return `<g><path class="${cls}" d="M${x} ${y} l-9 -13 a11 11 0 1 1 18 0 z"/><text class="m-pin-t" x="${x}" y="${y-15}" ${n[0]===1?'style="fill:var(--coin-ink)"':''}>${n.join('·')}</text>
+    <text class="m-name" x="${x+13}" y="${y-12}">${esc(st.name)}</text></g>`}).join('');
+  return `<a class="map" href="${mapsUrl((pk.near||pk.cheap).st)}" target="_blank" rel="noopener" aria-label="Abrir la ruta a ${esc((pk.near||pk.cheap).st.name)} en el mapa del celular"><span class="map-open">Abrir en Maps ↗</span><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Mapa esquemático con tu ubicación y las tiendas recomendadas">
+    <rect width="${W}" height="${H}" fill="var(--land)"/>
+    <polygon class="m-water" points="${line(SEA)}"/>
+    <polyline class="m-river" points="${line(RIVER)}" stroke-width="${Math.max(6,.55*k)}"/>
+    <text class="m-wlbl" x="${X(-1.2)}" y="${Y(-2.75)}" transform="rotate(-14 ${X(-1.2)} ${Y(-2.75)})">Río Biobío</text>
+    ${ROADS.map(r=>`<polyline class="m-road" points="${line(r)}" stroke-width="3"/>`).join('')}
+    ${sect}
+    <circle class="m-radius" cx="${X(m.x)}" cy="${Y(m.y)}" r="${rr.toFixed(1)}"/>
+    ${dots}
+    <circle class="m-me-halo" cx="${X(m.x)}" cy="${Y(m.y)}" r="13"/><circle class="m-me" cx="${X(m.x)}" cy="${Y(m.y)}" r="6"/>
+    ${pinSvg}
+  </svg><div class="legend"><span><i style="background:#2B6FD6"></i>Tú</span><span><i style="background:var(--coin)"></i>1 Barata cerca</span><span><i style="background:var(--leaf)"></i>2 Más barata</span><span><i style="background:var(--pin3)"></i>3 Más cercana</span><span>Zona verde: a menos de ${S.radius} km</span></div></a>`;
+}
+
+function bestDay(items,type){
+  const vals=ALL.map(d=>pick(evalStores(items,type,d,S.pay)).cheap);
+  const tot=vals.map(v=>v.total),max=Math.max(...tot),min=Math.min(...tot),floor=min*.9;
+  const bi=tot.indexOf(min),cur=tot[S.day],b=vals[bi];
+  const bars=vals.map((v,i)=>`<div class="day ${i===bi?'best':''} ${i===S.day?'cur':''}"><span class="v num">${Math.round(v.total/1000)}k</span><div class="bar" style="height:${12+((v.total-floor)/(max-floor||1))*78}%"></div><span class="d">${DSHORT[i]}</span></div>`).join('');
+  const better=!(bi===S.day||cur===min);
+  const msg=better?`Mejor día: el <b>${DAYS[bi].toLowerCase()}</b> en ${esc(b.st.name)}${b.disc.card?` con ${esc(CBY[b.disc.card].name)}`:''}. Ahorras <b class="num">${clp(cur-min)}</b> más.`
+    :`Hoy ya es el mejor día de la semana para esta lista.`;
+  return {better,msg,chart:`<div class="days" role="img" aria-label="Total más barato por día de la semana">${bars}</div>`};
+}
+function itemHTML(it,i){
+  const p=PBY[it.pid];const v=violates(p);
+  return `<div class="item"><div class="nm">${esc(p.name)} <span style="font-weight:400;color:var(--muted)">${esc(it.any?p.size:p.brand+' · '+p.size)}</span></div>
+   <div class="qty"><button data-act="dec" data-i="${i}" aria-label="Quitar uno">−</button><span class="num">${it.qty}</span><button data-act="inc" data-i="${i}" aria-label="Agregar uno">+</button></div>
+   <div class="meta"><button class="anyb ${it.any?'on':''}" data-act="any" data-i="${i}">${it.any?'Cualquier marca':'Solo '+esc(p.brand)}</button>
+   ${v.length?`<span style="color:var(--warn)">No calza con tu perfil (${v.join(', ')})</span>`:''}</div></div>`;
+}
+const TIPI={dia:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
+ sano:ICONS.saludable,med:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="8" width="18" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="M9.5 9.5l5 5"/></svg>'};
+function viewCanasta(){
+  const L=curList(),isNext=S.list==='next';
+  const {sup,far}=splitItems(L);
+  const n=L.reduce((a,b)=>a+b.qty,0);
+  const prev=L.slice(0,3).map(it=>esc(stripName(PBY[it.pid].name))).join(', ')+(L.length>3?` y ${L.length-3} más`:'');
+  let html=`<div class="seg" role="tablist"><button role="tab" class="${!isNext?'on':''}" data-act="list" data-l="habitual" aria-selected="${!isNext}">Canasta habitual</button><button role="tab" class="${isNext?'on':''}" data-act="list" data-l="next" aria-selected="${isNext}">Próxima compra (${S.next.reduce((a,b)=>a+b.qty,0)})</button></div>
+  <details class="listbox" id="listbox" ${S.listOpen?'open':''}><summary><span class="lb-t"><b>${isNext?'Próxima compra':'Mi canasta habitual'} · <span class="num">${n}</span> productos</b><small>${L.length?prev:'Vacía'}</small></span><span class="lnk-t"><span class="wc">Ver y editar</span><span class="wo">Ocultar</span></span></summary>
+   <div class="items lb-items">${L.length?L.map(itemHTML).join(''):`<div class="empty">Agrega productos desde <b>Buscar</b> o <b>Escanear</b>.</div>`}</div>
+   ${isNext&&L.length?`<div class="row" style="padding:0 14px 12px"><button class="btn sm ghost" data-act="merge">Sumar a mi canasta habitual</button><button class="btn sm ghost" data-act="clear">Vaciar lista</button></div>`:''}
+   <p class="hint" style="padding:0 14px 12px">${isNext?'Lo que escaneas o se te está acabando queda aquí, separado de tu compra de siempre.':'Toca la marca para elegir "Solo esa marca" o "Cualquier marca".'}</p></details>`;
+  if(!L.length)return html;
+  html+=payControls();
+  if(sup.length)html+=`<section class="sec"><div class="sec-h"><h2>Supermercado</h2><span class="eyebrow">${S.day===new Date().getDay()?'Hoy':DAYS[S.day]}</span></div>${optionsHTML(sup,'super',true,true)}</section>`;
+  if(far.length)html+=`<section class="sec"><div class="sec-h"><h2>Farmacia</h2></div>${optionsHTML(far,'farm',true,false)}</section>`;
+  const tips=[];let week='';
+  if(sup.length){const bd=bestDay(sup,'super');tips.push(`<div class="tip"><span class="ic">${TIPI.dia}</span><span class="t">${bd.msg}</span></div>`);week=`<details class="all"><summary>Ver precios de la semana</summary>${bd.chart}</details>`}
+  L.forEach((it,i)=>{const p=PBY[it.pid],g=genericFor(p);if(g)tips.push(`<div class="tip"><span class="ic">${TIPI.med}</span><span class="t">Genérico bioequivalente de <b>${esc(p.brand)}</b>: desde ${clp(minPrice(g).v)} en vez de ${clp(minPrice(p).v)}.</span><button class="btn sm ghost" data-act="togen" data-i="${i}" data-p="${g.id}">Cambiar</button></div>`)});
+  const swaps=isNext?0:S.basket.filter(it=>violates(PBY[it.pid]).length&&healthier(PBY[it.pid])).length;
+  if(swaps)tips.push(`<div class="tip"><span class="ic">${TIPI.sano}</span><span class="t"><b>${swaps} producto${swaps>1?'s':''}</b> tiene${swaps>1?'n':''} una opción más sana.</span><button class="btn sm ghost" data-tab="saludable">Ver</button></div>`);
+  if(tips.length)html+=`<section class="sec"><h2>Más formas de ahorrar</h2><div class="panel tips">${tips.join('')}</div>${week}</section>`;
+  return html;
+}
+function prodRow(p){
+  const m=minPrice(p);const v=violates(p);
+  return `<div class="prod"><button class="open" data-act="open" data-p="${p.id}"><span style="font-weight:600">${esc(p.name)}</span>
+   <span class="from">${esc(p.brand)} · ${esc(p.size)} · desde <b class="num">${clp(m.v)}</b> (${unitTxt(m.v,p)}) en ${esc(m.st.name)}</span>
+   <span class="row">${p.tags.includes('generico')?'<span class="bioq">Bioequivalente</span>':''}${p.where==='farm'?'':sellosHTML(p,true)}${v.length?`<span style="font-size:11px;color:var(--warn)">No calza con tu perfil</span>`:''}</span></button>
+   <button class="btn sm" data-act="add" data-p="${p.id}">Agregar</button></div>`;
+}
+function viewBuscar(){
+  const q=S.q.trim().toLowerCase();
+  let list=PRODUCTS.filter(p=>(S.cat==='Todas'||p.cat===S.cat)&&(!q||(p.name+' '+p.brand+' '+p.cat).toLowerCase().includes(q)));
+  if(S.diet)list=list.filter(p=>!violates(p).length);
+  return `<section class="sec"><div class="sec-h"><h2>Buscar productos</h2><span class="hint num">${PRODUCTS.length} productos · ${STORES.length} tiendas</span></div>
+   <input id="q" class="search" type="search" placeholder="Ej: leche, paracetamol, Coca-Cola" value="${esc(S.q)}" autocomplete="off">
+   <div class="chips">${['Todas',...CATS].map(c=>`<button class="chip ${S.cat===c?'on':''}" data-act="cat" data-c="${c}">${c}</button>`).join('')}</div>
+   <label class="row hint" for="diet"><input type="checkbox" id="diet" ${S.diet?'checked':''}> Mostrar solo productos que calzan con mi perfil saludable</label>
+   <p class="hint">"Agregar" lo suma a <b>${S.list==='next'?'Próxima compra':'tu canasta habitual'}</b>.</p>
+   <div class="panel plist">${list.length?list.map(prodRow).join(''):'<div class="empty">No encontramos productos con esa búsqueda.</div>'}</div></section>`;
+}
+function viewEscanear(){
+  return `<section class="sec"><h2>Escanear un producto</h2>
+   <p class="hint">¿Te gustó un jugo en la casa de un amigo o se te está acabando algo? Escanea el código de barras y Rinde te dice dónde está más barato.</p>
+   <div class="finder" aria-hidden="true"><div class="frame"><div class="bars">${'<i></i>'.repeat(18)}</div></div><div class="laser"></div></div>
+   <span class="btn coin block filebtn">Tomar foto del código de barras<input id="shot" type="file" accept="image/*" capture="environment" aria-label="Tomar foto del código de barras"></span>
+   <div id="scanmsg"></div>
+   <div class="manual"><input id="eanin" inputmode="numeric" placeholder="O escribe el número del código" aria-label="Número del código de barras"><button class="btn" data-act="ean">Buscar</button></div>
+   </section>
+   <section class="sec"><h3 style="font-size:16px">Prueba con estos códigos de ejemplo</h3>
+   <div class="panel plist">${['nectar','coca','kitadol','clarityne','vienesas'].map(id=>{const p=PBY[id];return `<div class="prod"><div style="display:grid;gap:2px;min-width:0"><span style="font-weight:600">${esc(p.name)} ${esc(p.brand)}</span><span class="ean">${p.ean}</span></div><button class="btn sm ghost" data-act="sim" data-p="${id}">Simular escaneo</button></div>`}).join('')}</div>
+   <p class="hint">En la app final la cámara lee el código en vivo. En este prototipo puedes subir una foto, escribir el número o simular el escaneo.</p></section>`;
+}
+function viewSaludable(){
+  const items=S.basket.map((it,i)=>({it,i,p:PBY[it.pid]})).filter(x=>violates(x.p).length);
+  const sw=items.map(x=>({...x,alt:healthier(x.p)})).filter(x=>x.alt);
+  return `<section class="sec"><h2>Mi perfil saludable</h2><p class="hint">Rinde usa los sellos "ALTO EN" del Minsal y la información de cada producto para proponerte cambios en tu canasta habitual.</p>
+   ${profileToggles()}</section>
+   <section class="sec"><div class="sec-h"><h2>Cambios sugeridos</h2>${sw.length>1?`<button class="btn sm" data-act="swapall">Cambiar todos</button>`:''}</div>
+   <div class="panel">${sw.length?sw.map(x=>{const a=minPrice(x.p).v,b=minPrice(x.alt).v,d=b-a;return `<div class="swap">
+     <div class="swap-row"><div><b>${esc(x.p.name)}</b><span class="hint">${esc(x.p.brand)}</span>${sellosHTML(x.p,true)}</div><span class="arrow" aria-hidden="true">→</span>
+     <div><b>${esc(x.alt.name)}</b><span class="hint">${esc(x.alt.brand)}</span>${sellosHTML(x.alt,true)}</div></div>
+     <div class="row" style="justify-content:space-between"><span class="diff num">Desde ${clp(a)} → ${clp(b)} (${d>0?'+':d<0?'−':''}${clp(Math.abs(d))} c/u) · motivo: ${violates(x.p).join(', ')}</span>
+     <button class="btn sm" data-act="swap" data-i="${x.i}" data-p="${x.alt.id}">Cambiar</button></div></div>`}).join('')
+     :`<div class="empty">Tu canasta ya calza con tu perfil. Activa más preferencias arriba para ver otras opciones.</div>`}</div></section>`;
+}
+function profileToggles(){
+  return `<div class="panel toggles">${PROFILE.map(f=>`<label class="tg" for="pf-${f.id}"><span>${f.name}<small>${f.desc}</small></span><input class="sw" type="checkbox" id="pf-${f.id}" data-pf="${f.id}" ${S.profile[f.id]?'checked':''}></label>`).join('')}</div>`;
+}
+function rulesText(c){
+  return RULES.filter(r=>r.card===c).map(r=>`${r.pct}% en ${r.chains.map(x=>CHAINS[x]).join(' y ')} ${r.days.length===7?'todos los días':r.days.length===6?'de lunes a sábado':'los '+r.days.map(d=>DAYS[d].toLowerCase()).join(' y ')} (tope ${clp(r.tope)}${r.min?', compra mín. '+clp(r.min):''})`).join(' · ');
+}
+function cardList(prefix){
+  return `<div class="panel cards">${CARDS.map(c=>`<label class="card-row" for="${prefix}-${c.id}"><span class="card-chip" style="background:${c.color}"></span>
+    <span class="txt"><b>${esc(c.name)}</b> <span class="hint">· ${c.kind}</span><small>${rulesText(c.id)}</small></span>
+    <input type="checkbox" id="${prefix}-${c.id}" data-card="${c.id}" ${S.cards.includes(c.id)?'checked':''}></label>`).join('')}</div>`;
+}
+function viewTarjetas(){
+  return `<section class="sec"><h2>Mis tarjetas</h2><p class="hint">Marca solo qué tarjetas tienes. Rinde no pide números, claves ni datos bancarios: solo cruza tus tarjetas con los descuentos de cada tienda.</p>
+   ${cardList('cd')}
+   <p class="hint">Descuentos de ejemplo. En la app real se actualizan cada semana desde los sitios de beneficios de cada banco.</p></section>
+   <section class="sec"><h2>Demo</h2><div class="row"><button class="btn ghost sm" data-act="onb">Ver la bienvenida de nuevo</button><button class="btn ghost sm" data-act="reset">Reiniciar la demo</button></div></section>`;
+}
+function viewAhorro(){
+  const all=[...seedHistory(),...S.history].sort((a,b)=>b.date.localeCompare(a.date));
+  const now=new Date(),month=all.filter(x=>{const d=new Date(x.date);return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear()});
+  const card=month.reduce((a,b)=>a+b.disc,0),tienda=month.reduce((a,b)=>a+b.tienda,0),tot=card+tienda,spent=month.reduce((a,b)=>a+b.total,0);
+  const pa=tot?card/tot*100:50;
+  return `<section class="sec"><h2>Mi ahorro</h2>
+   <div class="hero-save"><span class="eyebrow" style="color:rgba(247,245,239,.7)">Ahorrado en ${MONTHS[now.getMonth()]}</span>
+    <div class="big num">${clp(tot)}</div>
+    <div class="split" role="img" aria-label="Reparto del ahorro"><span class="a" style="width:${pa}%"></span><span class="b" style="width:${100-pa}%"></span></div>
+    <div class="kv num"><span><i style="background:var(--coin)"></i>Tarjetas ${clp(card)}</span><span><i style="background:#6CC69A"></i>Cambio de tienda ${clp(tienda)}</span></div>
+    <span style="font-size:13px;opacity:.8">${month.length} compras · gastaste ${clp(spent)}</span></div>
+   <p class="hint">Rinde compara cada compra con lo que habrías pagado en la tienda más cercana sin descuento. En la app real cada compra se confirma escaneando la boleta.</p></section>
+   <section class="sec"><div class="sec-h"><h2>Compras</h2><span class="hint">Toca "Compré aquí" en tu canasta para sumar una</span></div>
+   <div class="panel hist">${all.map(x=>{const d=new Date(x.date),st=SBY[x.store];return `<div class="hrow">
+     <div class="hdate"><b class="num">${d.getDate()}</b><span>${DSHORT[d.getDay()]}</span></div>
+     <div class="mid"><b>${esc(st.name)}</b>${x.seed?'<span class="badge">ejemplo</span>':''}<small>${x.n} productos · pagaste ${clp(x.total)}${x.card?' con '+esc(CBY[x.card].name):''}</small></div>
+     <div class="amt num"><b>+${clp(x.disc+x.tienda)}</b><span class="hint">ahorro</span></div></div>`}).join('')}</div></section>`;
+}
+function render(){
+  renderNav();
+  $('#sector').innerHTML=SECTORS.map(s=>`<option value="${s.id}" ${S.sector===s.id?'selected':''}>${s.name}</option>`).join('');
+  $('#view').innerHTML={canasta:viewCanasta,buscar:viewBuscar,escanear:viewEscanear,saludable:viewSaludable,ahorro:viewAhorro,tarjetas:viewTarjetas}[S.tab]()+'<p class="foot-note">Prototipo · precios, tiendas y descuentos de ejemplo</p>';
+  save();
+}
+let openId=null;
+function openProduct(id,via){
+  openId=id;
+  const p=PBY[id];const v=violates(p);const alt=v.length?healthier(p):null;
+  const type=p.where==='farm'?'farm':p.where==='super'?'super':'all';
+  $('#sheet').innerHTML=`<div class="sheet-bg" data-act="close"><div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(p.name)}">
+   <div class="sheet-h"><div>${via?`<div class="eyebrow">Código leído</div>`:''}<h2 style="font-size:20px">${esc(p.name)}</h2><div class="hint">${esc(p.brand)} · ${esc(p.size)}</div><div class="ean">EAN ${p.ean}</div></div><button class="x" data-act="close" aria-label="Cerrar">×</button></div>
+   ${p.where==='farm'?(p.tags.includes('generico')?'<span class="bioq">Genérico bioequivalente</span>':''):sellosHTML(p)}
+   <div class="hint num">Precio por ${unitName(p)}: desde <b>${unitTxt(minPrice(p).v,p)}</b></div>
+   ${bioHTML(p)}
+   ${alt?`<div class="banner"><span>Opción más sana: <b>${esc(alt.name)}</b> (${esc(alt.brand)})</span><button class="btn sm" data-act="open" data-p="${alt.id}">Ver</button></div>`:''}
+   ${payControls()}
+   ${optionsHTML([{pid:id,qty:1,any:false,exact:true}],type,false)}
+   <div class="two"><button class="btn coin" data-act="addto" data-l="next" data-p="${id}">Agregar a próxima compra</button><button class="btn ghost" data-act="addto" data-l="habitual" data-p="${id}">Agregar a canasta habitual</button></div></div></div>`;
+}
+function addTo(listKey,id){
+  const L=listKey==='next'?S.next:S.basket;
+  const e=L.find(x=>x.pid===id);if(e)e.qty++;else L.push({pid:id,qty:1,any:false});
+  save();toast(`Agregado a ${listKey==='next'?'Próxima compra':'tu canasta habitual'}`);render();
+}
+function lookupEan(code){
+  code=String(code).replace(/\D/g,'');const p=PRODUCTS.find(x=>x.ean===code);
+  const m=$('#scanmsg');
+  if(p){if(m)m.innerHTML='';openProduct(p.id,true);return}
+  if(m)m.innerHTML=`<div class="scanmsg err">Leímos el código <b class="ean">${esc(code||'(vacío)')}</b>, pero ese producto todavía no está en la base de ejemplo. En la app real lo agregaríamos con la ayuda de los usuarios.</div>`;
+}
+async function decodeFile(file){
+  if('BarcodeDetector' in window){try{const bd=new BarcodeDetector({formats:['ean_13','ean_8','upc_a','upc_e']});const r=await bd.detect(await createImageBitmap(file));if(r[0])return r[0].rawValue}catch(e){}}
+  if(window.ZXing){const url=URL.createObjectURL(file);try{const res=await new ZXing.BrowserMultiFormatReader().decodeFromImageUrl(url);return res.getText()}finally{URL.revokeObjectURL(url)}}
+  throw new Error('sin lector');
+}
+
+/* --- bienvenida --- */
+let OB=0;
+function onbStat(){
+  const {sup}=splitItems(S.basket);if(!sup.length)return null;
+  const res=evalStores(sup,'super',S.day,'cash').filter(r=>!r.missing.length);
+  if(res.length<2)return null;
+  const s=[...res].sort((a,b)=>a.total-b.total);return {lo:s[0],hi:s.at(-1)};
+}
+const VP_I={
+ a:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>',
+ b:ICONS.tarjetas.replace('<svg','<svg'),c:ICONS.saludable,d:ICONS.escanear};
+function renderOnb(){
+  if(S.onb){$('#onb').innerHTML='';return}
+  const steps=5;let body='',next='Siguiente';
+  if(OB===0){const st=onbStat();
+    body=`<h1>Compra lo mismo, paga menos.</h1>
+    ${st?`<div class="stat"><span style="font-size:14px">En Concepción, la misma canasta familiar de ejemplo cuesta</span><div class="big num">${clp(st.hi.total-st.lo.total)} más</div><span style="font-size:14px;opacity:.85">en ${esc(st.hi.st.name)} (${clp(st.hi.total)}) que en ${esc(st.lo.st.name)} (${clp(st.lo.total)}). Nadie tiene tiempo de comparar tienda por tienda y tarjeta por tarjeta.</span></div>`:''}
+    <div class="vp"><div>${VP_I.a}<span><b>Dónde comprar.</b> La más barata cerca de ti, la más barata de todas y la más cercana.</span></div>
+    <div>${VP_I.b}<span><b>Con qué pagar.</b> Rinde aplica sola el mejor descuento de tus tarjetas.</span></div>
+    <div>${VP_I.c}<span><b>Comer mejor.</b> Te propone cambios más sanos usando los sellos.</span></div>
+    <div>${VP_I.d}<span><b>Escanea y listo.</b> Lee el código de barras y te dice dónde está más barato.</span></div></div>`;next='Empezar';}
+  if(OB===1)body=`<h1>¿Dónde vives?</h1><p class="lead">Lo usamos para calcular qué tiendas te quedan cerca.</p>
+    <div class="pickgrid">${SECTORS.map(s=>`<button class="chip ${S.sector===s.id?'on':''}" data-act="ob-sector" data-s="${s.id}">${s.name}</button>`).join('')}</div>
+    <p class="hint">En la app real se usa la ubicación del celular, con tu permiso.</p>`;
+  if(OB===2)body=`<h1>¿Qué tarjetas tienes?</h1><p class="lead">Solo márcalas. No te pedimos números, claves ni datos bancarios.</p>${cardList('ob')}`;
+  if(OB===3)body=`<h1>Arma tu canasta habitual</h1><p class="lead">Marca lo que compras casi siempre. Después puedes cambiar cantidades y marcas.</p>
+    <div class="pickgrid">${FREQ.map(id=>{const p=PBY[id],on=S.basket.some(x=>x.pid===id);return `<button class="chip ${on?'on':''}" data-act="ob-prod" data-p="${id}" aria-pressed="${on}">${esc(stripName(p.name))}</button>`}).join('')}</div>
+    <p class="hint num">${S.basket.length} productos en tu canasta</p>`;
+  if(OB===4){body=`<h1>¿Quieres comer más sano?</h1><p class="lead">Opcional. Rinde te sugerirá cambios dentro de tu canasta.</p>${profileToggles()}`;next='Listo';}
+  $('#onb').innerHTML=`<div class="onb" role="dialog" aria-modal="true" aria-label="Bienvenida a Rinde"><div class="onb-in">
+    <div class="onb-top"><div class="dots">${Array.from({length:steps},(_,i)=>`<i class="${i===OB?'on':''}"></i>`).join('')}</div><button class="skip" data-act="ob-skip">Saltar</button></div>
+    <div class="onb-body">${body}</div>
+    <div class="onb-foot">${OB>0?`<button class="btn ghost" data-act="ob-back">Atrás</button>`:''}<button class="btn coin" data-act="ob-next">${next}</button></div></div></div>`;
+}
+function finishOnb(){S.onb=true;S.tab='canasta';S.list='habitual';save();renderOnb();render();window.scrollTo(0,0);
+  const {sup}=splitItems(S.basket);if(sup.length){const pk=pick(evalStores(sup,'super',S.day,S.pay)),c=pk.near||pk.cheap;toast(`Hoy te conviene ${c.st.name}, a ${km(c.km)}: ${clp(c.total)}`)}}
+
+/* ========= EVENTOS ========= */
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-tab],[data-act]');if(!t)return;
+  if(t.dataset.tab){S.tab=t.dataset.tab;$('#sheet').innerHTML='';openId=null;render();window.scrollTo(0,0);return}
+  const a=t.dataset.act,i=+t.dataset.i,id=t.dataset.p,L=curList();
+  if(a==='close'){if(e.target===t||t.classList.contains('x')){$('#sheet').innerHTML='';openId=null}return}
+  if(a==='inc'){L[i].qty++;render()}
+  else if(a==='dec'){L[i].qty--;if(L[i].qty<=0)L.splice(i,1);render()}
+  else if(a==='any'){L[i].any=!L[i].any;render()}
+  else if(a==='list'){S.list=t.dataset.l;render()}
+  else if(a==='add'){addTo(S.list,id)}
+  else if(a==='addto'){addTo(t.dataset.l,id);$('#sheet').innerHTML='';openId=null}
+  else if(a==='merge'){S.next.forEach(it=>{const e2=S.basket.find(x=>x.pid===it.pid);if(e2)e2.qty+=it.qty;else S.basket.push({...it})});S.next=[];S.list='habitual';render();toast('Sumado a tu canasta habitual')}
+  else if(a==='clear'){S.next=[];render();toast('Lista vaciada')}
+  else if(a==='open'){openProduct(id)}
+  else if(a==='cat'){S.cat=t.dataset.c;render()}
+  else if(a==='sim'){lookupEan(PBY[id].ean)}
+  else if(a==='ean'){lookupEan($('#eanin').value)}
+  else if(a==='swap'){S.basket[i]={pid:id,qty:S.basket[i].qty,any:false};render();toast('Producto cambiado')}
+  else if(a==='togen'){L[i]={pid:id,qty:L[i].qty,any:false};render();toast('Cambiado al genérico bioequivalente')}
+  else if(a==='swapall'){S.basket=S.basket.map(it=>{const p=PBY[it.pid];const alt=violates(p).length?healthier(p):null;return alt?{pid:alt.id,qty:it.qty,any:false}:it});render();toast('Canasta actualizada')}
+  else if(a==='buy'){const type=t.dataset.type,items=splitItems(L)[type==='farm'?'far':'sup'];
+    const pu={...purchase(items,type,SBY[t.dataset.s],S.day,S.pay),date:new Date().toISOString()};S.history.push(pu);save();
+    toast(`Compra registrada: ahorraste ${clp(pu.disc+pu.tienda)}. Míralo en Ahorro.`)}
+  else if(a==='onb'){S.onb=false;OB=0;renderOnb()}
+  else if(a==='reset'){const keep=S.day;S=clone(DEF);S.day=keep;OB=0;try{localStorage.removeItem('rinde-proto-v3')}catch(err){}render();renderOnb()}
+  else if(a==='ob-next'){if(OB>=4)finishOnb();else{OB++;renderOnb();$('#onb .onb').scrollTo(0,0)}}
+  else if(a==='ob-back'){OB=Math.max(0,OB-1);renderOnb()}
+  else if(a==='ob-skip'){finishOnb()}
+  else if(a==='ob-sector'){S.sector=t.dataset.s;renderOnb()}
+  else if(a==='ob-prod'){const k=S.basket.findIndex(x=>x.pid===id);if(k>=0)S.basket.splice(k,1);else S.basket.push({pid:id,qty:1,any:true});renderOnb()}
+});
+document.addEventListener('change',async e=>{
+  const t=e.target;
+  if(t.id==='sector'){S.sector=t.value;render();if(openId)openProduct(openId)}
+  else if(t.id==='pay'||t.id==='day'||t.id==='radius'){S[t.id]=t.id==='pay'?t.value:+t.value;render();if(openId)openProduct(openId)}
+  else if(t.id==='diet'){S.diet=t.checked;render()}
+  else if(t.dataset.pf){S.profile[t.dataset.pf]=t.checked;if(!S.onb)save();else render()}
+  else if(t.dataset.card){S.cards=t.checked?[...S.cards,t.dataset.card]:S.cards.filter(c=>c!==t.dataset.card);if(!S.cards.includes(S.pay)&&!['best','cash'].includes(S.pay))S.pay='best';if(!S.onb)save();else render()}
+  else if(t.id==='shot'&&t.files[0]){
+    const m=$('#scanmsg');m.innerHTML='<div class="scanmsg">Leyendo el código…</div>';
+    try{lookupEan(await decodeFile(t.files[0]))}catch(err){m.innerHTML='<div class="scanmsg err">No pudimos leer el código en la foto. Acércate más, con buena luz y el código derecho, o escribe el número.</div>'}
+    t.value='';
+  }
+});
+document.addEventListener('toggle',e=>{if(e.target.id==='listbox')S.listOpen=e.target.open},true);
+document.addEventListener('input',e=>{if(e.target.id==='q'){S.q=e.target.value;const pos=e.target.selectionStart;render();const q=$('#q');q.focus();q.setSelectionRange(pos,pos)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#sheet').innerHTML='';openId=null}if(e.key==='Enter'&&e.target.id==='eanin')lookupEan(e.target.value)});
+render();renderOnb();
+</script>
+
+<script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+</body>
+</html>

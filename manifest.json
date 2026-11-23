@@ -1,0 +1,17 @@
+{
+  "name": "Rinde",
+  "short_name": "Rinde",
+  "description": "Dónde comprar más barato en supermercados y farmacias, con tus tarjetas.",
+  "lang": "es-CL",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#13302B",
+  "theme_color": "#13302B",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
