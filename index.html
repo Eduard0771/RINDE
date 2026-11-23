@@ -230,6 +230,11 @@ details.all .days{padding-bottom:0}
 .cands{display:grid;gap:8px}
 .cand{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);text-align:left;width:100%;font:inherit;color:inherit;cursor:pointer}
 .cand b{font-weight:600}
+.realbox{border:1.5px solid var(--leaf);border-radius:14px;padding:12px;display:grid;gap:8px;background:var(--surface)}
+.realbox .rf{display:flex;gap:8px}.realbox select,.realbox input{min-width:0;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font:inherit;color:inherit}
+.realbox{min-width:0;max-width:100%}.realbox select{flex:1.4 1 0;width:0}.realbox input{flex:1 1 0;width:0}.realbox #realname{width:100%;box-sizing:border-box}.rl>span{min-width:0;overflow-wrap:anywhere}
+.rl{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
+.okp{display:inline-block;font-size:11px;font-weight:700;color:var(--leaf);letter-spacing:.3px}
 .offbox{padding:12px;border-radius:12px;background:var(--surface-2);font-size:14px}
 .manual input{flex:1;min-width:0;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
 
@@ -554,12 +559,16 @@ const DEF={tab:'canasta',list:'habitual',sector:'baru',cards:['bestado','cmr'],p
   {pid:'triton',qty:2,any:false},{pid:'yog-fru',qty:4,any:false},{pid:'aceite',qty:1,any:true},{pid:'cafe',qty:1,any:false},
   {pid:'huevos1',qty:1,any:true},{pid:'papel',qty:1,any:true},{pid:'para-gen',qty:1,any:true},{pid:'clarityne',qty:1,any:false}],
  next:[{pid:'nectar',qty:2,any:false},{pid:'shampoo',qty:1,any:false}],
- history:[],cat:'Todas',q:'',eanMap:{}};
+ history:[],cat:'Todas',q:'',eanMap:{},real:{}};
 const clone=o=>JSON.parse(JSON.stringify(o));
 let S;
 try{S=Object.assign(clone(DEF),JSON.parse(localStorage.getItem('rinde-proto-v3')||'{}'))}catch(e){S=clone(DEF)}
 S.day=new Date().getDay();S.tab=S.tab||'canasta';
-function save(){try{localStorage.setItem('rinde-proto-v3',JSON.stringify({sector:S.sector,cards:S.cards,pay:S.pay,radius:S.radius,profile:S.profile,diet:S.diet,basket:S.basket,next:S.next,history:S.history,onb:S.onb,list:S.list,eanMap:S.eanMap}))}catch(e){}}
+CHAIN_F.otra=1;
+function chainOf(n){n=fold(n);for(const [k,w] of [['lider','lider'],['jumbo','jumbo'],['santa isabel','santaisabel'],['unimarc','unimarc'],['tottus','tottus'],['acuenta','acuenta'],['cruz verde','cruzverde'],['salcobrand','salcobrand'],['ahumada','ahumada'],['simi','simi']])if(n.includes(k))return w;return 'otra'}
+function addMyStore(st){STORES.push(st);SBY[st.id]=st}
+(S.myStores||[]).forEach(addMyStore);
+function save(){try{localStorage.setItem('rinde-proto-v3',JSON.stringify({sector:S.sector,cards:S.cards,pay:S.pay,radius:S.radius,profile:S.profile,diet:S.diet,basket:S.basket,next:S.next,history:S.history,onb:S.onb,list:S.list,eanMap:S.eanMap,real:S.real,lastStore:S.lastStore,myStores:S.myStores||[]}))}catch(e){}}
 const curList=()=>S.list==='next'?S.next:S.basket;
 
 /* ========= MOTOR ========= */
@@ -571,7 +580,9 @@ function sells(p,st){
   if(st.type==='super'&&h(p.id+st.id+'na')<.05)return false;
   return true;
 }
+function realAt(p,st){const r=S.real&&S.real[st.id+'|'+p.id];return r||null}
 function priceAt(p,st){
+  const rp=realAt(p,st);if(rp)return rp.v;
   if(!sells(p,st))return null;
   const n=.86+h(p.id+st.chain)*.28, of=h(p.id+st.id+'of')<.16?.72:1;
   return Math.round(p.base*CHAIN_F[st.chain]*n*of/10)*10;
@@ -958,9 +969,24 @@ function openProduct(id,via){
    <div class="hint num">Precio por ${unitName(p)}: desde <b>${unitTxt(minPrice(p).v,p)}</b></div>
    ${bioHTML(p)}
    ${alt?`<div class="banner"><span>Opción más sana: <b>${esc(alt.name)}</b> (${esc(alt.brand)})</span><button class="btn sm" data-act="open" data-p="${alt.id}">Ver</button></div>`:''}
+   ${realHTML(p)}
    ${payControls()}
    ${optionsHTML([{pid:id,qty:1,any:false,exact:true}],type,false)}
    <div class="two"><button class="btn coin" data-act="addto" data-l="next" data-p="${id}">Agregar a próxima compra</button><button class="btn ghost" data-act="addto" data-l="habitual" data-p="${id}">Agregar a canasta habitual</button></div></div></div>`;
+}
+function ago(t){const d=new Date(t),n=new Date();const hm=d.toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'});
+  return d.toDateString()===n.toDateString()?`hoy ${hm}`:d.toLocaleDateString('es-CL',{day:'numeric',month:'short'})+' '+hm}
+function realHTML(p){
+  const kind=p.where==='farm'?'farm':'super';
+  const sts=STORES.filter(st=>p.where==='ambos'||st.type===kind||p.where==null).sort((a,b)=>dist(a)-dist(b));
+  const mine=STORES.map(st=>({st,r:realAt(p,st)})).filter(x=>x.r);
+  const def=S.lastStore&&sts.find(x=>x.id===S.lastStore)?S.lastStore:sts[0].id;
+  return `<div class="realbox"><div><b>¿Estás en la tienda?</b> <span class="hint">Escribe el precio de la etiqueta y Rinde usará ese precio real.</span></div>
+   ${mine.map(x=>`<div class="rl"><span><span class="okp">✓ PRECIO REAL</span> ${esc(x.st.name)}: <b class="num">${clp(x.r.v)}</b> <span class="hint">(${ago(x.r.t)})</span></span><button class="btn sm ghost" data-act="delreal" data-p="${p.id}" data-s="${x.st.id}">Quitar</button></div>`).join('')}
+   <div class="rf"><select id="realst" aria-label="Tienda">${sts.map(st=>`<option value="${st.id}" ${st.id===def?'selected':''}>${esc(st.name)} (${km(dist(st))})</option>`).join('')}<option value="new">+ Otra tienda…</option></select>
+   <input id="realv" inputmode="numeric" placeholder="$ precio" aria-label="Precio en góndola"></div>
+ <input id="realname" placeholder="Nombre de la tienda (ej: Unimarc Chiguayante)" aria-label="Nombre de la tienda" hidden style="padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font:inherit;color:inherit">
+   <button class="btn coin" data-act="saveal" data-p="${p.id}">Guardar precio real</button></div>`;
 }
 function addTo(listKey,id){
   const L=listKey==='next'?S.next:S.basket;
@@ -1077,6 +1103,13 @@ document.addEventListener('click',e=>{
   if(t.dataset.tab){stopCam();S.tab=t.dataset.tab;$('#sheet').innerHTML='';openId=null;render();window.scrollTo(0,0);return}
   const a=t.dataset.act,i=+t.dataset.i,id=t.dataset.p,L=curList();
   if(a==='close'){if(e.target===t||t.classList.contains('x')){$('#sheet').innerHTML='';openId=null}return}
+  if(a==='saveal'){const v=+String($('#realv').value).replace(/\D/g,''),sid=$('#realst').value;
+    if(!v||v<10){toast('Escribe el precio que ves en la etiqueta');$('#realv').focus();return}
+    let sid2=sid;if(sid==='new'){const nm=$('#realname').value.trim();if(!nm){toast('Escribe el nombre de la tienda');$('#realname').focus();return}
+      const m0=me(),st={id:'u'+Date.now().toString(36),chain:chainOf(nm),name:nm,type:PBY[id].where==='farm'?'farm':'super',x:m0.x+.05,y:m0.y+.05};
+      addMyStore(st);S.myStores=[...(S.myStores||[]),st];sid2=st.id}
+    S.real=S.real||{};S.real[sid2+'|'+id]={v,t:new Date().toISOString()};S.lastStore=sid2;save();toast(`Guardado: ${clp(v)} en ${SBY[sid2].name}`);openProduct(id,true);render();return}
+  if(a==='delreal'){delete S.real[t.dataset.s+'|'+id];save();openProduct(id,true);render();return}
   if(a==='stopcam'){stopCam();$('#sheet').innerHTML='';return}
   if(a==='cam'){startCam();return}
   if(a==='linkean'){S.eanMap=S.eanMap||{};S.eanMap[t.dataset.ean]=id;save();toast('Código guardado: la próxima vez lo reconoce al tiro');openProduct(id,true);return}
@@ -1108,6 +1141,7 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('change',async e=>{
   const t=e.target;
+  if(t.id==='realst'){const n=$('#realname');if(n){n.hidden=t.value!=='new';if(!n.hidden)n.focus()}return}
   if(t.id==='sector'){S.sector=t.value;render();if(openId)openProduct(openId)}
   else if(t.id==='pay'||t.id==='day'||t.id==='radius'){S[t.id]=t.id==='pay'?t.value:+t.value;render();if(openId)openProduct(openId)}
   else if(t.id==='diet'){S.diet=t.checked;render()}
