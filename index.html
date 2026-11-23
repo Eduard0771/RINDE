@@ -70,7 +70,13 @@ main{padding-block:16px;padding-left:max(16px,env(safe-area-inset-left,0px));pad
 .seg button.on{background:var(--surface);color:var(--fg);box-shadow:0 1px 3px rgba(0,0,0,.1)}
 
 .items{display:grid}
-.item{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:10px 12px;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:52px 1fr auto;gap:4px 10px;padding:10px 12px;border-top:1px solid var(--line);align-items:center}
+.item .thumb{grid-row:1/3;grid-column:1}.item .nm{grid-column:2}.item .qty{grid-column:3;grid-row:1/3}.item .meta{grid-column:2}
+.thumb{width:52px;height:52px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex:none;border:1px solid var(--line)}
+.thumb img{position:absolute;inset:3px;width:calc(100% - 6px);height:calc(100% - 6px);object-fit:contain;background:#fff}
+.thumb .emo{font-size:26px;line-height:1}
+.thumb.big{width:84px;height:84px;border-radius:16px}.thumb.big .emo{font-size:42px}
+.sh-id{display:flex;gap:12px;align-items:center;min-width:0}
 .item:first-child{border-top:0}
 .item .nm{font-weight:600;font-size:14px;min-width:0}
 .item .meta{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
@@ -196,7 +202,7 @@ details.all .days{padding-bottom:0}
 
 .search{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .plist{display:grid}
-.prod{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px;border-top:1px solid var(--line);align-items:center}
+.prod{display:grid;grid-template-columns:52px 1fr auto;gap:8px;padding:12px;border-top:1px solid var(--line);align-items:center}
 .prod:first-child{border-top:0}
 .prod .open{all:unset;cursor:pointer;display:grid;gap:3px;min-width:0}
 .prod .open:focus-visible{outline:3px solid var(--coin)}
@@ -568,7 +574,37 @@ CHAIN_F.otra=1;
 function chainOf(n){n=fold(n);for(const [k,w] of [['lider','lider'],['jumbo','jumbo'],['santa isabel','santaisabel'],['unimarc','unimarc'],['tottus','tottus'],['acuenta','acuenta'],['cruz verde','cruzverde'],['salcobrand','salcobrand'],['ahumada','ahumada'],['simi','simi']])if(n.includes(k))return w;return 'otra'}
 function addMyStore(st){STORES.push(st);SBY[st.id]=st}
 (S.myStores||[]).forEach(addMyStore);
-function save(){try{localStorage.setItem('rinde-proto-v3',JSON.stringify({sector:S.sector,cards:S.cards,pay:S.pay,radius:S.radius,profile:S.profile,diet:S.diet,basket:S.basket,next:S.next,history:S.history,onb:S.onb,list:S.list,eanMap:S.eanMap,real:S.real,lastStore:S.lastStore,myStores:S.myStores||[]}))}catch(e){}}
+function addMyProduct(q){if(PBY[q.id])return;PRODUCTS.push(q);PBY[q.id]=q;if(!CATS.includes(q.cat))CATS.push(q.cat)}
+(S.myProducts||[]).forEach(addMyProduct);
+/* --- fotos de productos (Open Food Facts) --- */
+let IMG={};try{IMG=JSON.parse(localStorage.getItem('rinde-img')||'{}')}catch(e){}
+const EMO={'Abarrotes':'🥫','Lácteos y huevos':'🥛','Hogar e higiene':'🧴','Farmacia':'💊','Desayuno':'☕','Bebidas':'🥤','Frutas y verduras':'🥬','Snacks':'🍪','Carnes':'🍗','Panadería':'🍞','Mis productos':'🛒'};
+const NEMO=[['platano','🍌'],['manzana','🍎'],['tomate','🍅'],['papa','🥔'],['palta','🥑'],['lechuga','🥬'],['cebolla','🧅'],['limon','🍋'],['carne','🥩'],['huevo','🥚'],['queso','🧀'],['pan ','🍞'],['cafe','☕'],['te ','🍵'],['agua','💧'],['arroz','🍚'],['spaghetti','🍝'],['pollo','🍗'],['papel','🧻'],['panal','🧷'],['termometro','🌡️'],['mascarilla','😷'],['protector','🧴'],['jarabe','🧪']];
+function emoji(p){const n=fold(p.name)+' ';for(const [k,e] of NEMO)if(n.includes(k))return e;return EMO[p.cat]||'🛒'}
+function realEanOf(p){if(p.user)return p.ean;const e=Object.entries(S.eanMap||{}).find(([k,v])=>v===p.id);return e?e[0]:null}
+function thumb(p,big){const r=IMG[p.id];if(!r||(!r.u&&r.e!==realEanOf(p)&&realEanOf(p)))qImg(p);
+  return `<span class="thumb${big?' big':''}" data-img="${p.id}"><span class="emo" aria-hidden="true">${emoji(p)}</span>${r&&r.u?`<img src="${esc(r.u)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`:''}</span>`}
+const IQ=[],IQS=new Set();let iqBusy=false,lastSearch=0;
+function setImg(id,u,e){IMG[id]={u:u||'',t:Date.now(),e:e||null};try{localStorage.setItem('rinde-img',JSON.stringify(IMG))}catch(err){}
+  const p=PBY[id];if(p)document.querySelectorAll(`[data-img="${id}"]`).forEach(el=>{el.outerHTML=thumb(p,el.classList.contains('big'))})}
+function qImg(p){if(IQS.has(p.id)||navigator.onLine===false)return;const e=realEanOf(p);
+  if(!e&&(p.where==='farm'||/^(Granel|Genérico)$/.test(p.brand))){IMG[p.id]={u:'',t:Date.now()};return}
+  IQS.add(p.id);IQ.push(p);setTimeout(pumpImg,0)}
+async function offFetch(url){const c=new AbortController();const t=setTimeout(()=>c.abort(),9000);try{const r=await fetch(url,{signal:c.signal});if(!r.ok)throw new Error('http');return await r.json()}finally{clearTimeout(t)}}
+async function offImgByEan(code){const j=await offFetch(`https://world.openfoodfacts.org/api/v2/product/${code}.json?fields=image_front_small_url,image_front_url,image_small_url`);
+  const x=j&&j.product;return x?(x.image_front_small_url||x.image_small_url||x.image_front_url||''):''}
+async function offImgSearch(p){const nm=p.name.replace(/·.*/,'').trim();
+  const j=await offFetch(`https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(p.brand+' '+nm)}&search_simple=1&action=process&json=1&page_size=10&tagtype_0=countries&tag_contains_0=contains&tag_0=chile&fields=product_name,brands,image_front_small_url,image_front_url`);
+  const b=fold(p.brand).split(' ').filter(Boolean)[0]||'';const ws=fold(nm).split(' ').filter(w=>w.length>2);
+  const sc=x=>{const n=fold(x.product_name);return ws.filter(w=>n.includes(w)).length};
+  const ok=((j&&j.products)||[]).filter(x=>(x.image_front_small_url||x.image_front_url)&&fold(x.brands).includes(b)).sort((a,c)=>sc(c)-sc(a));
+  const best=ok[0];if(!best||(ws.length&&sc(best)<Math.min(2,ws.length)))return '';return best.image_front_small_url||best.image_front_url}
+async function pumpImg(){if(iqBusy)return;iqBusy=true;
+  while(IQ.length){const p=IQ.shift();const e=realEanOf(p);let u=null;
+    try{if(e)u=await offImgByEan(e);else{const w=lastSearch+6500-Date.now();if(w>0)await new Promise(r=>setTimeout(r,w));lastSearch=Date.now();u=await offImgSearch(p)}}catch(err){u=null}
+    if(u!==null)setImg(p.id,u,e);IQS.delete(p.id);if(u===null){IMG[p.id]=IMG[p.id]||undefined}}
+  iqBusy=false}
+function save(){try{localStorage.setItem('rinde-proto-v3',JSON.stringify({sector:S.sector,cards:S.cards,pay:S.pay,radius:S.radius,profile:S.profile,diet:S.diet,basket:S.basket,next:S.next,history:S.history,onb:S.onb,list:S.list,eanMap:S.eanMap,real:S.real,lastStore:S.lastStore,myStores:S.myStores||[],myProducts:S.myProducts||[]}))}catch(e){}}
 const curList=()=>S.list==='next'?S.next:S.basket;
 
 /* ========= MOTOR ========= */
@@ -583,6 +619,7 @@ function sells(p,st){
 function realAt(p,st){const r=S.real&&S.real[st.id+'|'+p.id];return r||null}
 function priceAt(p,st){
   const rp=realAt(p,st);if(rp)return rp.v;
+  if(p.user)return null;
   if(!sells(p,st))return null;
   const n=.86+h(p.id+st.chain)*.28, of=h(p.id+st.id+'of')<.16?.72:1;
   return Math.round(p.base*CHAIN_F[st.chain]*n*of/10)*10;
@@ -716,7 +753,7 @@ const $=s=>document.querySelector(s);
 const clp=n=>'$'+Math.round(n).toLocaleString('es-CL');
 const km=k=>k<1?Math.max(100,Math.round(k*1000/50)*50)+' m':k.toFixed(1).replace('.',',')+' km';
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function sellosHTML(p,sm){
+function sellosHTML(p,sm){if(p.user)return "";
   if(!p.sellos.length)return '<span class="ok">Sin sellos</span>';
   return '<div class="sellos">'+p.sellos.map(s=>`<div class="sello ${sm?'sm':''}" title="Alto en ${SELLO[s]}"><b>Alto en</b>${SELLO[s]}<b>Minsal</b></div>`).join('')+'</div>';
 }
@@ -773,7 +810,8 @@ function rowOpt(kind,r,note,type,canBuy){
 }
 const sameRow=(n,t,txt)=>`<div class="orow"><span class="n n${n}">${n}</span><div class="om"><span class="ot">${t}</span><small>${txt}</small></div><span></span></div>`;
 function optionsHTML(items,type,canBuy,showMap=true){
-  const res=evalStores(items,type,S.day,S.pay);
+  let res=evalStores(items,type,S.day,S.pay);
+  if(items.length===1){const ok=res.filter(r=>!r.missing.length);if(ok.length)res=ok}
   const pk=pick(res),{cheap,near,close,priciest}=pk;
   const ref=near||cheap;
   const saveTxt=near&&priciest&&priciest.total>near.total?`<span class="save num">Ahorras ${clp(priciest.total-near.total)} vs. la más cara</span>`:'';
@@ -841,7 +879,7 @@ function bestDay(items,type){
 }
 function itemHTML(it,i){
   const p=PBY[it.pid];const v=violates(p);
-  return `<div class="item"><div class="nm">${esc(p.name)} <span style="font-weight:400;color:var(--muted)">${esc(it.any?p.size:p.brand+' · '+p.size)}</span></div>
+  return `<div class="item">${thumb(p)}<div class="nm">${esc(p.name)} <span style="font-weight:400;color:var(--muted)">${esc(it.any?p.size:p.brand+' · '+p.size)}</span></div>
    <div class="qty"><button data-act="dec" data-i="${i}" aria-label="Quitar uno">−</button><span class="num">${it.qty}</span><button data-act="inc" data-i="${i}" aria-label="Agregar uno">+</button></div>
    <div class="meta"><button class="anyb ${it.any?'on':''}" data-act="any" data-i="${i}">${it.any?'Cualquier marca':'Solo '+esc(p.brand)}</button>
    ${v.length?`<span style="color:var(--warn)">No calza con tu perfil (${v.join(', ')})</span>`:''}</div></div>`;
@@ -872,8 +910,8 @@ function viewCanasta(){
 }
 function prodRow(p){
   const m=minPrice(p);const v=violates(p);
-  return `<div class="prod"><button class="open" data-act="open" data-p="${p.id}"><span style="font-weight:600">${esc(p.name)}</span>
-   <span class="from">${esc(p.brand)} · ${esc(p.size)} · desde <b class="num">${clp(m.v)}</b> (${unitTxt(m.v,p)}) en ${esc(m.st.name)}</span>
+  return `<div class="prod">${thumb(p)}<button class="open" data-act="open" data-p="${p.id}"><span style="font-weight:600">${esc(p.name)}</span>
+   <span class="from">${esc(p.brand)} · ${esc(p.size)} · ${m?`desde <b class="num">${clp(m.v)}</b> (${unitTxt(m.v,p)}) en ${esc(m.st.name)}${realAt(p,m.st)?' <span class="okp">✓ REAL</span>':''}`:'<span class="okp">Sin precio aún: toca para registrarlo</span>'}</span>
    <span class="row">${p.tags.includes('generico')?'<span class="bioq">Bioequivalente</span>':''}${p.where==='farm'?'':sellosHTML(p,true)}${v.length?`<span style="font-size:11px;color:var(--warn)">No calza con tu perfil</span>`:''}</span></button>
    <button class="btn sm" data-act="add" data-p="${p.id}">Agregar</button></div>`;
 }
@@ -964,14 +1002,13 @@ function openProduct(id,via){
   const p=PBY[id];const v=violates(p);const alt=v.length?healthier(p):null;
   const type=p.where==='farm'?'farm':p.where==='super'?'super':'all';
   $('#sheet').innerHTML=`<div class="sheet-bg" data-act="close"><div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(p.name)}">
-   <div class="sheet-h"><div>${via?`<div class="eyebrow">Código leído</div>`:''}<h2 style="font-size:20px">${esc(p.name)}</h2><div class="hint">${esc(p.brand)} · ${esc(p.size)}</div><div class="ean">EAN ${p.ean}</div></div><button class="x" data-act="close" aria-label="Cerrar">×</button></div>
+   <div class="sheet-h"><div class="sh-id">${thumb(p,true)}<div style="min-width:0">${via?`<div class="eyebrow">Código leído</div>`:''}<h2 style="font-size:20px">${esc(p.name)}</h2><div class="hint">${esc(p.brand)} · ${esc(p.size)}</div><div class="ean">EAN ${realEanOf(p)||p.ean}</div></div></div><button class="x" data-act="close" aria-label="Cerrar">×</button></div>
    ${p.where==='farm'?(p.tags.includes('generico')?'<span class="bioq">Genérico bioequivalente</span>':''):sellosHTML(p)}
-   <div class="hint num">Precio por ${unitName(p)}: desde <b>${unitTxt(minPrice(p).v,p)}</b></div>
+   ${minPrice(p)?`<div class="hint num">Precio por ${unitName(p)}: desde <b>${unitTxt(minPrice(p).v,p)}</b></div>`:''}
    ${bioHTML(p)}
    ${alt?`<div class="banner"><span>Opción más sana: <b>${esc(alt.name)}</b> (${esc(alt.brand)})</span><button class="btn sm" data-act="open" data-p="${alt.id}">Ver</button></div>`:''}
    ${realHTML(p)}
-   ${payControls()}
-   ${optionsHTML([{pid:id,qty:1,any:false,exact:true}],type,false)}
+   ${minPrice(p)?payControls()+optionsHTML([{pid:id,qty:1,any:false,exact:true}],type,false):`<div class="offbox">Todavía no hay precios de este producto. Registra el de la tienda donde estás y Rinde empieza a compararlo con los precios que vayas guardando.</div>`}
    <div class="two"><button class="btn coin" data-act="addto" data-l="next" data-p="${id}">Agregar a próxima compra</button><button class="btn ghost" data-act="addto" data-l="habitual" data-p="${id}">Agregar a canasta habitual</button></div></div></div>`;
 }
 function ago(t){const d=new Date(t),n=new Date();const hm=d.toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'});
@@ -1000,15 +1037,16 @@ function lookupEan(code){
   if(p){if(m)m.innerHTML='';openProduct(p.id,true);return}
   if(m)m.innerHTML='';unknownEan(code);
 }
-function candHTML(list,code){return list.length?list.map(p=>`<button class="cand" data-act="linkean" data-p="${p.id}" data-ean="${code}"><span><b>${esc(p.name)}</b><br><span class="hint">${esc(p.brand)} · ${esc(p.size)}</span></span><span class="btn sm">Es este</span></button>`).join(''):'<p class="hint">Escribe arriba para buscar el producto.</p>'}
+function candHTML(list,code){return list.length?list.map(p=>`<button class="cand" data-act="linkean" data-p="${p.id}" data-ean="${code}">${thumb(p)}<span style="flex:1;min-width:0"><b>${esc(p.name)}</b><br><span class="hint">${esc(p.brand)} · ${esc(p.size)}</span></span><span class="btn sm">Es este</span></button>`).join(''):'<p class="hint">Escribe arriba para buscar el producto.</p>'}
 function guess(txt){const w=fold(txt).split(/\s+/).filter(x=>x.length>2);if(!w.length)return [];
   return PRODUCTS.map(p=>{const H=hay(p);let sc=0;for(const x of w){if(H.includes(x))sc+=x.length>4?2:1}return {p,sc}}).filter(x=>x.sc>0).sort((a,b)=>b.sc-a.sc).slice(0,5).map(x=>x.p)}
+const LASTOFF={};
 async function offLookup(code){
   const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),6000);
-  try{const r=await fetch(`https://world.openfoodfacts.org/api/v2/product/${code}.json?fields=product_name,product_name_es,generic_name_es,brands,quantity,categories_tags`,{signal:ctl.signal});
+  try{const r=await fetch(`https://world.openfoodfacts.org/api/v2/product/${code}.json?fields=product_name,product_name_es,generic_name_es,brands,quantity,categories_tags,image_front_small_url,image_front_url`,{signal:ctl.signal});
     if(!r.ok)return null;const j=await r.json();if(!j||j.status!==1||!j.product)return null;const pr=j.product;
     const name=pr.product_name_es||pr.product_name||pr.generic_name_es||'';if(!name)return null;
-    return {name,brand:(pr.brands||'').split(',')[0].trim(),qty:pr.quantity||'',cats:(pr.categories_tags||[]).map(c=>c.replace(/^[a-z]{2}:/,'').replace(/-/g,' ')).join(' ')};
+    LASTOFF[code]=pr.image_front_small_url||pr.image_front_url||'';return {img:LASTOFF[code],name,brand:(pr.brands||'').split(',')[0].trim(),qty:pr.quantity||'',cats:(pr.categories_tags||[]).map(c=>c.replace(/^[a-z]{2}:/,'').replace(/-/g,' ')).join(' ')};
   }catch(e){return null}finally{clearTimeout(to)}
 }
 async function unknownEan(code){
@@ -1018,10 +1056,16 @@ async function unknownEan(code){
   const off=navigator.onLine===false?null:await offLookup(code);
   const cands=off?guess(off.name+' '+off.brand+' '+off.cats):[];
   $('#sheet').innerHTML=sheet(`
-   ${off?`<div class="offbox">Es <b>${esc(off.name)}</b>${off.brand?` · ${esc(off.brand)}`:''}${off.qty?` · ${esc(off.qty)}`:''}<br><span class="hint">Nombre según Open Food Facts</span></div>`:`<div class="offbox">Leímos el código, pero aún no lo tenemos en la base de precios.</div>`}
+   ${off?`<div class="offbox" style="display:flex;gap:12px;align-items:center">${off.img?`<span class="thumb big"><img src="${esc(off.img)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()"></span>`:''}<div>Es <b>${esc(off.name)}</b>${off.brand?` · ${esc(off.brand)}`:''}${off.qty?` · ${esc(off.qty)}`:''}<br><span class="hint">Nombre según Open Food Facts</span></div></div>`:`<div class="offbox">Leímos el código, pero aún no lo tenemos en la base de precios.</div>`}
    <h3 style="font-size:16px;margin-top:6px">¿A cuál de nuestros productos corresponde?</h3>
    <p class="hint">Elige el equivalente y Rinde te muestra dónde está más barato. El código queda guardado para la próxima vez.</p>
    <input id="linkq" class="search" type="search" data-ean="${code}" placeholder="Busca: leche, jugo, ibuprofeno…" autocomplete="off" value="${off?esc(cands.length?'':fold(off.name).split(' ')[0]):''}">
+   <details class="offbox" ${cands.length?'':'open'}><summary><b>No está en la lista: agregarlo como producto nuevo</b></summary>
+    <div style="display:grid;gap:8px;margin-top:10px">
+     <input id="npname" class="search" value="${esc(off?off.name:'')}" placeholder="Nombre (ej: Ice Tea Limón)" aria-label="Nombre del producto">
+     <div class="rf" style="display:flex;gap:8px"><input id="npbrand" class="search" style="flex:1 1 0;width:0" value="${esc(off?off.brand:'')}" placeholder="Marca" aria-label="Marca"><input id="npsize" class="search" style="flex:1 1 0;width:0" value="${esc(off?off.qty:'')}" placeholder="Tamaño (600 ml)" aria-label="Tamaño"></div>
+     <select id="npwhere" class="search" aria-label="Dónde se vende"><option value="super">Supermercado</option><option value="farm">Farmacia</option></select>
+     <button class="btn coin" data-act="newprod" data-ean="${code}">Agregar y registrar su precio</button></div></details>
    <div class="cands" id="linkres">${candHTML(cands.length?cands:(off?PRODUCTS.filter(p=>matchQ(p,fold(off.name).split(' ')[0])).slice(0,8):[]),code)}</div>`);
 }
 let SCAN=null;
@@ -1103,6 +1147,10 @@ document.addEventListener('click',e=>{
   if(t.dataset.tab){stopCam();S.tab=t.dataset.tab;$('#sheet').innerHTML='';openId=null;render();window.scrollTo(0,0);return}
   const a=t.dataset.act,i=+t.dataset.i,id=t.dataset.p,L=curList();
   if(a==='close'){if(e.target===t||t.classList.contains('x')){$('#sheet').innerHTML='';openId=null}return}
+  if(a==='newprod'){const code=t.dataset.ean,nm=$('#npname').value.trim();if(!nm){toast('Escribe el nombre del producto');$('#npname').focus();return}
+    const w=$('#npwhere').value,pid='u-'+code;
+    const q={id:pid,name:nm,brand:$('#npbrand').value.trim()||'—',size:$('#npsize').value.trim()||'1 un',cat:'Mis productos',group:pid,swap:pid,base:0,sellos:[],tags:[w],ean:code,where:w,user:true};
+    addMyProduct(q);if(LASTOFF[code])setImg(pid,LASTOFF[code],code);S.myProducts=[...(S.myProducts||[]).filter(x=>x.id!==pid),q];save();toast('Producto agregado. Ahora registra su precio');openProduct(pid,true);setTimeout(()=>{const r=$('#realv');if(r)r.focus()},100);return}
   if(a==='saveal'){const v=+String($('#realv').value).replace(/\D/g,''),sid=$('#realst').value;
     if(!v||v<10){toast('Escribe el precio que ves en la etiqueta');$('#realv').focus();return}
     let sid2=sid;if(sid==='new'){const nm=$('#realname').value.trim();if(!nm){toast('Escribe el nombre de la tienda');$('#realname').focus();return}
@@ -1112,7 +1160,7 @@ document.addEventListener('click',e=>{
   if(a==='delreal'){delete S.real[t.dataset.s+'|'+id];save();openProduct(id,true);render();return}
   if(a==='stopcam'){stopCam();$('#sheet').innerHTML='';return}
   if(a==='cam'){startCam();return}
-  if(a==='linkean'){S.eanMap=S.eanMap||{};S.eanMap[t.dataset.ean]=id;save();toast('Código guardado: la próxima vez lo reconoce al tiro');openProduct(id,true);return}
+  if(a==='linkean'){S.eanMap=S.eanMap||{};S.eanMap[t.dataset.ean]=id;save();if(LASTOFF[t.dataset.ean])setImg(id,LASTOFF[t.dataset.ean],t.dataset.ean);toast('Código guardado: la próxima vez lo reconoce al tiro');openProduct(id,true);return}
   if(a==='inc'){L[i].qty++;render()}
   else if(a==='dec'){L[i].qty--;if(L[i].qty<=0)L.splice(i,1);render()}
   else if(a==='any'){L[i].any=!L[i].any;render()}
