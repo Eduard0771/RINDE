@@ -1,0 +1,6 @@
+{
+  "actualizado": "2026-11-24",
+  "nota": "Descuentos de tarjetas verificados por el equipo en la página de beneficios de cada banco. days: 0=domingo, 1=lunes ... 6=sábado (vacío = todos los días). pct = % de descuento, tope y min en pesos. Las reglas vencidas (hasta) se ignoran solas. Copia el ejemplo dentro de reglas con datos reales.",
+  "ejemplo": {"card": "bestado", "chains": ["unimarc"], "days": [4], "pct": 15, "tope": 8000, "min": 0, "desde": "2026-12-01", "hasta": "2026-12-31", "fuente": "https://link-a-la-pagina-del-beneficio"},
+  "reglas": []
+}
