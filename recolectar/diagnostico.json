@@ -1,7 +1,837 @@
 {
- "fecha": "2026-11-24T04:55:47.098Z",
- "prueba": true,
+ "fecha": "2026-11-24T06:30:49.716Z",
+ "prueba": false,
  "cadenas": {
+  "jumbo": {
+   "pruebas": [
+    {
+     "tipo": "vtex",
+     "url": "https://www.jumbo.cl/api/catalog_system/pub/products/search?ft=leche%20entera&_from=0&_to=29",
+     "status": 404,
+     "productos": 0,
+     "ejemplos": [],
+     "titulo": "Jumbo.cl | Supermercado de Chile",
+     "largo": 757445,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4a6vi\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
+     "pistas": [
+      "/.well-known/ai-plugin.json\\",
+      "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56941540961\\",
+      "https://be-reg-groceries-bff-jumbo.*\\",
+      "/experiencias-jumbo/productos-importados\\",
+      "/experiencias-jumbo/productos-importados/productos-alemanes\\",
+      "/experiencias-jumbo/productos-importados/productos-espanoles\\",
+      "/experiencias-jumbo/productos-importados/productos-americanos\\",
+      "/experiencias-jumbo/productos-importados/productos-asiaticos\\",
+      "/experiencias-jumbo/productos-importados/productos-italianos\\",
+      "/busca?fq=H%3A30883\\",
+      "/busca?fq=H%3A30710\\",
+      "/busca?fq=H%3A31124\\",
+      "/busca?fq=H%3A17747\\",
+      "/busca?fq=H%3A31787\\",
+      "/busca?fq=H%3A31566\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A28987\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/shampoo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/acondicionadores\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/tratamiento-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/coloracion-y-tintura-de-pelo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/busca?fq=H%3A29288\\",
+      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\",
+      "/busca?fq=H%3A30014\\"
+     ]
+    },
+    {
+     "tipo": "vtex-is",
+     "url": "https://www.jumbo.cl/api/io/_v/api/intelligent-search/product_search/?query=leche%20entera&count=30&page=1&locale=es-CL",
+     "status": 404,
+     "productos": 0,
+     "ejemplos": [],
+     "titulo": "Jumbo.cl | Supermercado de Chile",
+     "largo": 757537,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4a6vi\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
+     "pistas": [
+      "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56941540961\\",
+      "https://be-reg-groceries-bff-jumbo.*\\",
+      "/.well-known/ai-plugin.json\\",
+      "https://www.jumbo.cl/api/io/_v/api/intelligent-search/product_search\\",
+      "/experiencias-jumbo/productos-importados\\",
+      "/experiencias-jumbo/productos-importados/productos-alemanes\\",
+      "/experiencias-jumbo/productos-importados/productos-espanoles\\",
+      "/experiencias-jumbo/productos-importados/productos-americanos\\",
+      "/experiencias-jumbo/productos-importados/productos-asiaticos\\",
+      "/experiencias-jumbo/productos-importados/productos-italianos\\",
+      "/busca?fq=H%3A30883\\",
+      "/busca?fq=H%3A30710\\",
+      "/busca?fq=H%3A31124\\",
+      "/busca?fq=H%3A17747\\",
+      "/busca?fq=H%3A31787\\",
+      "/busca?fq=H%3A31566\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A28987\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/shampoo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/acondicionadores\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/tratamiento-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/coloracion-y-tintura-de-pelo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/busca?fq=H%3A29288\\",
+      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\"
+     ]
+    },
+    {
+     "tipo": "web",
+     "url": "https://www.jumbo.cl/busqueda?ft=leche%20entera",
+     "status": 200,
+     "productos": 163,
+     "ejemplos": [
+      "Leche Colun Entera 1 L · $1080",
+      "Leche Cuisine & Co Entera 1 L · $1200",
+      "Leche Soprole Entera Natural 1 L · $1100",
+      "Leche Soprole Proteína Natural 1 L · $2288"
+     ],
+     "ejemplo": {
+      "name": "Leche Colun Entera 1 L",
+      "brand": "Colun",
+      "v": 1080,
+      "l": null,
+      "card": {},
+      "ean": null,
+      "img": "https://jumbocl.vteximg.com.br/arquivos/ids/348513-250-250/Leche-entera-1-L.jpg?v=638776485157100000",
+      "url": "https://www.jumbo.cl/leche-entera-colun-caja-1-l-natural/p",
+      "extra": "",
+      "agotado": false
+     }
+    }
+   ],
+   "muestras": [
+    {
+     "id": "leche-colun",
+     "rinde": "Colun · Leche Entera · 1 L",
+     "tienda": "Leche Colun Entera 1 L",
+     "precio": 1080
+    },
+    {
+     "id": "leche-soprole",
+     "rinde": "Soprole · Leche Entera · 1 L",
+     "tienda": "Leche Soprole Entera Cremosa 1 L",
+     "precio": 1100
+    },
+    {
+     "id": "leche-lonco",
+     "rinde": "Loncoleche · Leche Entera · 1 L",
+     "tienda": "Leche Loncoleche Entera 1 L",
+     "precio": 1000
+    },
+    {
+     "id": "leche-sl",
+     "rinde": "Colun · Leche Semidescremada Sin Lactosa · 1 L",
+     "tienda": "Leche Sin Lactosa Colun Semidescremada 1 L",
+     "precio": 1250
+    },
+    {
+     "id": "leche-desc",
+     "rinde": "Loncoleche · Leche Descremada · 1 L",
+     "tienda": "Leche Loncoleche Descremada 1 L",
+     "precio": 1000
+    },
+    {
+     "id": "queso-gauda",
+     "rinde": "Colun · Queso Gauda Laminado · 250 g",
+     "tienda": "Queso Gauda Ranco Colun Laminado 250 g",
+     "precio": 3860
+    },
+    {
+     "id": "mantequilla",
+     "rinde": "Colun · Mantequilla con Sal · 250 g",
+     "tienda": "Mantequilla Colun con Sal 250 g",
+     "precio": 2570
+    },
+    {
+     "id": "huevos2",
+     "rinde": "Yemita · Huevos Blancos Extra · 12 un",
+     "tienda": "Huevos Yemita Extra Blancos 12 un.",
+     "precio": 4190
+    },
+    {
+     "id": "coca",
+     "rinde": "Coca-Cola · Coca-Cola Original · 1,5 L",
+     "tienda": "Bebida Coca-Cola Original 1.5 L",
+     "precio": 1495
+    },
+    {
+     "id": "fanta",
+     "rinde": "Fanta · Fanta Naranja · 1,5 L",
+     "tienda": "Bebida Fanta Naranja 1.5 L",
+     "precio": 2290
+    },
+    {
+     "id": "nectar",
+     "rinde": "Watt's · Néctar Durazno · 1,5 L",
+     "tienda": "Néctar Watt's Durazno 1.5 L",
+     "precio": 1590
+    },
+    {
+     "id": "agua",
+     "rinde": "Cachantun · Agua Mineral Sin Gas · 1,6 L",
+     "tienda": "Agua Mineral Cachantun Sin Gas 1.6 L",
+     "precio": 750
+    },
+    {
+     "id": "te2",
+     "rinde": "Lipton · Té Negro · 100 bolsitas",
+     "tienda": "Té Negro Lipton Yellow Label 100 un.",
+     "precio": 6750
+    },
+    {
+     "id": "cafe",
+     "rinde": "Nescafé · Café Instantáneo Tradición · 170 g",
+     "tienda": "Café Instantáneo Nescafé Tradición Tarro 170 g",
+     "precio": 8150
+    },
+    {
+     "id": "manjar1",
+     "rinde": "Colun · Manjar · 400 g",
+     "tienda": "Manjar Colun 400 g",
+     "precio": 2650
+    },
+    {
+     "id": "manjar2",
+     "rinde": "Nestlé · Manjar · 400 g",
+     "tienda": "Manjar Tradicional Nestlé Doypack 400 g",
+     "precio": 2990
+    },
+    {
+     "id": "pan",
+     "rinde": "Ideal · Pan de Molde Blanco · 560 g",
+     "tienda": "Pan Molde Ideal Blanco Artesano Masa Madre 550 g",
+     "precio": 2950
+    },
+    {
+     "id": "arroz",
+     "rinde": "Tucapel · Arroz Grado 1 · 1 kg",
+     "tienda": "Arroz Grado 1 Tucapel Grano Largo Delgado 1 kg",
+     "precio": 1950
+    },
+    {
+     "id": "arroz2",
+     "rinde": "Miraflores · Arroz Grado 1 · 1 kg",
+     "tienda": "Arroz Grado 1 Miraflores Grano Largo y Ancho 1 kg",
+     "precio": 1990
+    },
+    {
+     "id": "arroz-int",
+     "rinde": "Tucapel · Arroz Integral · 1 kg",
+     "tienda": "Arroz Grado 1 Tucapel Integral 1 kg",
+     "precio": 2890
+    },
+    {
+     "id": "fideos",
+     "rinde": "Carozzi · Spaghetti N°5 · 400 g",
+     "tienda": "Pasta Spaghetti N°5 Carozzi 400 g",
+     "precio": 700
+    },
+    {
+     "id": "fideos2",
+     "rinde": "Lucchetti · Spaghetti N°5 · 400 g",
+     "tienda": "Spaghetti N°5 Lucchetti 400 g",
+     "precio": 1060
+    },
+    {
+     "id": "fideos-int",
+     "rinde": "Carozzi · Spaghetti Integral · 400 g",
+     "tienda": "Pasta Spaghetti Carozzi Integral 400 g",
+     "precio": 1170
+    },
+    {
+     "id": "aceite",
+     "rinde": "Belmont · Aceite Vegetal · 1 L",
+     "tienda": "Aceite Vegetal Belmont 1 L",
+     "precio": 2690
+    },
+    {
+     "id": "harina",
+     "rinde": "Selecta · Harina Sin Polvos de Hornear · 1 kg",
+     "tienda": "Harina Selecta Sin Polvos de Hornear 1 kg",
+     "precio": 1350
+    },
+    {
+     "id": "lentejas",
+     "rinde": "Banquete · Lentejas · 1 kg",
+     "tienda": "Lentejas Banquete 6 mm 1 kg",
+     "precio": 3000
+    },
+    {
+     "id": "porotos",
+     "rinde": "Banquete · Porotos Hallados · 1 kg",
+     "tienda": "Porotos Hallados Banquete 1 kg",
+     "precio": 2890
+    },
+    {
+     "id": "salsa1",
+     "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
+     "tienda": "Salsa de Tomate Pomarola Italiana 200 g",
+     "precio": 880
+    },
+    {
+     "id": "salsa2",
+     "rinde": "Malloa · Salsa de Tomate Italiana · 200 g",
+     "tienda": "Salsa de Tomate Malloa Italiana 200 g",
+     "precio": 950
+    },
+    {
+     "id": "mayo",
+     "rinde": "Hellmann's · Mayonesa · 372 g",
+     "tienda": "Mayonesa Hellmann's Regular Doypack 372 g",
+     "precio": 2950
+    },
+    {
+     "id": "platano",
+     "rinde": "Granel · Plátano · 1 kg",
+     "tienda": "Plátano Barraganette Granel",
+     "precio": 995
+    },
+    {
+     "id": "tomate",
+     "rinde": "Granel · Tomate · 1 kg",
+     "tienda": "Tomate Salad Granel",
+     "precio": 1245
+    },
+    {
+     "id": "papa",
+     "rinde": "Granel · Papa en Malla · 2 kg",
+     "tienda": "Papas Souflé Malla 2 kg",
+     "precio": 3590
+    },
+    {
+     "id": "palta",
+     "rinde": "Granel · Palta Hass · 1 kg",
+     "tienda": "Palta Hass Malla 1 kg",
+     "precio": 3990
+    },
+    {
+     "id": "lechuga",
+     "rinde": "Granel · Lechuga Escarola · 1 un",
+     "tienda": "Lechuga Escarola Feria 1 un.",
+     "precio": 1360
+    },
+    {
+     "id": "cebolla",
+     "rinde": "Granel · Cebolla · 1 kg",
+     "tienda": "Cebolla Perla Kr Granel",
+     "precio": 880
+    },
+    {
+     "id": "limon",
+     "rinde": "Granel · Limón · 1 kg",
+     "tienda": "Limón Malla 1 kg",
+     "precio": 1590
+    },
+    {
+     "id": "molida",
+     "rinde": "Granel · Carne Molida 4% Grasa · 500 g",
+     "tienda": "Carne Molida de Vacuno Congelada 10% Grasa Cuisine & Co 500 g",
+     "precio": 5890
+    },
+    {
+     "id": "soda",
+     "rinde": "McKay · Galletas de Soda · 180 g",
+     "tienda": "Galletas McKay Soda Clásica 180 g",
+     "precio": 1290
+    },
+    {
+     "id": "papas",
+     "rinde": "Lay's · Papas Fritas Corte Americano · 180 g",
+     "tienda": "Papas Fritas Lay's Corte Americano 180 g",
+     "precio": 1990
+    }
+   ],
+   "sin": [
+    "leche-choc (82 resultados)",
+    "yog-fru (51 resultados)",
+    "yog-gri (55 resultados)",
+    "yog-pro (71 resultados)",
+    "quesillo (60 resultados)",
+    "queso-crema (56 resultados)",
+    "huevos1 (58 resultados)",
+    "coca-zero (44 resultados)",
+    "fanta-zero (32 resultados)",
+    "nectar-light (64 resultados)",
+    "zuko (36 resultados)",
+    "agua2 (68 resultados)",
+    "te1 (96 resultados)",
+    "cafe2 (64 resultados)",
+    "chocapic (40 resultados)",
+    "fitness (59 resultados)",
+    "avena (63 resultados)",
+    "granola (68 resultados)",
+    "merm (59 resultados)",
+    "merm-sa (63 resultados)",
+    "pan2 (40 resultados)",
+    "pan-int (56 resultados)",
+    "aceite2 (70 resultados)",
+    "oliva (71 resultados)",
+    "azucar (59 resultados)",
+    "stevia (67 resultados)",
+    "sal (66 resultados)",
+    "atun1 (52 resultados)",
+    "atun2 (58 resultados)",
+    "mayo-l (55 resultados)",
+    "manzana (48 resultados)",
+    "pollo1 (32 resultados)",
+    "pollo2 (60 resultados)",
+    "vienesas (24 resultados)",
+    "vienesas-pavo (44 resultados)",
+    "jamon (48 resultados)",
+    "triton (24 resultados)",
+    "arroz-gall (58 resultados)",
+    "ramitas (32 resultados)",
+    "mani (58 resultados)",
+    "sahne (44 resultados)",
+    "barra (79 resultados)",
+    "cloro (40 resultados)",
+    "shampoo (54 resultados)",
+    "desodorante (114 resultados)",
+    "jabon (74 resultados)",
+    "gel (24 resultados)",
+    "panal1 (12 resultados)",
+    "leche-svelty (44 resultados)",
+    "leche-polvo2 (71 resultados)",
+    "leche-almendra (62 resultados)",
+    "leche-evap (48 resultados)",
+    "yog-nat (36 resultados)",
+    "yog-pack (74 resultados)",
+    "postre-leche (51 resultados)",
+    "flan (40 resultados)",
+    "queso-chanco (68 resultados)",
+    "queso-fresco (52 resultados)",
+    "queso-crema2 (56 resultados)",
+    "margarina (63 resultados)"
+   ],
+   "fuente": "web",
+   "buscados": 344,
+   "conPrecio": 146,
+   "estado": "ok"
+  },
+  "santaisabel": {
+   "pruebas": [
+    {
+     "tipo": "vtex",
+     "url": "https://www.santaisabel.cl/api/catalog_system/pub/products/search?ft=leche%20entera&_from=0&_to=29",
+     "status": 404,
+     "productos": 0,
+     "ejemplos": [],
+     "titulo": "SantaIsabel.cl | Supermercado de Chile",
+     "largo": 553008,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4jr8d\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.santaisabel.cl/_next/static/chunks/3h68ui0o0u1v",
+     "pistas": [
+      "https://www.santaisabel.cl/busqueda?ft={search_term_string}\\",
+      "/.well-known/ai-plugin.json\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20Santa%20Isabel.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56950131501\\",
+      "/busca?fq=H%3A7530\\",
+      "/busca?fq=H%3A9370\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A11554\\",
+      "/productos-importados\\",
+      "/productos-importados/productos-alemanes\\",
+      "/productos-importados/productos-espanoles\\",
+      "/productos-importados/productos-americanos\\",
+      "/productos-importados/productos-asiaticos\\",
+      "/productos-importados/productos-italianos\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/shampoo\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/acondicionadores\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/tratamiento-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/coloracion-tintura-de-pelo\\",
+      "/busca?fq=H%3A9373\\",
+      "/busca?fq=H%3A1420\\u0026nombre_promo=MENU-productos-cuisine-03012023\\",
+      "https://www.santaisabel.cl/api/catalog_system/pub/products/search\\"
+     ]
+    },
+    {
+     "tipo": "vtex-is",
+     "url": "https://www.santaisabel.cl/api/io/_v/api/intelligent-search/product_search/?query=leche%20entera&count=30&page=1&locale=es-CL",
+     "status": 404,
+     "productos": 0,
+     "ejemplos": [],
+     "titulo": "SantaIsabel.cl | Supermercado de Chile",
+     "largo": 553117,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4jr8d\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.santaisabel.cl/_next/static/chunks/3h68ui0o0u1v",
+     "pistas": [
+      "https://www.santaisabel.cl/busqueda?ft={search_term_string}\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20Santa%20Isabel.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56950131501\\",
+      "/.well-known/ai-plugin.json\\",
+      "https://www.santaisabel.cl/api/io/_v/api/intelligent-search/product_search\\",
+      "/busca?fq=H%3A7530\\",
+      "/busca?fq=H%3A9370\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A11554\\",
+      "/productos-importados\\",
+      "/productos-importados/productos-alemanes\\",
+      "/productos-importados/productos-espanoles\\",
+      "/productos-importados/productos-americanos\\",
+      "/productos-importados/productos-asiaticos\\",
+      "/productos-importados/productos-italianos\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/shampoo\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/acondicionadores\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/tratamiento-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/coloracion-tintura-de-pelo\\",
+      "/busca?fq=H%3A9373\\",
+      "/busca?fq=H%3A1420\\u0026nombre_promo=MENU-productos-cuisine-03012023\\"
+     ]
+    },
+    {
+     "tipo": "web",
+     "url": "https://www.santaisabel.cl/busqueda?ft=leche%20entera",
+     "status": 200,
+     "productos": 144,
+     "ejemplos": [
+      "Leche Cuisine & Co Entera 1 L · $1190",
+      "Leche Soprole Entera Natural 1 L · $1190",
+      "Leche Surlat Entera 1 L · $1030",
+      "Leche Colun Entera 1 L · $1080"
+     ],
+     "ejemplo": {
+      "name": "Leche Cuisine & Co Entera 1 L",
+      "brand": "Cuisine & Co",
+      "v": 1190,
+      "l": null,
+      "card": {},
+      "ean": null,
+      "img": "https://santaisabel.vteximg.com.br/arquivos/ids/304187-250-250/Leche-entera-1-L.jpg?v=638300648951570000",
+      "url": "https://www.santaisabel.cl/leche-entera-1-l-cuisine-and-co-1858321/p",
+      "extra": "",
+      "agotado": false
+     }
+    }
+   ],
+   "muestras": [
+    {
+     "id": "leche-colun",
+     "rinde": "Colun · Leche Entera · 1 L",
+     "tienda": "Leche Colun Entera 1 L",
+     "precio": 1080
+    },
+    {
+     "id": "leche-soprole",
+     "rinde": "Soprole · Leche Entera · 1 L",
+     "tienda": "Leche Soprole Entera Natural 1 L",
+     "precio": 1190
+    },
+    {
+     "id": "leche-lonco",
+     "rinde": "Loncoleche · Leche Entera · 1 L",
+     "tienda": "Leche Loncoleche Entera 1 L",
+     "precio": 990
+    },
+    {
+     "id": "leche-sl",
+     "rinde": "Colun · Leche Semidescremada Sin Lactosa · 1 L",
+     "tienda": "Leche Sin Lactosa Colun Semidescremada 1 L",
+     "precio": 1300
+    },
+    {
+     "id": "leche-desc",
+     "rinde": "Loncoleche · Leche Descremada · 1 L",
+     "tienda": "Leche Loncoleche Descremada 1 L",
+     "precio": 990
+    },
+    {
+     "id": "queso-gauda",
+     "rinde": "Colun · Queso Gauda Laminado · 250 g",
+     "tienda": "Queso Gauda Ranco Colun Laminado 250 g",
+     "precio": 3190
+    },
+    {
+     "id": "mantequilla",
+     "rinde": "Colun · Mantequilla con Sal · 250 g",
+     "tienda": "Mantequilla Colun con Sal 250 g",
+     "precio": 2850
+    },
+    {
+     "id": "nectar",
+     "rinde": "Watt's · Néctar Durazno · 1,5 L",
+     "tienda": "Néctar Watt's Durazno 1.5 L",
+     "precio": 1575
+    },
+    {
+     "id": "agua",
+     "rinde": "Cachantun · Agua Mineral Sin Gas · 1,6 L",
+     "tienda": "Agua Mineral Cachantun Sin Gas 1.6 L",
+     "precio": 845
+    },
+    {
+     "id": "te2",
+     "rinde": "Lipton · Té Negro · 100 bolsitas",
+     "tienda": "Té Negro Lipton Yellow Label 100 un.",
+     "precio": 6990
+    },
+    {
+     "id": "cafe",
+     "rinde": "Nescafé · Café Instantáneo Tradición · 170 g",
+     "tienda": "Café Instantáneo Nescafé Tradición Tarro 170 g",
+     "precio": 8850
+    },
+    {
+     "id": "manjar1",
+     "rinde": "Colun · Manjar · 400 g",
+     "tienda": "Manjar Colun 400 g",
+     "precio": 2000
+    },
+    {
+     "id": "manjar2",
+     "rinde": "Nestlé · Manjar · 400 g",
+     "tienda": "Manjar Tradicional Nestlé Doypack 400 g",
+     "precio": 2890
+    },
+    {
+     "id": "pan",
+     "rinde": "Ideal · Pan de Molde Blanco · 560 g",
+     "tienda": "Pan Molde Ideal Blanco Artesano Masa Madre 550 g",
+     "precio": 2890
+    },
+    {
+     "id": "arroz",
+     "rinde": "Tucapel · Arroz Grado 1 · 1 kg",
+     "tienda": "Arroz Grado 1 Tucapel Grano Largo Delgado 1 kg",
+     "precio": 1590
+    },
+    {
+     "id": "arroz2",
+     "rinde": "Miraflores · Arroz Grado 1 · 1 kg",
+     "tienda": "Arroz Grado 2 Miraflores Grano Largo y Laminado 1 kg",
+     "precio": 2280
+    },
+    {
+     "id": "arroz-int",
+     "rinde": "Tucapel · Arroz Integral · 1 kg",
+     "tienda": "Arroz Grado 1 Tucapel Integral 1 kg",
+     "precio": 2890
+    },
+    {
+     "id": "fideos",
+     "rinde": "Carozzi · Spaghetti N°5 · 400 g",
+     "tienda": "Pasta Spaghetti N°5 Carozzi 400 g",
+     "precio": 750
+    },
+    {
+     "id": "fideos2",
+     "rinde": "Lucchetti · Spaghetti N°5 · 400 g",
+     "tienda": "Spaghetti N°5 Lucchetti 400 g",
+     "precio": 740
+    },
+    {
+     "id": "fideos-int",
+     "rinde": "Carozzi · Spaghetti Integral · 400 g",
+     "tienda": "Pasta Spaghetti Carozzi Integral 400 g",
+     "precio": 950
+    },
+    {
+     "id": "aceite",
+     "rinde": "Belmont · Aceite Vegetal · 1 L",
+     "tienda": "Aceite Vegetal Belmont 1 L",
+     "precio": 2190
+    },
+    {
+     "id": "harina",
+     "rinde": "Selecta · Harina Sin Polvos de Hornear · 1 kg",
+     "tienda": "Harina Selecta Sin Polvos de Hornear 1 kg",
+     "precio": 1650
+    },
+    {
+     "id": "lentejas",
+     "rinde": "Banquete · Lentejas · 1 kg",
+     "tienda": "Lentejas Banquete 4 mm 1 kg",
+     "precio": 2990
+    },
+    {
+     "id": "salsa1",
+     "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
+     "tienda": "Salsa de Tomate Pomarola Italiana 200 g",
+     "precio": 645
+    },
+    {
+     "id": "mayo",
+     "rinde": "Hellmann's · Mayonesa · 372 g",
+     "tienda": "Mayonesa Hellmann's Regular Doypack 372 g",
+     "precio": 2930
+    },
+    {
+     "id": "platano",
+     "rinde": "Granel · Plátano · 1 kg",
+     "tienda": "Plátano Barraganette Granel",
+     "precio": 995
+    },
+    {
+     "id": "tomate",
+     "rinde": "Granel · Tomate · 1 kg",
+     "tienda": "Salsa de Tomate Maggi Tuco con Carne 980 g",
+     "precio": 6350
+    },
+    {
+     "id": "papa",
+     "rinde": "Granel · Papa en Malla · 2 kg",
+     "tienda": "Papa Malla 2 kg",
+     "precio": 3950
+    },
+    {
+     "id": "palta",
+     "rinde": "Granel · Palta Hass · 1 kg",
+     "tienda": "Palta Hass Malla 1 kg",
+     "precio": 3590
+    },
+    {
+     "id": "lechuga",
+     "rinde": "Granel · Lechuga Escarola · 1 un",
+     "tienda": "Lechuga Escarola 1 un.",
+     "precio": 1390
+    },
+    {
+     "id": "cebolla",
+     "rinde": "Granel · Cebolla · 1 kg",
+     "tienda": "Cebolla Morada Granel",
+     "precio": 1125
+    },
+    {
+     "id": "limon",
+     "rinde": "Granel · Limón · 1 kg",
+     "tienda": "Limón Malla 1 kg",
+     "precio": 1550
+    },
+    {
+     "id": "molida",
+     "rinde": "Granel · Carne Molida 4% Grasa · 500 g",
+     "tienda": "Carne Molida de Vacuno Congelada 10% Grasa Cuisine & Co 500 g",
+     "precio": 5890
+    },
+    {
+     "id": "soda",
+     "rinde": "McKay · Galletas de Soda · 180 g",
+     "tienda": "Galletas McKay Soda Clásica 180 g",
+     "precio": 1250
+    },
+    {
+     "id": "super8",
+     "rinde": "Nestlé · Super 8 · 29 g",
+     "tienda": "Oblea Bañada Super 8 29 g",
+     "precio": 570
+    },
+    {
+     "id": "papel",
+     "rinde": "Elite · Papel Higiénico Doble Hoja · 12 rollos",
+     "tienda": "Papel Higiénico Elite Ultra Suave Doble Hoja 25 m 12 un.",
+     "precio": 5990
+    },
+    {
+     "id": "papel2",
+     "rinde": "Confort · Papel Higiénico Doble Hoja · 12 rollos",
+     "tienda": "Papel Higiénico Confort Rendiplus Doble Hoja 27 m 12 un.",
+     "precio": 5890
+    },
+    {
+     "id": "toalla",
+     "rinde": "Elite · Toalla de Papel · 2 rollos",
+     "tienda": "Toalla de Papel Elite Deco 20 m 2 un.",
+     "precio": 2990
+    },
+    {
+     "id": "deter1",
+     "rinde": "Omo · Detergente Líquido · 3 L",
+     "tienda": "Detergente Líquido Omo Piel Sensible Doypack 3 L",
+     "precio": 9990
+    },
+    {
+     "id": "deter2",
+     "rinde": "Popeye · Detergente Líquido · 3 L",
+     "tienda": "Detergente Líquido Popeye Bebé Hipoalergénico 3 L",
+     "precio": 16590
+    }
+   ],
+   "sin": [
+    "leche-choc (60 resultados)",
+    "yog-fru (44 resultados)",
+    "yog-gri (12 resultados)",
+    "yog-pro (40 resultados)",
+    "quesillo (44 resultados)",
+    "queso-crema (36 resultados)",
+    "huevos1 (8 resultados)",
+    "huevos2 (12 resultados)",
+    "coca (16 resultados)",
+    "coca-zero (24 resultados)",
+    "fanta (28 resultados)",
+    "fanta-zero (28 resultados)",
+    "nectar-light (20 resultados)",
+    "zuko (24 resultados)",
+    "agua2 (40 resultados)",
+    "te1 (60 resultados)",
+    "cafe2 (32 resultados)",
+    "chocapic (32 resultados)",
+    "fitness (24 resultados)",
+    "avena (36 resultados)",
+    "granola (28 resultados)",
+    "merm (36 resultados)",
+    "merm-sa (40 resultados)",
+    "pan2 (16 resultados)",
+    "pan-int (36 resultados)",
+    "aceite2 (32 resultados)",
+    "oliva (28 resultados)",
+    "azucar (32 resultados)",
+    "stevia (52 resultados)",
+    "sal (32 resultados)",
+    "atun1 (28 resultados)",
+    "atun2 (20 resultados)",
+    "porotos (36 resultados)",
+    "salsa2 (36 resultados)",
+    "mayo-l (32 resultados)",
+    "manzana (32 resultados)",
+    "pollo1 (24 resultados)",
+    "pollo2 (20 resultados)",
+    "vienesas (36 resultados)",
+    "vienesas-pavo (8 resultados)",
+    "jamon (28 resultados)",
+    "triton (4 resultados)",
+    "arroz-gall (36 resultados)",
+    "papas (16 resultados)",
+    "ramitas (20 resultados)",
+    "mani (36 resultados)",
+    "sahne (32 resultados)",
+    "barra (12 resultados)",
+    "cloro (48 resultados)",
+    "shampoo (28 resultados)",
+    "desodorante (68 resultados)",
+    "jabon (36 resultados)",
+    "gel (4 resultados)",
+    "panal1 (8 resultados)",
+    "panal2 (8 resultados)",
+    "leche-svelty (32 resultados)",
+    "leche-polvo2 (36 resultados)",
+    "leche-almendra (32 resultados)",
+    "leche-evap (28 resultados)",
+    "yog-nat (28 resultados)"
+   ],
+   "fuente": "web",
+   "buscados": 344,
+   "conPrecio": 123,
+   "estado": "ok"
+  },
   "lider": {
    "pruebas": [
     {
@@ -70,14 +900,283 @@
      "rinde": "Loncoleche · Leche Descremada · 1 L",
      "tienda": "Leche Natural Descremada Lonco Leche 1 L",
      "precio": 1050
+    },
+    {
+     "id": "mantequilla",
+     "rinde": "Colun · Mantequilla con Sal · 250 g",
+     "tienda": "Mantequilla Con sal 250 g",
+     "precio": 2570
+    },
+    {
+     "id": "huevos2",
+     "rinde": "Yemita · Huevos Blancos Extra · 12 un",
+     "tienda": "Huevos Tradicionales Extra Grande Blanco 12 Un",
+     "precio": 3550
+    },
+    {
+     "id": "coca",
+     "rinde": "Coca-Cola · Coca-Cola Original · 1,5 L",
+     "tienda": "Bebida Coca-Cola Original Botella Desechable 1.5 L",
+     "precio": 2250
+    },
+    {
+     "id": "coca-zero",
+     "rinde": "Coca-Cola · Coca-Cola Sin Azúcar · 1,5 L",
+     "tienda": "Bebida Coca-Cola Sin Azúcar Botella Desechable 1.5 L",
+     "precio": 2250
+    },
+    {
+     "id": "nectar",
+     "rinde": "Watt's · Néctar Durazno · 1,5 L",
+     "tienda": "Néctar de Durazno Botella 1,5 L",
+     "precio": 1950
+    },
+    {
+     "id": "agua",
+     "rinde": "Cachantun · Agua Mineral Sin Gas · 1,6 L",
+     "tienda": "Agua Mineral Sin Gas Botella 1,6 L",
+     "precio": 1090
+    },
+    {
+     "id": "te2",
+     "rinde": "Lipton · Té Negro · 100 bolsitas",
+     "tienda": "Té Negro Yellow Label Caja 100 Un",
+     "precio": 5390
+    },
+    {
+     "id": "manjar1",
+     "rinde": "Colun · Manjar · 400 g",
+     "tienda": "Manjar Tradicional Pote 400 g",
+     "precio": 2000
+    },
+    {
+     "id": "manjar2",
+     "rinde": "Nestlé · Manjar · 400 g",
+     "tienda": "Manjar Clásico Doypack 400 g",
+     "precio": 2750
+    },
+    {
+     "id": "pan",
+     "rinde": "Ideal · Pan de Molde Blanco · 560 g",
+     "tienda": "Pan De Molde Artesano Blanco 550 g",
+     "precio": 2950
+    },
+    {
+     "id": "arroz",
+     "rinde": "Tucapel · Arroz Grado 1 · 1 kg",
+     "tienda": "Arroz Grado 2 Grano Largo Bolsa 1 kg",
+     "precio": 1790
+    },
+    {
+     "id": "arroz2",
+     "rinde": "Miraflores · Arroz Grado 1 · 1 kg",
+     "tienda": "Arroz Grado 2 Largo Ancho Bolsa 1 kg",
+     "precio": 1750
+    },
+    {
+     "id": "arroz-int",
+     "rinde": "Tucapel · Arroz Integral · 1 kg",
+     "tienda": "Arroz Integral Grado 1 Grano Largo Bolsa 1 kg",
+     "precio": 1890
+    },
+    {
+     "id": "fideos",
+     "rinde": "Carozzi · Spaghetti N°5 · 400 g",
+     "tienda": "Fideo Pasta Spaghetti N°5 Bolsa. 400 g",
+     "precio": 1050
+    },
+    {
+     "id": "fideos2",
+     "rinde": "Lucchetti · Spaghetti N°5 · 400 g",
+     "tienda": "Fideo Pasta Spaghetti N°5 Bolsa 400 g",
+     "precio": 1030
+    },
+    {
+     "id": "fideos-int",
+     "rinde": "Carozzi · Spaghetti Integral · 400 g",
+     "tienda": "Fideo Pasta Integral Spaghetti N°5 Bolsa 400 g",
+     "precio": 1090
+    },
+    {
+     "id": "aceite",
+     "rinde": "Belmont · Aceite Vegetal · 1 L",
+     "tienda": "Aceite Vegetal Botella 1 L",
+     "precio": 2450
+    },
+    {
+     "id": "oliva",
+     "rinde": "Talliani · Aceite de Oliva Extra Virgen · 500 ml",
+     "tienda": "Aceite Oliva Extra Virgen Botella 500 ml",
+     "precio": 8990
+    },
+    {
+     "id": "azucar",
+     "rinde": "Iansa · Azúcar Granulada · 1 kg",
+     "tienda": "Azúcar Blanca Granulada Bolsa 1 Kg",
+     "precio": 1450
+    },
+    {
+     "id": "harina",
+     "rinde": "Selecta · Harina Sin Polvos de Hornear · 1 kg",
+     "tienda": "Harina Sin Polvos De Hornear Bolsa 1 Kg",
+     "precio": 1590
+    },
+    {
+     "id": "sal",
+     "rinde": "Lobos · Sal de Mesa · 1 kg",
+     "tienda": "Sal de Mesa Bolsa 1 Kg",
+     "precio": 550
+    },
+    {
+     "id": "lentejas",
+     "rinde": "Banquete · Lentejas · 1 kg",
+     "tienda": "Lentejas 5mm Bolsa 1 Kg",
+     "precio": 2990
+    },
+    {
+     "id": "porotos",
+     "rinde": "Banquete · Porotos Hallados · 1 kg",
+     "tienda": "Poroto Hallado Bolsa 1 Kg",
+     "precio": 3590
+    },
+    {
+     "id": "salsa1",
+     "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
+     "tienda": "Salsa de Tomate Italiana Bolsa 200 g",
+     "precio": 850
+    },
+    {
+     "id": "mayo",
+     "rinde": "Hellmann's · Mayonesa · 372 g",
+     "tienda": "Mayonesa Supreme Frasco 380 g",
+     "precio": 3490
+    },
+    {
+     "id": "platano",
+     "rinde": "Granel · Plátano · 1 kg",
+     "tienda": "Leche Plátano Caja",
+     "precio": 520
+    },
+    {
+     "id": "manzana",
+     "rinde": "Granel · Manzana Roja · 1 kg",
+     "tienda": "Manzana Roja Importada Unidad",
+     "precio": 525
+    },
+    {
+     "id": "tomate",
+     "rinde": "Granel · Tomate · 1 kg",
+     "tienda": "Tomate Pera Unidad",
+     "precio": 326
+    },
+    {
+     "id": "papa",
+     "rinde": "Granel · Papa en Malla · 2 kg",
+     "tienda": "Papas Soufflé Malla 2 Kg",
+     "precio": 3490
+    },
+    {
+     "id": "palta",
+     "rinde": "Granel · Palta Hass · 1 kg",
+     "tienda": "Palta Hass Unidad",
+     "precio": 1241
+    },
+    {
+     "id": "lechuga",
+     "rinde": "Granel · Lechuga Escarola · 1 un",
+     "tienda": "Ensalada Lechuga Escarola Bolsa 180 g",
+     "precio": 1090
+    },
+    {
+     "id": "cebolla",
+     "rinde": "Granel · Cebolla · 1 kg",
+     "tienda": "Cebolla Morada Unidad",
+     "precio": 690
+    },
+    {
+     "id": "limon",
+     "rinde": "Granel · Limón · 1 kg",
+     "tienda": "Limón Unidad",
+     "precio": 287
+    },
+    {
+     "id": "papas",
+     "rinde": "Lay's · Papas Fritas Corte Americano · 180 g",
+     "tienda": "Papas Fritas lay's corte americano sabor cheddar 180 g",
+     "precio": 2350
+    },
+    {
+     "id": "papel",
+     "rinde": "Elite · Papel Higiénico Doble Hoja · 12 rollos",
+     "tienda": "Papel Higiénico Ultra Doble Hoja 50 m. 12 Un",
+     "precio": 12890
     }
    ],
    "sin": [
-    "leche-choc (40 resultados)"
+    "leche-choc (40 resultados)",
+    "yog-fru (40 resultados)",
+    "yog-gri (40 resultados)",
+    "yog-pro (40 resultados)",
+    "queso-gauda (40 resultados)",
+    "quesillo (8 resultados)",
+    "queso-crema (40 resultados)",
+    "huevos1 (39 resultados)",
+    "fanta (21 resultados)",
+    "fanta-zero (39 resultados)",
+    "nectar-light (40 resultados)",
+    "zuko (40 resultados)",
+    "agua2 (40 resultados)",
+    "te1 (40 resultados)",
+    "cafe (40 resultados)",
+    "cafe2 (40 resultados)",
+    "chocapic (39 resultados)",
+    "fitness (39 resultados)",
+    "avena (40 resultados)",
+    "granola (40 resultados)",
+    "merm (22 resultados)",
+    "merm-sa (40 resultados)",
+    "pan2 (39 resultados)",
+    "pan-int (39 resultados)",
+    "aceite2 (40 resultados)",
+    "stevia (39 resultados)",
+    "atun1 (37 resultados)",
+    "atun2 (40 resultados)",
+    "salsa2 (40 resultados)",
+    "mayo-l (40 resultados)",
+    "pollo1 (40 resultados)",
+    "pollo2 (40 resultados)",
+    "molida (0 resultados)",
+    "vienesas (0 resultados)",
+    "vienesas-pavo (0 resultados)",
+    "jamon (0 resultados)",
+    "triton (0 resultados)",
+    "soda (0 resultados)",
+    "arroz-gall (0 resultados)",
+    "ramitas (31 resultados)",
+    "mani (40 resultados)",
+    "sahne (39 resultados)",
+    "super8 (37 resultados)",
+    "barra (40 resultados)",
+    "cloro (39 resultados)",
+    "pasta (40 resultados)",
+    "shampoo (40 resultados)",
+    "jabon (40 resultados)",
+    "gel (34 resultados)",
+    "panal1 (40 resultados)",
+    "panal2 (40 resultados)",
+    "leche-svelty (40 resultados)",
+    "leche-polvo2 (40 resultados)",
+    "leche-almendra (39 resultados)",
+    "leche-avena (34 resultados)",
+    "leche-evap (17 resultados)",
+    "crema2 (40 resultados)",
+    "yog-nat (40 resultados)",
+    "yog-batido-vain (40 resultados)",
+    "yog-griego2 (40 resultados)"
    ],
    "fuente": "web",
-   "buscados": 6,
-   "conPrecio": 5,
+   "buscados": 344,
+   "conPrecio": 142,
    "estado": "ok"
   },
   "unimarc": {
@@ -124,8 +1223,8 @@
     {
      "id": "leche-lonco",
      "rinde": "Loncoleche · Leche Entera · 1 L",
-     "tienda": "Pack leche entera Loncoleche 12 un 1 L",
-     "precio": 13080
+     "tienda": "Leche entera Loncoleche sin tapa 1 L",
+     "precio": 1090
     },
     {
      "id": "leche-sl",
@@ -136,16 +1235,647 @@
     {
      "id": "leche-desc",
      "rinde": "Loncoleche · Leche Descremada · 1 L",
-     "tienda": "Pack leche descremada Loncoleche 12 un 1 L",
-     "precio": 13080
+     "tienda": "Leche descremada Loncoleche sin tapa 1 L",
+     "precio": 1090
+    },
+    {
+     "id": "mantequilla",
+     "rinde": "Colun · Mantequilla con Sal · 250 g",
+     "tienda": "Mantequilla Colun con sal pan 250 g",
+     "precio": 2890
+    },
+    {
+     "id": "huevos2",
+     "rinde": "Yemita · Huevos Blancos Extra · 12 un",
+     "tienda": "Huevos extra blanco Yemita 12 un",
+     "precio": 4360
+    },
+    {
+     "id": "coca",
+     "rinde": "Coca-Cola · Coca-Cola Original · 1,5 L",
+     "tienda": "Bebida Coca Cola original 1.5 L",
+     "precio": 2290
+    },
+    {
+     "id": "fanta",
+     "rinde": "Fanta · Fanta Naranja · 1,5 L",
+     "tienda": "FANTA NARANJA FULL SUGAR 1.5 LT PET",
+     "precio": 2290
+    },
+    {
+     "id": "nectar",
+     "rinde": "Watt's · Néctar Durazno · 1,5 L",
+     "tienda": "Néctar Watt's durazno boca ancha 1.5 L",
+     "precio": 1990
+    },
+    {
+     "id": "agua",
+     "rinde": "Cachantun · Agua Mineral Sin Gas · 1,6 L",
+     "tienda": "Agua mineral Cachantun sin gas 1.6 L",
+     "precio": 1090
+    },
+    {
+     "id": "te2",
+     "rinde": "Lipton · Té Negro · 100 bolsitas",
+     "tienda": "Té negro royal ceylán Lipton 100 un",
+     "precio": 6390
+    },
+    {
+     "id": "cafe2",
+     "rinde": "Monterrey · Café Instantáneo Clásico · 170 g",
+     "tienda": "Café instantáneo Monterrey clásico lata 170 g",
+     "precio": 4150
+    },
+    {
+     "id": "manjar1",
+     "rinde": "Colun · Manjar · 400 g",
+     "tienda": "Manjar Colun pote 400 g",
+     "precio": 2000
+    },
+    {
+     "id": "manjar2",
+     "rinde": "Nestlé · Manjar · 400 g",
+     "tienda": "Manjar untable Nestlé doypack 400 g",
+     "precio": 2990
+    },
+    {
+     "id": "arroz",
+     "rinde": "Tucapel · Arroz Grado 1 · 1 kg",
+     "tienda": "Arroz grado 1 cosecha especial Tucapel 1kg",
+     "precio": 2890
+    },
+    {
+     "id": "arroz-int",
+     "rinde": "Tucapel · Arroz Integral · 1 kg",
+     "tienda": "Arroz Tucapel integral G1 1 Kg",
+     "precio": 2890
+    },
+    {
+     "id": "fideos",
+     "rinde": "Carozzi · Spaghetti N°5 · 400 g",
+     "tienda": "Pasta spaghetti N° 5 Carozzi 400 g Pasta spaghetti N°5 Carozzi 400 g",
+     "precio": 1050
+    },
+    {
+     "id": "fideos2",
+     "rinde": "Lucchetti · Spaghetti N°5 · 400 g",
+     "tienda": "Pasta spaghetti N° 5 Lucchetti 400 g Pasta spaghetti N°5 Lucchetti 400 g",
+     "precio": 1050
+    },
+    {
+     "id": "fideos-int",
+     "rinde": "Carozzi · Spaghetti Integral · 400 g",
+     "tienda": "Pasta spaghetti integral Carozzi 400 g",
+     "precio": 1000
+    },
+    {
+     "id": "aceite",
+     "rinde": "Belmont · Aceite Vegetal · 1 L",
+     "tienda": "Aceite Belmont vegetal con canola 1 L",
+     "precio": 3150
+    },
+    {
+     "id": "lentejas",
+     "rinde": "Banquete · Lentejas · 1 kg",
+     "tienda": "Lentejas Banquete 6 mm 1 Kg",
+     "precio": 3400
+    },
+    {
+     "id": "porotos",
+     "rinde": "Banquete · Porotos Hallados · 1 kg",
+     "tienda": "Poroto hallado Banquete 1 Kg",
+     "precio": 3790
+    },
+    {
+     "id": "salsa1",
+     "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
+     "tienda": "Salsa de tomate Pomarola italiana 200 g",
+     "precio": 870
+    },
+    {
+     "id": "salsa2",
+     "rinde": "Malloa · Salsa de Tomate Italiana · 200 g",
+     "tienda": "Salsa de tomate Malloa italiana 200 g",
+     "precio": 890
+    },
+    {
+     "id": "mayo",
+     "rinde": "Hellmann's · Mayonesa · 372 g",
+     "tienda": "Mayonesa Hellmann's supreme artesana frasco 380 g",
+     "precio": 4490
+    },
+    {
+     "id": "platano",
+     "rinde": "Granel · Plátano · 1 kg",
+     "tienda": "Plátano granel 500 g",
+     "precio": 745
+    },
+    {
+     "id": "tomate",
+     "rinde": "Granel · Tomate · 1 kg",
+     "tienda": "Tomate larga vida granel 500 g",
+     "precio": 1045
+    },
+    {
+     "id": "papa",
+     "rinde": "Granel · Papa en Malla · 2 kg",
+     "tienda": "Papas pequeñas malla 2 Kg",
+     "precio": 3590
+    },
+    {
+     "id": "palta",
+     "rinde": "Granel · Palta Hass · 1 kg",
+     "tienda": "Palta hass granel 500 g",
+     "precio": 3195
+    },
+    {
+     "id": "lechuga",
+     "rinde": "Granel · Lechuga Escarola · 1 un",
+     "tienda": "Lechuga escarola bolsa 1 un",
+     "precio": 1390
+    },
+    {
+     "id": "cebolla",
+     "rinde": "Granel · Cebolla · 1 kg",
+     "tienda": "Cebollas granel 500 g",
+     "precio": 1045
+    },
+    {
+     "id": "limon",
+     "rinde": "Granel · Limón · 1 kg",
+     "tienda": "Limón granel 500 g",
+     "precio": 995
+    },
+    {
+     "id": "pollo1",
+     "rinde": "Super Pollo · Pechuga de Pollo Deshuesada · 1 kg",
+     "tienda": "Pechuga de pollo deshuesada Super Pollo granel 600 g",
+     "precio": 4194
+    },
+    {
+     "id": "pollo2",
+     "rinde": "Ariztía · Pechuga de Pollo Deshuesada · 1 kg",
+     "tienda": "Pechuga de pollo deshuesada Ariztía granel 600 g",
+     "precio": 4194
+    },
+    {
+     "id": "molida",
+     "rinde": "Granel · Carne Molida 4% Grasa · 500 g",
+     "tienda": "Carne molida fundo rio alegre tartaro 4% grasa 500g",
+     "precio": 7990
+    },
+    {
+     "id": "soda",
+     "rinde": "McKay · Galletas de Soda · 180 g",
+     "tienda": "Galletas de soda McKay clásica 180 g",
+     "precio": 1350
+    },
+    {
+     "id": "papel2",
+     "rinde": "Confort · Papel Higiénico Doble Hoja · 12 rollos",
+     "tienda": "Papel higiénico Confort doble hoja rendiplus 12 un 27 mt",
+     "precio": 6290
+    },
+    {
+     "id": "toalla",
+     "rinde": "Elite · Toalla de Papel · 2 rollos",
+     "tienda": "Toalla de papel Elite deco maxi rollo 2 un 20 mt",
+     "precio": 3490
+    },
+    {
+     "id": "deter1",
+     "rinde": "Omo · Detergente Líquido · 3 L",
+     "tienda": "Detergente Omo matic multiacción líquido 3 L",
+     "precio": 15490
     }
    ],
    "sin": [
-    "leche-choc (40 resultados)"
+    "leche-choc (40 resultados)",
+    "yog-fru (13 resultados)",
+    "yog-gri (0 resultados)",
+    "yog-pro (40 resultados)",
+    "queso-gauda (6 resultados)",
+    "quesillo (7 resultados)",
+    "queso-crema (40 resultados)",
+    "huevos1 (40 resultados)",
+    "coca-zero (22 resultados)",
+    "fanta-zero (40 resultados)",
+    "nectar-light (40 resultados)",
+    "zuko (2 resultados)",
+    "agua2 (5 resultados)",
+    "te1 (1 resultados)",
+    "cafe (7 resultados)",
+    "chocapic (5 resultados)",
+    "fitness (1 resultados)",
+    "avena (2 resultados)",
+    "granola (40 resultados)",
+    "merm (2 resultados)",
+    "merm-sa (1 resultados)",
+    "pan (8 resultados)",
+    "pan2 (4 resultados)",
+    "pan-int (6 resultados)",
+    "arroz2 (2 resultados)",
+    "aceite2 (40 resultados)",
+    "oliva (0 resultados)",
+    "azucar (3 resultados)",
+    "stevia (4 resultados)",
+    "harina (0 resultados)",
+    "sal (40 resultados)",
+    "atun1 (1 resultados)",
+    "atun2 (0 resultados)",
+    "mayo-l (1 resultados)",
+    "manzana (2 resultados)",
+    "vienesas (3 resultados)",
+    "vienesas-pavo (40 resultados)",
+    "jamon (8 resultados)",
+    "triton (3 resultados)",
+    "arroz-gall (40 resultados)",
+    "papas (40 resultados)",
+    "ramitas (40 resultados)",
+    "mani (0 resultados)",
+    "sahne (40 resultados)",
+    "super8 (2 resultados)",
+    "barra (0 resultados)",
+    "papel (4 resultados)",
+    "shampoo (0 resultados)",
+    "jabon (12 resultados)",
+    "gel (40 resultados)",
+    "panal1 (4 resultados)",
+    "panal2 (40 resultados)",
+    "leche-svelty (40 resultados)",
+    "leche-polvo2 (11 resultados)",
+    "leche-almendra (0 resultados)",
+    "leche-evap (7 resultados)",
+    "yog-nat (9 resultados)",
+    "yog-batido-vain (3 resultados)",
+    "yog-griego2 (3 resultados)",
+    "yog-pack (1 resultados)"
    ],
    "fuente": "unimarc-bff",
-   "buscados": 6,
-   "conPrecio": 5,
+   "buscados": 344,
+   "conPrecio": 133,
+   "estado": "ok"
+  },
+  "tottus": {
+   "pruebas": [
+    {
+     "tipo": "web",
+     "url": "https://www.tottus.cl/tottus-cl/buscar?Ntt=leche%20entera",
+     "status": 403,
+     "productos": 0,
+     "ejemplos": [],
+     "titulo": "Just a moment...",
+     "largo": 5896,
+     "inicio": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scal",
+     "pistas": [
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_tk=AKERREZrPP2OjLF10CxGuB5nXYRn7HMQmXjuNZUXcpY-1795496517-1.0.1.1-Y7QQrGhWhD5pYfs1m6zntWOuQ9wlfvfLeyH9cVm_OZo",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_f_tk=AKERREZrPP2OjLF10CxGuB5nXYRn7HMQmXjuNZUXcpY-1795496517-1.0.1.1-Y7QQrGhWhD5pYfs1m6zntWOuQ9wlfvfLeyH9cVm_OZo",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_rt_tk=AKERREZrPP2OjLF10CxGuB5nXYRn7HMQmXjuNZUXcpY-1795496517-1.0.1.1-Y7QQrGhWhD5pYfs1m6zntWOuQ9wlfvfLeyH9cVm_OZo"
+     ]
+    },
+    {
+     "tipo": "web",
+     "url": "https://www.tottus.cl/buscar?Ntt=leche%20entera",
+     "status": 526,
+     "productos": 0,
+     "ejemplos": [],
+     "titulo": "",
+     "largo": 1102,
+     "inicio": "{\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-526/\",\"title\":\"Error 526: Invalid SSL certificate\",\"status\":526,\"detail\":\"The TLS certificate presented by the origin web server failed validation. The certificate is expired, self-signed",
+     "pistas": []
+    }
+   ],
+   "muestras": [],
+   "sin": [],
+   "estado": "sin acceso (ninguna fuente respondió con productos)"
+  },
+  "acuenta": {
+   "pruebas": [
+    {
+     "tipo": "vtex",
+     "url": "https://www.acuenta.cl/api/catalog_system/pub/products/search?ft=leche%20entera&_from=0&_to=29",
+     "error": "fetch failed"
+    },
+    {
+     "tipo": "web",
+     "url": "https://www.acuenta.cl/search?q=leche%20entera",
+     "error": "fetch failed"
+    }
+   ],
+   "muestras": [],
+   "sin": [],
+   "estado": "sin acceso (ninguna fuente respondió con productos)"
+  },
+  "cruzverde": {
+   "pruebas": [
+    {
+     "tipo": "cruzverde-api",
+     "url": "(API)",
+     "status": 200,
+     "productos": 40,
+     "ejemplos": [
+      "Xumadol Paracetamol 1000 mg 20 Comprimidos · $7690",
+      "Paracetamol 100 mg Gotas 15 mL · $2421",
+      "Tramadol Clorhidrato 100 mg / mL Solución para Gotas Orales 20 mL · $5391",
+      "Betacort Cassara Betametasona 0,5 mg / mL Solucion Oral para Gotas 30 mL · $23211"
+     ],
+     "ejemplo": {
+      "name": "Xumadol Paracetamol 1000 mg 20 Comprimidos",
+      "brand": "ITF LABOMED",
+      "v": 7690,
+      "l": 11390,
+      "card": {},
+      "ean": null,
+      "img": "",
+      "url": "https://beta.cruzverde.cl/s/Chile/dw/shop/v19_1/products/266145?start=0&count=40&q=paracetamol&sort=&searchDrivenRedirect=true",
+      "extra": "",
+      "agotado": false
+     }
+    }
+   ],
+   "muestras": [
+    {
+     "id": "pasta",
+     "rinde": "Colgate · Pasta Dental Total · 90 g",
+     "tienda": "Pasta Dental Total Interdental 90 G",
+     "precio": 2245
+    },
+    {
+     "id": "desodorante",
+     "rinde": "Rexona · Desodorante Aerosol · 150 ml",
+     "tienda": "Desodorante en aerosol Men Invisible 150 ml",
+     "precio": 2995
+    },
+    {
+     "id": "para-gen",
+     "rinde": "Genérico · Paracetamol 500 mg · 16 comprimidos · 16 un",
+     "tienda": "Paracetamol 500 mg 16 Comprimidos",
+     "precio": 756
+    },
+    {
+     "id": "ibu-gen",
+     "rinde": "Genérico · Ibuprofeno 400 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibuprofeno 400 mg 20 Comprimidos",
+     "precio": 1422
+    },
+    {
+     "id": "ibupirac",
+     "rinde": "Ibupirac · Ibupirac 400 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibupirac LC Ibuprofeno 400 mg 20 Cápsulas Blandas",
+     "precio": 5616
+    },
+    {
+     "id": "lora-gen",
+     "rinde": "Genérico · Loratadina 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Loratadina 10 mg 30 Comprimidos",
+     "precio": 1242
+    },
+    {
+     "id": "omepra",
+     "rinde": "Genérico · Omeprazol 20 mg · 30 cápsulas · 30 un",
+     "tienda": "Omeprazol 20 mg 30 Cápsulas con Gránulos",
+     "precio": 2421
+    },
+    {
+     "id": "losartan",
+     "rinde": "Genérico · Losartán 50 mg · 30 comprimidos · 30 un",
+     "tienda": "Losartan Potasico 50 mg 30 Comprimidos",
+     "precio": 1890
+    },
+    {
+     "id": "protector",
+     "rinde": "Eucerin · Protector Solar FPS 50 · 50 ml",
+     "tienda": "Protector Solar Cc Creme  Fps 50+ 50  mL",
+     "precio": 13854
+    },
+    {
+     "id": "cepillo",
+     "rinde": "Colgate · Cepillo de Dientes Suave · 2 un · 2 un",
+     "tienda": "Cepillo De Dientes Total Whitening Suave 2 U",
+     "precio": 4990
+    },
+    {
+     "id": "enjuague",
+     "rinde": "Listerine · Enjuague Bucal · 500 ml",
+     "tienda": "Enjuague Bucal Cuidado Total Con Fluor 500 mL",
+     "precio": 8043
+    },
+    {
+     "id": "toallas-higienicas",
+     "rinde": "Kotex · Toallas Higiénicas · 16 un · 16 un",
+     "tienda": "Toalla Higiénica Kotex Ultradiscreta Suave 16 un",
+     "precio": 2890
+    },
+    {
+     "id": "afeitadora",
+     "rinde": "Gillette · Máquinas de Afeitar · 2 un · 2 un",
+     "tienda": "Maquina de Afeitar Desechable Venus Íntima 2 Unidades",
+     "precio": 4390
+    },
+    {
+     "id": "ibu-600",
+     "rinde": "Genérico · Ibuprofeno 600 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibuprofeno 600 mg 20 Comprimidos",
+     "precio": 1971
+    },
+    {
+     "id": "naproxeno",
+     "rinde": "Genérico · Naproxeno 550 mg · 10 comprimidos · 10 un",
+     "tienda": "Naproxeno de Sodio 550 mg 10 Comprimidos Recubiertos",
+     "precio": 2691
+    },
+    {
+     "id": "ketoprofeno",
+     "rinde": "Genérico · Ketoprofeno 100 mg · 20 cápsulas · 20 un",
+     "tienda": "Relatene Ketoprofeno 100 mg 20 Comprimidos Recubiertos",
+     "precio": 8451
+    },
+    {
+     "id": "aspirina",
+     "rinde": "Bayer · Aspirina 500 mg · 20 comprimidos · 20 un",
+     "tienda": "Aspirina Adulto Ácido Acetilsalicílico 500 mg 20 Comprimidos",
+     "precio": 3186
+    },
+    {
+     "id": "cetirizina",
+     "rinde": "Genérico · Cetirizina 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Cetirex Cetirizina 10 mg 30 Comprimidos Recubiertos",
+     "precio": 4750
+    },
+    {
+     "id": "desloratadina",
+     "rinde": "Genérico · Desloratadina 5 mg · 30 comprimidos · 30 un",
+     "tienda": "Neohysticlar Desloratadina 5 mg 30 Comprimidos Recubierto",
+     "precio": 4673
+    },
+    {
+     "id": "aerius",
+     "rinde": "Aerius · Aerius 5 mg · 30 comprimidos · 30 un",
+     "tienda": "Aerius Desloratadina 5 mg 30 Comprimidos Recubierto",
+     "precio": 25461
+    },
+    {
+     "id": "loperamida",
+     "rinde": "Genérico · Loperamida 2 mg · 6 comprimidos · 6 un",
+     "tienda": "Loperamida 2 mg 6 Comprimidos",
+     "precio": 1071
+    },
+    {
+     "id": "suero-oral",
+     "rinde": "Genérico · Sales de Rehidratación Oral · 4 sobres · 4 un",
+     "tienda": "Sales para Rehidratación 90 Cloruro de Sodio 3,5 gr Polvo para Suspensión Oral 4 Sobres Sabor Limón",
+     "precio": 6471
+    },
+    {
+     "id": "metformina",
+     "rinde": "Genérico · Metformina 850 mg · 30 comprimidos · 30 un",
+     "tienda": "Metformina 850 mg 30 Comprimidos",
+     "precio": 3051
+    },
+    {
+     "id": "enalapril",
+     "rinde": "Genérico · Enalapril 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Diotensil Enalapril 10 mg 30 Comprimidos",
+     "precio": 2528
+    },
+    {
+     "id": "atorvastatina",
+     "rinde": "Genérico · Atorvastatina 20 mg · 30 comprimidos · 30 un",
+     "tienda": "Atorvastatina 20 mg 30 Comprimidos",
+     "precio": 2331
+    },
+    {
+     "id": "lipitor",
+     "rinde": "Lipitor · Lipitor 20 mg · 30 comprimidos · 30 un",
+     "tienda": "Lipitor Atorvastatina 20 mg 30 Comprimidos Recubiertos",
+     "precio": 57973
+    },
+    {
+     "id": "amlodipino",
+     "rinde": "Genérico · Amlodipino 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Amlodipino 10 mg 30 Comprimidos",
+     "precio": 2268
+    },
+    {
+     "id": "sertralina",
+     "rinde": "Genérico · Sertralina 50 mg · 30 comprimidos · 30 un",
+     "tienda": "Sertralina 50 mg 30 Comprimidos",
+     "precio": 3231
+    },
+    {
+     "id": "amoxicilina",
+     "rinde": "Genérico · Amoxicilina 500 mg · 21 cápsulas · 21 un",
+     "tienda": "Amoxicilina 500 mg 21 Cápsulas",
+     "precio": 4491
+    },
+    {
+     "id": "clotrimazol",
+     "rinde": "Genérico · Clotrimazol Crema 1% · 20 g",
+     "tienda": "Clotrimazol 1% Crema Tópica 20 gr",
+     "precio": 1791
+    },
+    {
+     "id": "ambroxol",
+     "rinde": "Genérico · Ambroxol Jarabe 30 mg/5 ml · 100 ml",
+     "tienda": "Tocalm Adulto Ambroxol 30 mg/5mL Jarabe 100 mL",
+     "precio": 3590
+    },
+    {
+     "id": "multivitaminico",
+     "rinde": "Centrum · Multivitamínico · 30 comprimidos · 30 un",
+     "tienda": "Centrum Multivitaminico / Multimineral 30 Comprimidos Recubiertos",
+     "precio": 10297
+    },
+    {
+     "id": "magnesio",
+     "rinde": "Genérico · Magnesio · 60 comprimidos · 60 un",
+     "tienda": "Triptófano / Vitamina B2 B6 B12 / Magnesio 60 Cápsulas",
+     "precio": 6490
+    },
+    {
+     "id": "omega3",
+     "rinde": "Genérico · Omega 3 · 60 cápsulas · 60 un",
+     "tienda": "Omega 3 60 Cápsulas Blandas Sabor Naranja",
+     "precio": 11394
+    },
+    {
+     "id": "melatonina",
+     "rinde": "Genérico · Melatonina 3 mg · 30 comprimidos · 30 un",
+     "tienda": "Melrest Melatonina 3 Mg X 30 Cápsulas",
+     "precio": 5992
+    },
+    {
+     "id": "test-embarazo",
+     "rinde": "Genérico · Test de Embarazo · 1 un",
+     "tienda": "Scanmed Test de Embarazo 99% de Exactitud 1 Unidad",
+     "precio": 5990
+    }
+   ],
+   "sin": [
+    "shampoo (13 resultados)",
+    "jabon (6 resultados)",
+    "gel (4 resultados)",
+    "panal1 (1 resultados)",
+    "panal2 (2 resultados)",
+    "kitadol (3 resultados)",
+    "para-inf (1 resultados)",
+    "clarityne (40 resultados)",
+    "tapsin (1 resultados)",
+    "vitc (1 resultados)",
+    "mascarilla (1 resultados)",
+    "termometro (0 resultados)",
+    "papel-3 (0 resultados)",
+    "panuelos (7 resultados)",
+    "desinfectante (0 resultados)",
+    "toallas-humedas (2 resultados)",
+    "pasta-dental2 (3 resultados)",
+    "pasta-dental3 (5 resultados)",
+    "hilo-dental (1 resultados)",
+    "shampoo2 (0 resultados)",
+    "shampoo3 (5 resultados)",
+    "acondicionador (10 resultados)",
+    "jabon-barra (1 resultados)",
+    "desodorante2 (0 resultados)",
+    "desodorante3 (9 resultados)",
+    "tampones (4 resultados)",
+    "panal3 (1 resultados)",
+    "panal-adulto (1 resultados)",
+    "leche-formula (1 resultados)",
+    "compota (1 resultados)",
+    "papilla (0 resultados)",
+    "shampoo-bebe (0 resultados)",
+    "para-500-24 (16 resultados)",
+    "para-1g (1 resultados)",
+    "panadol (2 resultados)",
+    "ibu-inf (6 resultados)",
+    "aspirina-gen (8 resultados)",
+    "zyrtec (2 resultados)",
+    "omeprazol-28 (17 resultados)",
+    "lansoprazol (2 resultados)",
+    "famotidina (1 resultados)",
+    "sal-fruta (4 resultados)",
+    "viadil (3 resultados)",
+    "levotiroxina (4 resultados)",
+    "diclofenaco-gel (2 resultados)",
+    "voltaren (37 resultados)",
+    "antigripal2 (2 resultados)",
+    "jarabe-tos (1 resultados)",
+    "pastillas-garganta (1 resultados)",
+    "suero-fisiologico (4 resultados)",
+    "gotas-ojos (1 resultados)",
+    "vitd (1 resultados)",
+    "alcohol-70 (4 resultados)",
+    "agua-oxigenada (2 resultados)",
+    "parches (9 resultados)",
+    "gasa (0 resultados)",
+    "preservativos (2 resultados)",
+    "protector2 (12 resultados)",
+    "protector-gen (38 resultados)",
+    "crema-manos (2 resultados)"
+   ],
+   "fuente": "cruzverde-api",
+   "buscados": 99,
+   "conPrecio": 36,
    "estado": "ok"
   },
   "salcobrand": {
@@ -153,12 +1883,14 @@
     {
      "tipo": "algolia",
      "url": "(API)",
-     "error": "no encontré la clave de Algolia (4 scripts revisados)",
+     "error": "Algolia GM3RP06HJG: ningún índice respondió (sb_variant_production, sb_variant_prod, sb_variant_cl, title_modal_add_product, modal_products_quote, update_quote_products, product_id, search, SEARCH, va",
      "algolia": {
-      "app": "",
-      "tieneClave": false,
+      "app": "GM3RP06HJG",
+      "tieneClave": true,
       "indices": [
-       "sb_variant_",
+       "sb_variant_production",
+       "sb_variant_prod",
+       "sb_variant_cl",
        "title_modal_add_product",
        "modal_products_quote",
        "update_quote_products",
@@ -169,7 +1901,17 @@
        "products",
        "catalog"
       ],
-      "scripts": 4
+      "scripts": 4,
+      "trozos": [
+       "ss=\"collapse navbar-collapse\" id=\"myNavbar\"><ul class=\"nav navbar-nav shop-menu shop-menu-btn\"><li class=\"mobile-menu\"><nav class=\"new-nav\" id=\"nav-menu\"></nav></li></ul></nav></div></div><div class=\"algolia__searchbar container__hidden-mobile\" id=\"algolia-search-bar\"></div><div class=\"icon-menu\"><ul class=\"navbar-nav navbar-right list-inline icons-list\"><li class=\"user-options hidden-lg hidden-md\"><span></span></li><li class=\"user-options hidden",
+       "lass=\"nav navbar-nav shop-menu shop-menu-btn\"><li class=\"mobile-menu\"><nav class=\"new-nav\" id=\"nav-menu\"></nav></li></ul></nav></div></div><div class=\"algolia__searchbar container__hidden-mobile\" id=\"algolia-search-bar\"></div><div class=\"icon-menu\"><ul class=\"navbar-nav navbar-right list-inline icons-list\"><li class=\"user-options hidden-lg hidden-md\"><span></span></li><li class=\"user-options hidden-lg hidden-md\"><span id=\"searchbar-toggler\"><img ",
+       "n_misalcobrand\",\"product_categories.lvl0\",\"product_categories.lvl1\",\"product_categories.lvl2\",\"product_categories.lvl3\"],P=\"602bc79d97a52501e0fc97f4\",T=\"602bc77c97a52501e0fc97f3\",j=[\"productListUrl\",\"algoliaHitPerPage\",\"algoliaSortBy\",\"algoliaBrands\"],C=5e3,k=15e3,F=1e4,N=\"success\",I=\"failure\",A=null,D=\"0.0\",M=\"receta no encontrada\"},function(e,t,n){var r=n(36),i=n(27),a=n(108),o=n(51),u=n(48),c=function(e,t,n){var s,l,f,d=e&c.F,p=e&c.G,h=e&c.S,m",
+       "duct_categories.lvl0\",\"product_categories.lvl1\",\"product_categories.lvl2\",\"product_categories.lvl3\"],P=\"602bc79d97a52501e0fc97f4\",T=\"602bc77c97a52501e0fc97f3\",j=[\"productListUrl\",\"algoliaHitPerPage\",\"algoliaSortBy\",\"algoliaBrands\"],C=5e3,k=15e3,F=1e4,N=\"success\",I=\"failure\",A=null,D=\"0.0\",M=\"receta no encontrada\"},function(e,t,n){var r=n(36),i=n(27),a=n(108),o=n(51),u=n(48),c=function(e,t,n){var s,l,f,d=e&c.F,p=e&c.G,h=e&c.S,m=e&c.P,y=e&c.B,v=e&c",
+       "lvl0\",\"product_categories.lvl1\",\"product_categories.lvl2\",\"product_categories.lvl3\"],P=\"602bc79d97a52501e0fc97f4\",T=\"602bc77c97a52501e0fc97f3\",j=[\"productListUrl\",\"algoliaHitPerPage\",\"algoliaSortBy\",\"algoliaBrands\"],C=5e3,k=15e3,F=1e4,N=\"success\",I=\"failure\",A=null,D=\"0.0\",M=\"receta no encontrada\"},function(e,t,n){var r=n(36),i=n(27),a=n(108),o=n(51),u=n(48),c=function(e,t,n){var s,l,f,d=e&c.F,p=e&c.G,h=e&c.S,m=e&c.P,y=e&c.B,v=e&c.W,g=p?i:i[t]||(",
+       "ndex:function(e){p=p.setIndex(e)},clearCache:function(){c.clearCache(),g()},skipSearch:function(){l=!0}}}function Ge(e,t){var n=document.createElement(\"meta\"),r=document.querySelector(\"head\");n.name=\"algolia:metadata\";var i=function(e,t){var n=[\"contextValue\",\"indexContextValue\"],r=e.map(function(e){var t=e.props,r=e.constructor,i=r._connectorDesc||{},a=i.defaultProps,o=void 0===a?{}:a,u=i.displayName;return{displayName:void 0===u?r.displayName:u",
+       ",Yt=q({displayName:\"AlgoliaPoweredBy\",$$type:\"ais.poweredBy\",getProvidedProps:function(){var e=\"undefined\"==typeof window||void 0===window.location?\"\":window.location.hostname;return{url:\"https://www.algolia.com/?utm_source=react-instantsearch&utm_medium=website&\"+\"utm_content=\".concat(e,\"&\")+\"utm_campaign=poweredby\"}}});function Jt(e){return e.attribute}var Xt=\"range\";function Zt(e,t,n,r){var i=te(e,t,r,\"\".concat(Xt,\".\").concat(Jt(e)),{}),a=i.mi",
+       "a.createElement(\"div\",null,\"We do not provide any Slider, see the documentation to learn how to connect one easily:\",p.a.createElement(\"a\",{target:\"_blank\",rel:\"noopener noreferrer\",href:\"https://www.algolia.com/doc/api-reference/widgets/range-slider/react/\"},\"https://www.algolia.com/doc/api-reference/widgets/range-slider/react/\"))};function $i(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r="
+      ]
      }
     },
     {
@@ -221,7 +1963,7 @@
       "Paracetamol 500 mg x 16 Comprimidos · $1559",
       "Paracetamol 500mg. Caja 16 Comp.Ad. · $1559",
       "Gesidol Paracetamol 1gr 20 Comprimidos · $10509",
-      "Paracetamol 100 mg/mL x 15 mL Soluci&oacute;n Oral Para Gotas · $3249"
+      "Paracetamol 100 mg/mL x 15 mL Solución Oral Para Gotas · $3249"
      ],
      "ejemplo": {
       "name": "Paracetamol 500 mg x 16 Comprimidos",
@@ -249,17 +1991,499 @@
      "rinde": "Rexona · Desodorante Aerosol · 150 ml",
      "tienda": "Rexona Clinical Desodorante en aerosol Sin Perfume 150 ml",
      "precio": 6499
+    },
+    {
+     "id": "para-gen",
+     "rinde": "Genérico · Paracetamol 500 mg · 16 comprimidos · 16 un",
+     "tienda": "Paracetamol 500 mg x 16 Comprimidos",
+     "precio": 1559
+    },
+    {
+     "id": "kitadol",
+     "rinde": "Kitadol · Kitadol 500 mg · 24 comprimidos · 24 un",
+     "tienda": "Kitadol 500 mg x 24 Comprimidos",
+     "precio": 1559
+    },
+    {
+     "id": "ibu-gen",
+     "rinde": "Genérico · Ibuprofeno 400 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibuprofeno 400 mg x 20 Comprimidos Recubiertos ASCEND",
+     "precio": 2449
+    },
+    {
+     "id": "ibupirac",
+     "rinde": "Ibupirac · Ibupirac 400 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibupirac LC 400 mg x 20 Cápsulas Blandas",
+     "precio": 6649
+    },
+    {
+     "id": "losartan",
+     "rinde": "Genérico · Losartán 50 mg · 30 comprimidos · 30 un",
+     "tienda": "Losartan Potasico 50 mg x 30 Comprimidos Recubiertos",
+     "precio": 1799
+    },
+    {
+     "id": "protector",
+     "rinde": "Eucerin · Protector Solar FPS 50 · 50 ml",
+     "tienda": "Protector Solar Eucerin Hydrofluid Fps50+ 50 mL",
+     "precio": 24109
+    },
+    {
+     "id": "toallas-humedas",
+     "rinde": "Huggies · Toallitas Húmedas · 80 un · 80 un",
+     "tienda": "Toallas Húmedas Huggies 80 un",
+     "precio": 3269
+    },
+    {
+     "id": "cepillo",
+     "rinde": "Colgate · Cepillo de Dientes Suave · 2 un · 2 un",
+     "tienda": "Cepillo de Dientes Colgate Total Limpieza Espumosa Suave 2 un",
+     "precio": 6529
+    },
+    {
+     "id": "enjuague",
+     "rinde": "Listerine · Enjuague Bucal · 500 ml",
+     "tienda": "Enjuague Bucal Listerine® Control Sarro Menta Suave 500 mL",
+     "precio": 11649
+    },
+    {
+     "id": "toallas-higienicas",
+     "rinde": "Kotex · Toallas Higiénicas · 16 un · 16 un",
+     "tienda": "Toallas Higiénicas Kotex Ultrafina Suave Con Alas 16 un",
+     "precio": 4149
+    },
+    {
+     "id": "afeitadora",
+     "rinde": "Gillette · Máquinas de Afeitar · 2 un · 2 un",
+     "tienda": "Máquina de Afeitar Gillette Venus Íntima 2 un",
+     "precio": 4959
+    },
+    {
+     "id": "ibu-600",
+     "rinde": "Genérico · Ibuprofeno 600 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibuprofeno 600 mg x 20 Comprimidos CHILE",
+     "precio": 3849
+    },
+    {
+     "id": "naproxeno",
+     "rinde": "Genérico · Naproxeno 550 mg · 10 comprimidos · 10 un",
+     "tienda": "Naproxeno Sodico 550 mg x 10 Comprimidos Recubiertos ANDROMACO S.A.",
+     "precio": 4249
+    },
+    {
+     "id": "cetirizina",
+     "rinde": "Genérico · Cetirizina 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Cetirizina Diclorhidrato 10 mg x 30 Comprimidos Recubiertos",
+     "precio": 4799
+    },
+    {
+     "id": "aerius",
+     "rinde": "Aerius · Aerius 5 mg · 30 comprimidos · 30 un",
+     "tienda": "Aerius 5 mg x 30 Comprimidos Recubiertos",
+     "precio": 28769
+    },
+    {
+     "id": "loperamida",
+     "rinde": "Genérico · Loperamida 2 mg · 6 comprimidos · 6 un",
+     "tienda": "Loperamida Clorhidrato 2 mg x 6 Comprimidos CHILE",
+     "precio": 1949
+    },
+    {
+     "id": "metformina",
+     "rinde": "Genérico · Metformina 850 mg · 30 comprimidos · 30 un",
+     "tienda": "Metformina 850 mg Caja x 30 Comprimidos Recubiertos",
+     "precio": 3869
+    },
+    {
+     "id": "enalapril",
+     "rinde": "Genérico · Enalapril 10 mg · 30 comprimidos · 30 un",
+     "tienda": "ENALTEN Enalapril maleato 10 mg 30 comprimidos",
+     "precio": 23699
+    },
+    {
+     "id": "lipitor",
+     "rinde": "Lipitor · Lipitor 20 mg · 30 comprimidos · 30 un",
+     "tienda": "Lipitor 20 mg x 30 Comprimidos Recubiertos",
+     "precio": 89199
+    },
+    {
+     "id": "sertralina",
+     "rinde": "Genérico · Sertralina 50 mg · 30 comprimidos · 30 un",
+     "tienda": "DEPRAX Sertralina 50 mg 30 comprimidos",
+     "precio": 28849
+    },
+    {
+     "id": "amoxicilina",
+     "rinde": "Genérico · Amoxicilina 500 mg · 21 cápsulas · 21 un",
+     "tienda": "AMOVAL Amoxicilina 500 mg 21 comprimidos",
+     "precio": 29929
+    },
+    {
+     "id": "multivitaminico",
+     "rinde": "Centrum · Multivitamínico · 30 comprimidos · 30 un",
+     "tienda": "Multivitamínico Centrum Mujer 30 Comprimidos &ndash; Multimineral para mujeres adultas",
+     "precio": 18299
+    },
+    {
+     "id": "magnesio",
+     "rinde": "Genérico · Magnesio · 60 comprimidos · 60 un",
+     "tienda": "Natuvit Triptófano con Magnesio y Vitamina B2 y B12 60 Capsulas",
+     "precio": 8509
+    },
+    {
+     "id": "melatonina",
+     "rinde": "Genérico · Melatonina 3 mg · 30 comprimidos · 30 un",
+     "tienda": "Melatonina 3 mg Arama Natural Products 30 Cápsulas",
+     "precio": 8899
+    },
+    {
+     "id": "test-embarazo",
+     "rinde": "Genérico · Test de Embarazo · 1 un",
+     "tienda": "Test de Embarazo Baby Test 1 un",
+     "precio": 6719
+    },
+    {
+     "id": "crema-manos",
+     "rinde": "Nivea · Crema de Manos · 75 ml",
+     "tienda": "Crema Manos Miel Nivea 75Ml",
+     "precio": 2449
     }
    ],
    "sin": [
     "shampoo (5 resultados)",
     "jabon (0 resultados)",
     "gel (2 resultados)",
-    "panal1 (3 resultados)"
+    "panal1 (3 resultados)",
+    "panal2 (1 resultados)",
+    "para-inf (2 resultados)",
+    "lora-gen (2 resultados)",
+    "clarityne (22 resultados)",
+    "omepra (1 resultados)",
+    "tapsin (1 resultados)",
+    "vitc (1 resultados)",
+    "mascarilla (0 resultados)",
+    "termometro (0 resultados)",
+    "papel-3 (1 resultados)",
+    "panuelos (7 resultados)",
+    "desinfectante (0 resultados)",
+    "pasta-dental2 (1 resultados)",
+    "pasta-dental3 (5 resultados)",
+    "hilo-dental (10 resultados)",
+    "shampoo2 (5 resultados)",
+    "shampoo3 (2 resultados)",
+    "acondicionador (1 resultados)",
+    "jabon-barra (2 resultados)",
+    "desodorante2 (13 resultados)",
+    "desodorante3 (3 resultados)",
+    "tampones (4 resultados)",
+    "panal3 (1 resultados)",
+    "panal-adulto (18 resultados)",
+    "leche-formula (0 resultados)",
+    "compota (0 resultados)",
+    "papilla (0 resultados)",
+    "shampoo-bebe (0 resultados)",
+    "para-500-24 (9 resultados)",
+    "para-1g (2 resultados)",
+    "panadol (3 resultados)",
+    "ibu-inf (2 resultados)",
+    "ketoprofeno (1 resultados)",
+    "aspirina (0 resultados)",
+    "aspirina-gen (2 resultados)",
+    "zyrtec (1 resultados)",
+    "desloratadina (12 resultados)",
+    "omeprazol-28 (1 resultados)",
+    "lansoprazol (1 resultados)",
+    "famotidina (1 resultados)",
+    "sal-fruta (3 resultados)",
+    "viadil (2 resultados)",
+    "suero-oral (1 resultados)",
+    "atorvastatina (6 resultados)",
+    "levotiroxina (3 resultados)",
+    "amlodipino (17 resultados)",
+    "clotrimazol (0 resultados)",
+    "diclofenaco-gel (0 resultados)",
+    "voltaren (20 resultados)",
+    "antigripal2 (1 resultados)",
+    "jarabe-tos (3 resultados)",
+    "ambroxol (1 resultados)",
+    "pastillas-garganta (1 resultados)",
+    "suero-fisiologico (2 resultados)",
+    "gotas-ojos (3 resultados)",
+    "vitd (1 resultados)"
    ],
    "fuente": "web",
-   "buscados": 6,
-   "conPrecio": 2,
+   "buscados": 99,
+   "conPrecio": 28,
+   "estado": "ok"
+  },
+  "simi": {
+   "pruebas": [
+    {
+     "tipo": "vtex",
+     "url": "https://www.drsimi.cl/api/catalog_system/pub/products/search?ft=paracetamol&_from=0&_to=29",
+     "status": 206,
+     "productos": 30,
+     "ejemplos": [
+      "Tapsin paracetamol 500 mg 24 comprimidos · $1200",
+      "Paracetamol 500 mg 16 comprimidos · $480",
+      "Tral P paracetamol 325 mg tramadol 37,5 mg 30 comprimidos recubiertos · $7800",
+      "Dropol paracetamol 1 g 20 comprimidos · $5960"
+     ],
+     "ejemplo": {
+      "name": "Tapsin paracetamol 500 mg 24 comprimidos",
+      "brand": "MAVER",
+      "v": 1200,
+      "l": null,
+      "card": {},
+      "ean": null,
+      "img": "https://farmaciasdeldrsimicl.vteximg.com.br/arquivos/ids/159596-300-300/CH5296-1_.jpg?v=638884622582900000",
+      "url": "https://www.drsimi.cl/tapsin-paracetamol-500-mg-24-comprimidos-ch5296/p",
+      "extra": "",
+      "agotado": false
+     }
+    }
+   ],
+   "muestras": [
+    {
+     "id": "para-gen",
+     "rinde": "Genérico · Paracetamol 500 mg · 16 comprimidos · 16 un",
+     "tienda": "Paracetamol 500 mg 16 comprimidos",
+     "precio": 480
+    },
+    {
+     "id": "ibu-gen",
+     "rinde": "Genérico · Ibuprofeno 400 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibuprofeno 400 mg 20 comprimidos",
+     "precio": 920
+    },
+    {
+     "id": "ibupirac",
+     "rinde": "Ibupirac · Ibupirac 400 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibupirac LC ibuprofeno 400 mg 20 cápsulas blandas",
+     "precio": 3960
+    },
+    {
+     "id": "lora-gen",
+     "rinde": "Genérico · Loratadina 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Loratadina 10 mg 30 comprimidos",
+     "precio": 800
+    },
+    {
+     "id": "omepra",
+     "rinde": "Genérico · Omeprazol 20 mg · 30 cápsulas · 30 un",
+     "tienda": "Omeprazol 20 mg 30 cápsulas con gránulos con recubrimiento entérico",
+     "precio": 1560
+    },
+    {
+     "id": "losartan",
+     "rinde": "Genérico · Losartán 50 mg · 30 comprimidos · 30 un",
+     "tienda": "Losartán potásico 50 mg 30 comprimidos recubiertos",
+     "precio": 1560
+    },
+    {
+     "id": "afeitadora",
+     "rinde": "Gillette · Máquinas de Afeitar · 2 un · 2 un",
+     "tienda": "Gillette Venus extra suave máquina de afeitar extra suave 2 unidades",
+     "precio": 5840
+    },
+    {
+     "id": "para-500-24",
+     "rinde": "Genérico · Paracetamol 500 mg · 24 comprimidos · 24 un",
+     "tienda": "Tapsin paracetamol 500 mg 24 comprimidos",
+     "precio": 1200
+    },
+    {
+     "id": "ibu-600",
+     "rinde": "Genérico · Ibuprofeno 600 mg · 20 comprimidos · 20 un",
+     "tienda": "Ibuprofeno 600 mg 20 comprimidos recubiertos",
+     "precio": 1200
+    },
+    {
+     "id": "naproxeno",
+     "rinde": "Genérico · Naproxeno 550 mg · 10 comprimidos · 10 un",
+     "tienda": "Naproxeno 550 mg 10 comprimidos recubiertos",
+     "precio": 1960
+    },
+    {
+     "id": "aspirina",
+     "rinde": "Bayer · Aspirina 500 mg · 20 comprimidos · 20 un",
+     "tienda": "Aspirina ácido acetilsalicílico 500 mg 20 comprimidos",
+     "precio": 2360
+    },
+    {
+     "id": "cetirizina",
+     "rinde": "Genérico · Cetirizina 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Rigotax cetirizina 10 mg 30 comprimidos recubiertos",
+     "precio": 4000
+    },
+    {
+     "id": "desloratadina",
+     "rinde": "Genérico · Desloratadina 5 mg · 30 comprimidos · 30 un",
+     "tienda": "NeoAlledryl desloratadina 5 mg 30 comprimidos recubiertos",
+     "precio": 2880
+    },
+    {
+     "id": "loperamida",
+     "rinde": "Genérico · Loperamida 2 mg · 6 comprimidos · 6 un",
+     "tienda": "Loperamida 2 mg 6 comprimidos",
+     "precio": 680
+    },
+    {
+     "id": "metformina",
+     "rinde": "Genérico · Metformina 850 mg · 30 comprimidos · 30 un",
+     "tienda": "Metformina 850 mg 30 comprimidos recubiertos",
+     "precio": 2600
+    },
+    {
+     "id": "atorvastatina",
+     "rinde": "Genérico · Atorvastatina 20 mg · 30 comprimidos · 30 un",
+     "tienda": "Atorvastatina 20 mg 30 comprimidos recubiertos",
+     "precio": 1680
+    },
+    {
+     "id": "amlodipino",
+     "rinde": "Genérico · Amlodipino 10 mg · 30 comprimidos · 30 un",
+     "tienda": "Amlodipino 10 mg 30 comprimidos",
+     "precio": 1760
+    },
+    {
+     "id": "sertralina",
+     "rinde": "Genérico · Sertralina 50 mg · 30 comprimidos · 30 un",
+     "tienda": "Sertralina 50 mg 30 comprimidos recubiertos",
+     "precio": 2400
+    },
+    {
+     "id": "amoxicilina",
+     "rinde": "Genérico · Amoxicilina 500 mg · 21 cápsulas · 21 un",
+     "tienda": "Amoxicilina 500 mg 21 cápsulas",
+     "precio": 2800
+    },
+    {
+     "id": "clotrimazol",
+     "rinde": "Genérico · Clotrimazol Crema 1% · 20 g",
+     "tienda": "Clotrimazol 1 % crema 20 g",
+     "precio": 640
+    },
+    {
+     "id": "ambroxol",
+     "rinde": "Genérico · Ambroxol Jarabe 30 mg/5 ml · 100 ml",
+     "tienda": "Tocalm ambroxol 30 mg/5 mL jarabe adulto 100 mL",
+     "precio": 3400
+    },
+    {
+     "id": "multivitaminico",
+     "rinde": "Centrum · Multivitamínico · 30 comprimidos · 30 un",
+     "tienda": "Centrum mini multivitaminico multimineral 30 comprimidos masticables",
+     "precio": 10480
+    },
+    {
+     "id": "magnesio",
+     "rinde": "Genérico · Magnesio · 60 comprimidos · 60 un",
+     "tienda": "Dokal colágeno fortificado en calcio y magnesio 60 cápsulas",
+     "precio": 4200
+    },
+    {
+     "id": "omega3",
+     "rinde": "Genérico · Omega 3 · 60 cápsulas · 60 un",
+     "tienda": "Simi Omega Plus omega 3,6,9 60 cápsulas blandas",
+     "precio": 4880
+    },
+    {
+     "id": "melatonina",
+     "rinde": "Genérico · Melatonina 3 mg · 30 comprimidos · 30 un",
+     "tienda": "Melatonina 3 mg 30 cápsulas",
+     "precio": 3920
+    },
+    {
+     "id": "alcohol-70",
+     "rinde": "Genérico · Alcohol 70% · 250 ml",
+     "tienda": "Alcohol desnaturalizado 0,7 v/v solución tópica 250 mL",
+     "precio": 2200
+    },
+    {
+     "id": "gasa",
+     "rinde": "Genérico · Gasa Estéril · 10 un · 10 un",
+     "tienda": "First care gasa no tejida esteril tamaño 10 cm x 10 cm 2 unidades",
+     "precio": 560
+    },
+    {
+     "id": "test-embarazo",
+     "rinde": "Genérico · Test de Embarazo · 1 un",
+     "tienda": "Test de embarazo en un paso 1 unidad",
+     "precio": 1520
+    },
+    {
+     "id": "protector-gen",
+     "rinde": "Genérico · Protector Solar FPS 50 · 120 ml",
+     "tienda": "Sunwork protector solar FPS 50 en spray 120 mL",
+     "precio": 6400
+    }
+   ],
+   "sin": [
+    "pasta (1 resultados)",
+    "shampoo (2 resultados)",
+    "desodorante (7 resultados)",
+    "jabon (2 resultados)",
+    "gel (4 resultados)",
+    "panal1 (0 resultados)",
+    "panal2 (0 resultados)",
+    "kitadol (8 resultados)",
+    "para-inf (18 resultados)",
+    "clarityne (0 resultados)",
+    "tapsin (9 resultados)",
+    "vitc (2 resultados)",
+    "mascarilla (0 resultados)",
+    "termometro (2 resultados)",
+    "protector (8 resultados)",
+    "papel-3 (0 resultados)",
+    "panuelos (1 resultados)",
+    "desinfectante (0 resultados)",
+    "toallas-humedas (3 resultados)",
+    "pasta-dental2 (1 resultados)",
+    "pasta-dental3 (0 resultados)",
+    "cepillo (2 resultados)",
+    "enjuague (2 resultados)",
+    "hilo-dental (6 resultados)",
+    "shampoo2 (3 resultados)",
+    "shampoo3 (0 resultados)",
+    "acondicionador (4 resultados)",
+    "jabon-barra (0 resultados)",
+    "desodorante2 (1 resultados)",
+    "desodorante3 (5 resultados)",
+    "toallas-higienicas (1 resultados)",
+    "tampones (1 resultados)",
+    "panal3 (0 resultados)",
+    "panal-adulto (0 resultados)",
+    "leche-formula (5 resultados)",
+    "compota (0 resultados)",
+    "papilla (0 resultados)",
+    "shampoo-bebe (0 resultados)",
+    "para-1g (30 resultados)",
+    "panadol (4 resultados)",
+    "ibu-inf (22 resultados)",
+    "ketoprofeno (30 resultados)",
+    "aspirina-gen (8 resultados)",
+    "zyrtec (1 resultados)",
+    "aerius (2 resultados)",
+    "omeprazol-28 (5 resultados)",
+    "lansoprazol (30 resultados)",
+    "famotidina (30 resultados)",
+    "sal-fruta (4 resultados)",
+    "viadil (5 resultados)",
+    "suero-oral (7 resultados)",
+    "enalapril (30 resultados)",
+    "lipitor (4 resultados)",
+    "levotiroxina (24 resultados)",
+    "diclofenaco-gel (7 resultados)",
+    "voltaren (1 resultados)",
+    "antigripal2 (5 resultados)",
+    "jarabe-tos (14 resultados)",
+    "pastillas-garganta (7 resultados)",
+    "suero-fisiologico (1 resultados)"
+   ],
+   "fuente": "vtex",
+   "buscados": 99,
+   "conPrecio": 29,
    "estado": "ok"
   }
  }
