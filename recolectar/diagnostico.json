@@ -1,5 +1,5 @@
 {
- "fecha": "2026-11-24T04:06:27.590Z",
+ "fecha": "2026-11-24T04:38:35.841Z",
  "prueba": false,
  "cadenas": {
   "jumbo": {
@@ -9,20 +9,90 @@
      "url": "https://www.jumbo.cl/api/catalog_system/pub/products/search?ft=leche%20entera&_from=0&_to=29",
      "status": 404,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "Jumbo.cl | Supermercado de Chile",
+     "largo": 757445,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4a6vi\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
+     "pistas": [
+      "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56941540961\\",
+      "https://be-reg-groceries-bff-jumbo.*\\",
+      "/.well-known/ai-plugin.json\\",
+      "https://www.jumbo.cl/api/catalog_system/pub/products/search\\",
+      "/experiencias-jumbo/productos-importados\\",
+      "/experiencias-jumbo/productos-importados/productos-alemanes\\",
+      "/experiencias-jumbo/productos-importados/productos-espanoles\\",
+      "/experiencias-jumbo/productos-importados/productos-americanos\\",
+      "/experiencias-jumbo/productos-importados/productos-asiaticos\\",
+      "/experiencias-jumbo/productos-importados/productos-italianos\\",
+      "/busca?fq=H%3A30883\\",
+      "/busca?fq=H%3A30710\\",
+      "/busca?fq=H%3A31124\\",
+      "/busca?fq=H%3A17747\\",
+      "/busca?fq=H%3A31787\\",
+      "/busca?fq=H%3A31566\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A28987\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/shampoo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/acondicionadores\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/tratamiento-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/coloracion-y-tintura-de-pelo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/busca?fq=H%3A29288\\",
+      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\"
+     ]
     },
     {
      "tipo": "vtex-is",
      "url": "https://www.jumbo.cl/api/io/_v/api/intelligent-search/product_search/?query=leche%20entera&count=30&page=1&locale=es-CL",
      "status": 404,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "Jumbo.cl | Supermercado de Chile",
+     "largo": 757537,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4a6vi\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
+     "pistas": [
+      "/.well-known/ai-plugin.json\\",
+      "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56941540961\\",
+      "https://be-reg-groceries-bff-jumbo.*\\",
+      "/experiencias-jumbo/productos-importados\\",
+      "/experiencias-jumbo/productos-importados/productos-alemanes\\",
+      "/experiencias-jumbo/productos-importados/productos-espanoles\\",
+      "/experiencias-jumbo/productos-importados/productos-americanos\\",
+      "/experiencias-jumbo/productos-importados/productos-asiaticos\\",
+      "/experiencias-jumbo/productos-importados/productos-italianos\\",
+      "/busca?fq=H%3A30883\\",
+      "/busca?fq=H%3A30710\\",
+      "/busca?fq=H%3A31124\\",
+      "/busca?fq=H%3A17747\\",
+      "/busca?fq=H%3A31787\\",
+      "/busca?fq=H%3A31566\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A28987\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/shampoo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/acondicionadores\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/tratamiento-capilar\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/coloracion-y-tintura-de-pelo\\",
+      "/belleza-y-cuidado-personal/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/busca?fq=H%3A29288\\",
+      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\",
+      "/busca?fq=H%3A30014\\"
+     ]
     },
     {
      "tipo": "web",
      "url": "https://www.jumbo.cl/busqueda?ft=leche%20entera",
      "status": 200,
-     "productos": 166,
+     "productos": 163,
      "ejemplos": [
       "Leche Colun Entera 1 L · $1080",
       "Leche Cuisine & Co Entera 1 L · $1200",
@@ -274,10 +344,10 @@
     }
    ],
    "sin": [
-    "leche-choc (79 resultados)",
+    "leche-choc (82 resultados)",
     "yog-fru (54 resultados)",
     "yog-gri (58 resultados)",
-    "yog-pro (78 resultados)",
+    "yog-pro (75 resultados)",
     "quesillo (64 resultados)",
     "queso-crema (52 resultados)",
     "huevos1 (58 resultados)",
@@ -285,15 +355,15 @@
     "fanta-zero (32 resultados)",
     "nectar-light (67 resultados)",
     "zuko (40 resultados)",
-    "agua2 (68 resultados)",
-    "te1 (99 resultados)",
-    "cafe2 (67 resultados)",
+    "agua2 (71 resultados)",
+    "te1 (96 resultados)",
+    "cafe2 (64 resultados)",
     "chocapic (36 resultados)",
     "fitness (66 resultados)",
-    "avena (66 resultados)",
-    "granola (74 resultados)",
+    "avena (60 resultados)",
+    "granola (68 resultados)",
     "merm (52 resultados)",
-    "merm-sa (62 resultados)",
+    "merm-sa (59 resultados)",
     "pan2 (44 resultados)",
     "pan-int (56 resultados)",
     "aceite2 (70 resultados)",
@@ -315,7 +385,7 @@
     "ramitas (32 resultados)",
     "mani (58 resultados)",
     "sahne (40 resultados)",
-    "barra (82 resultados)",
+    "barra (76 resultados)",
     "cloro (40 resultados)",
     "shampoo (58 resultados)",
     "desodorante (114 resultados)",
@@ -328,12 +398,12 @@
     "leche-evap (48 resultados)",
     "yog-nat (36 resultados)",
     "yog-pack (71 resultados)",
-    "postre-leche (58 resultados)",
+    "postre-leche (55 resultados)",
     "flan (40 resultados)",
-    "queso-chanco (72 resultados)",
+    "queso-chanco (68 resultados)",
     "queso-fresco (52 resultados)",
     "queso-crema2 (56 resultados)",
-    "margarina (55 resultados)"
+    "margarina (58 resultados)"
    ],
    "fuente": "web",
    "buscados": 344,
@@ -347,14 +417,74 @@
      "url": "https://www.santaisabel.cl/api/catalog_system/pub/products/search?ft=leche%20entera&_from=0&_to=29",
      "status": 404,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "SantaIsabel.cl | Supermercado de Chile",
+     "largo": 553008,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4jr8d\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.santaisabel.cl/_next/static/chunks/3h68ui0o0u1v",
+     "pistas": [
+      "/.well-known/ai-plugin.json\\",
+      "https://www.santaisabel.cl/busqueda?ft={search_term_string}\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20Santa%20Isabel.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56950131501\\",
+      "https://www.santaisabel.cl/api/catalog_system/pub/products/search\\",
+      "/busca?fq=H%3A7530\\",
+      "/busca?fq=H%3A9370\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A11554\\",
+      "/productos-importados\\",
+      "/productos-importados/productos-alemanes\\",
+      "/productos-importados/productos-espanoles\\",
+      "/productos-importados/productos-americanos\\",
+      "/productos-importados/productos-asiaticos\\",
+      "/productos-importados/productos-italianos\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/shampoo\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/acondicionadores\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/tratamiento-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/coloracion-tintura-de-pelo\\",
+      "/busca?fq=H%3A9373\\",
+      "/busca?fq=H%3A1420\\u0026nombre_promo=MENU-productos-cuisine-03012023\\"
+     ]
     },
     {
      "tipo": "vtex-is",
      "url": "https://www.santaisabel.cl/api/io/_v/api/intelligent-search/product_search/?query=leche%20entera&count=30&page=1&locale=es-CL",
      "status": 404,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "SantaIsabel.cl | Supermercado de Chile",
+     "largo": 553117,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4jr8d\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.santaisabel.cl/_next/static/chunks/3h68ui0o0u1v",
+     "pistas": [
+      "https://www.santaisabel.cl/busqueda?ft={search_term_string}\\",
+      "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20Santa%20Isabel.cl\\",
+      "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20avance\\",
+      "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
+      "https://api.whatsapp.com/send/?phone=56950131501\\",
+      "/.well-known/ai-plugin.json\\",
+      "/busca?fq=H%3A7530\\",
+      "/busca?fq=H%3A9370\\",
+      "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
+      "/busca?fq=H%3A11554\\",
+      "/productos-importados\\",
+      "/productos-importados/productos-alemanes\\",
+      "/productos-importados/productos-espanoles\\",
+      "/productos-importados/productos-americanos\\",
+      "/productos-importados/productos-asiaticos\\",
+      "/productos-importados/productos-italianos\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/shampoo\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/acondicionadores\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/tratamiento-capilar\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/fijadores-lacas-y-ceras\\",
+      "/cuidado-personal-y-bebe/cuidado-capilar/coloracion-tintura-de-pelo\\",
+      "/busca?fq=H%3A9373\\",
+      "/busca?fq=H%3A1420\\u0026nombre_promo=MENU-productos-cuisine-03012023\\",
+      "https://www.santaisabel.cl/api/io/_v/api/intelligent-search/product_search\\"
+     ]
     },
     {
      "tipo": "web",
@@ -392,7 +522,7 @@
      "id": "leche-sl",
      "rinde": "Colun · Leche Semidescremada Sin Lactosa · 1 L",
      "tienda": "Leche Sin Lactosa Colun Semidescremada 1 L",
-     "precio": 1400
+     "precio": 1300
     },
     {
      "id": "leche-desc",
@@ -416,13 +546,13 @@
      "id": "nectar",
      "rinde": "Watt's · Néctar Durazno · 1,5 L",
      "tienda": "Néctar Watt's Durazno 1.5 L",
-     "precio": 1980
+     "precio": 1575
     },
     {
      "id": "agua",
      "rinde": "Cachantun · Agua Mineral Sin Gas · 1,6 L",
      "tienda": "Agua Mineral Cachantun Sin Gas 1.6 L",
-     "precio": 1150
+     "precio": 845
     },
     {
      "id": "te2",
@@ -476,13 +606,13 @@
      "id": "fideos",
      "rinde": "Carozzi · Spaghetti N°5 · 400 g",
      "tienda": "Pasta Spaghetti N°5 Carozzi 400 g",
-     "precio": 1050
+     "precio": 750
     },
     {
      "id": "fideos2",
      "rinde": "Lucchetti · Spaghetti N°5 · 400 g",
      "tienda": "Spaghetti N°5 Lucchetti 400 g",
-     "precio": 990
+     "precio": 740
     },
     {
      "id": "fideos-int",
@@ -512,7 +642,7 @@
      "id": "salsa1",
      "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
      "tienda": "Salsa de Tomate Pomarola Italiana 200 g",
-     "precio": 840
+     "precio": 645
     },
     {
      "id": "salsa2",
@@ -685,7 +815,11 @@
      "url": "(API)",
      "status": 521,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "",
+     "largo": 19,
+     "inicio": "{\"StatusCode\":521} ",
+     "pistas": []
     },
     {
      "tipo": "web",
@@ -738,24 +872,6 @@
      "precio": 2570
     },
     {
-     "id": "huevos2",
-     "rinde": "Yemita · Huevos Blancos Extra · 12 un",
-     "tienda": "Huevos Tradicionales Extra Grande Blanco 12 Un",
-     "precio": 3550
-    },
-    {
-     "id": "coca",
-     "rinde": "Coca-Cola · Coca-Cola Original · 1,5 L",
-     "tienda": "Bebida Coca-Cola Original Botella Desechable 1.5 L",
-     "precio": 2250
-    },
-    {
-     "id": "coca-zero",
-     "rinde": "Coca-Cola · Coca-Cola Sin Azúcar · 1,5 L",
-     "tienda": "Bebida Coca-Cola Sin Azúcar Botella Desechable 1.5 L",
-     "precio": 2250
-    },
-    {
      "id": "nectar",
      "rinde": "Watt's · Néctar Durazno · 1,5 L",
      "tienda": "Néctar de Durazno Botella 1,5 L",
@@ -774,24 +890,6 @@
      "precio": 5390
     },
     {
-     "id": "manjar1",
-     "rinde": "Colun · Manjar · 400 g",
-     "tienda": "Manjar Tradicional Pote 400 g",
-     "precio": 2000
-    },
-    {
-     "id": "manjar2",
-     "rinde": "Nestlé · Manjar · 400 g",
-     "tienda": "Manjar Clásico Doypack 400 g",
-     "precio": 2750
-    },
-    {
-     "id": "pan",
-     "rinde": "Ideal · Pan de Molde Blanco · 560 g",
-     "tienda": "Pan De Molde Artesano Blanco 550 g",
-     "precio": 2950
-    },
-    {
      "id": "arroz",
      "rinde": "Tucapel · Arroz Grado 1 · 1 kg",
      "tienda": "Arroz Grado 2 Grano Largo Bolsa 1 kg",
@@ -802,36 +900,6 @@
      "rinde": "Miraflores · Arroz Grado 1 · 1 kg",
      "tienda": "Arroz Grado 2 Largo Ancho Bolsa 1 kg",
      "precio": 1750
-    },
-    {
-     "id": "arroz-int",
-     "rinde": "Tucapel · Arroz Integral · 1 kg",
-     "tienda": "Arroz Integral Grado 1 Grano Largo Bolsa 1 kg",
-     "precio": 1890
-    },
-    {
-     "id": "fideos",
-     "rinde": "Carozzi · Spaghetti N°5 · 400 g",
-     "tienda": "Fideo Pasta Spaghetti N°5 Bolsa. 400 g",
-     "precio": 1050
-    },
-    {
-     "id": "fideos2",
-     "rinde": "Lucchetti · Spaghetti N°5 · 400 g",
-     "tienda": "Fideo Pasta Spaghetti N°5 Bolsa 400 g",
-     "precio": 1030
-    },
-    {
-     "id": "fideos-int",
-     "rinde": "Carozzi · Spaghetti Integral · 400 g",
-     "tienda": "Fideo Pasta Integral Spaghetti N°5 Bolsa 400 g",
-     "precio": 1090
-    },
-    {
-     "id": "aceite",
-     "rinde": "Belmont · Aceite Vegetal · 1 L",
-     "tienda": "Aceite Vegetal Botella 1 L",
-     "precio": 2450
     },
     {
      "id": "oliva",
@@ -858,24 +926,6 @@
      "precio": 550
     },
     {
-     "id": "lentejas",
-     "rinde": "Banquete · Lentejas · 1 kg",
-     "tienda": "Lentejas 5mm Bolsa 1 Kg",
-     "precio": 2990
-    },
-    {
-     "id": "porotos",
-     "rinde": "Banquete · Porotos Hallados · 1 kg",
-     "tienda": "Poroto Hallado Bolsa 1 Kg",
-     "precio": 3590
-    },
-    {
-     "id": "salsa1",
-     "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
-     "tienda": "Salsa de Tomate Italiana Bolsa 200 g",
-     "precio": 850
-    },
-    {
      "id": "salsa2",
      "rinde": "Malloa · Salsa de Tomate Italiana · 200 g",
      "tienda": "Salsa de Tomate Italiana Pack 6 Un Bolsa 200 g",
@@ -886,36 +936,6 @@
      "rinde": "Hellmann's · Mayonesa · 372 g",
      "tienda": "Mayonesa Supreme Frasco 380 g",
      "precio": 3490
-    },
-    {
-     "id": "platano",
-     "rinde": "Granel · Plátano · 1 kg",
-     "tienda": "Leche Plátano Caja",
-     "precio": 520
-    },
-    {
-     "id": "manzana",
-     "rinde": "Granel · Manzana Roja · 1 kg",
-     "tienda": "Manzana Roja Importada Unidad",
-     "precio": 525
-    },
-    {
-     "id": "tomate",
-     "rinde": "Granel · Tomate · 1 kg",
-     "tienda": "Tomate Pera Unidad",
-     "precio": 326
-    },
-    {
-     "id": "papa",
-     "rinde": "Granel · Papa en Malla · 2 kg",
-     "tienda": "Papas Soufflé Malla 2 Kg",
-     "precio": 3490
-    },
-    {
-     "id": "palta",
-     "rinde": "Granel · Palta Hass · 1 kg",
-     "tienda": "Palta Hass Unidad",
-     "precio": 1241
     },
     {
      "id": "lechuga",
@@ -934,79 +954,211 @@
      "rinde": "Granel · Limón · 1 kg",
      "tienda": "Limón Unidad",
      "precio": 287
+    },
+    {
+     "id": "molida",
+     "rinde": "Granel · Carne Molida 4% Grasa · 500 g",
+     "tienda": "Carne Molida 10% Grasa 500 g",
+     "precio": 4750
+    },
+    {
+     "id": "papas",
+     "rinde": "Lay's · Papas Fritas Corte Americano · 180 g",
+     "tienda": "Papas Fritas lay's corte americano sabor cheddar 180 g",
+     "precio": 2350
+    },
+    {
+     "id": "papel",
+     "rinde": "Elite · Papel Higiénico Doble Hoja · 12 rollos",
+     "tienda": "Papel Higiénico Ultra Doble Hoja 50 m. 12 Un",
+     "precio": 12890
+    },
+    {
+     "id": "papel2",
+     "rinde": "Confort · Papel Higiénico Doble Hoja · 12 rollos",
+     "tienda": "Papel Higiénico Mega Doble Hoja 50 m. 12 Un",
+     "precio": 9990
+    },
+    {
+     "id": "toalla",
+     "rinde": "Elite · Toalla de Papel · 2 rollos",
+     "tienda": "ELITE PROFESSIONAL TOALLA PAPEL 1H 250MT 2UN ELITE PRO",
+     "precio": 9590
+    },
+    {
+     "id": "deter1",
+     "rinde": "Omo · Detergente Líquido · 3 L",
+     "tienda": "Detergente Líquido Ultra Power Doypack 3 L",
+     "precio": 7990
+    },
+    {
+     "id": "deter2",
+     "rinde": "Popeye · Detergente Líquido · 3 L",
+     "tienda": "Detergente Líquido Hipoalergénico Doypack 3 l",
+     "precio": 15690
+    },
+    {
+     "id": "lavaloza",
+     "rinde": "Quix · Lavaloza Limón · 750 ml",
+     "tienda": "Quix Lavaloza Limón Bio Activos 750ml Concentrado",
+     "precio": 4490
+    },
+    {
+     "id": "leche-cond",
+     "rinde": "Nestlé · Leche Condensada · 397 g",
+     "tienda": "Leche Condensada 48 Un De 397 Gr",
+     "precio": 88990
+    },
+    {
+     "id": "crema",
+     "rinde": "Colun · Crema de Leche · 200 ml",
+     "tienda": "Crema de leche Natural Para Batir Caja 200 ml",
+     "precio": 1390
+    },
+    {
+     "id": "crema2",
+     "rinde": "Nestlé · Crema de Leche · 157 g",
+     "tienda": "Pack 6 crema de leche Nestlé tarro 157g",
+     "precio": 6690
+    },
+    {
+     "id": "leche-cult",
+     "rinde": "Soprole · Leche Cultivada Frutilla · 1 L",
+     "tienda": "Leche Cultivada Sabor Frutilla Botella 1 L",
+     "precio": 2690
+    },
+    {
+     "id": "queso-mantecoso",
+     "rinde": "Soprole · Queso Mantecoso Laminado · 250 g",
+     "tienda": "Queso Mantecoso Quilque Laminado 250 g",
+     "precio": 4090
+    },
+    {
+     "id": "queso-rallado",
+     "rinde": "Soprole · Queso Parmesano Rallado · 40 g",
+     "tienda": "Queso Rallado Parmesano 40 g",
+     "precio": 1090
     }
    ],
    "sin": [
-    "leche-choc (40 resultados)",
-    "yog-fru (40 resultados)",
-    "yog-gri (40 resultados)",
-    "yog-pro (40 resultados)",
-    "queso-gauda (40 resultados)",
+    "leche-choc (0 resultados)",
+    "yog-fru (0 resultados)",
+    "yog-gri (0 resultados)",
+    "yog-pro (0 resultados)",
+    "queso-gauda (0 resultados)",
     "quesillo (8 resultados)",
     "queso-crema (40 resultados)",
     "huevos1 (39 resultados)",
-    "fanta (25 resultados)",
-    "fanta-zero (39 resultados)",
+    "huevos2 (0 resultados)",
+    "coca (0 resultados)",
+    "coca-zero (0 resultados)",
+    "fanta (0 resultados)",
+    "fanta-zero (0 resultados)",
     "nectar-light (40 resultados)",
     "zuko (40 resultados)",
     "agua2 (40 resultados)",
     "te1 (40 resultados)",
-    "cafe (40 resultados)",
-    "cafe2 (40 resultados)",
-    "chocapic (39 resultados)",
-    "fitness (40 resultados)",
-    "avena (40 resultados)",
+    "cafe (0 resultados)",
+    "cafe2 (0 resultados)",
+    "chocapic (0 resultados)",
+    "fitness (0 resultados)",
+    "avena (0 resultados)",
     "granola (40 resultados)",
-    "merm (22 resultados)",
-    "merm-sa (40 resultados)",
+    "merm (0 resultados)",
+    "merm-sa (0 resultados)",
+    "manjar1 (0 resultados)",
+    "manjar2 (0 resultados)",
+    "pan (0 resultados)",
     "pan2 (39 resultados)",
     "pan-int (39 resultados)",
+    "arroz-int (0 resultados)",
+    "fideos (0 resultados)",
+    "fideos2 (0 resultados)",
+    "fideos-int (0 resultados)",
+    "aceite (0 resultados)",
     "aceite2 (40 resultados)",
     "stevia (39 resultados)",
-    "atun1 (37 resultados)",
-    "atun2 (40 resultados)",
+    "atun1 (0 resultados)",
+    "atun2 (0 resultados)",
+    "lentejas (0 resultados)",
+    "porotos (0 resultados)",
+    "salsa1 (0 resultados)",
     "mayo-l (40 resultados)",
+    "platano (0 resultados)",
+    "manzana (0 resultados)",
+    "tomate (0 resultados)",
+    "papa (0 resultados)",
+    "palta (0 resultados)",
     "pollo1 (40 resultados)",
     "pollo2 (40 resultados)",
-    "molida (0 resultados)",
-    "vienesas (0 resultados)",
+    "vienesas (40 resultados)",
     "vienesas-pavo (0 resultados)",
     "jamon (0 resultados)",
     "triton (0 resultados)",
     "soda (0 resultados)",
     "arroz-gall (0 resultados)",
-    "papas (0 resultados)",
-    "ramitas (0 resultados)",
-    "mani (0 resultados)",
-    "sahne (0 resultados)"
+    "ramitas (32 resultados)",
+    "mani (40 resultados)",
+    "sahne (40 resultados)",
+    "super8 (37 resultados)"
    ],
    "fuente": "web",
-   "estado": "cortado tras 82 búsquedas (la página dejó de responder)",
-   "buscados": 82,
-   "conPrecio": 39
+   "estado": "cortado tras 130 búsquedas (la página dejó de responder)",
+   "buscados": 130,
+   "conPrecio": 34
   },
   "unimarc": {
    "pruebas": [
+    {
+     "tipo": "unimarc-bff",
+     "url": "(API)",
+     "status": 200,
+     "productos": 0,
+     "ejemplos": [],
+     "titulo": "",
+     "largo": 75135,
+     "inicio": "{\"resource\":\"30\",\"redirect\":\"\",\"operator\":\"and\",\"misspelled\":false,\"availableProducts\":[{\"price\":{\"price\":\"$1.190\",\"listPrice\":\"$1.350\",\"priceWithoutDiscount\":\"$1.350\",\"rewardValue\":0,\"availableQuantity\":10000,\"inOffer\":true,\"ppum\":\"$1.190 x litro\",\"ppumListPrice\":\"$1.350 x litro\",\"saving\":\"Ahorras ",
+     "pistas": [],
+     "muestra": "{\"resource\":\"30\",\"redirect\":\"\",\"operator\":\"and\",\"misspelled\":false,\"availableProducts\":[{\"price\":{\"price\":\"$1.190\",\"listPrice\":\"$1.350\",\"priceWithoutDiscount\":\"$1.350\",\"rewardValue\":0,\"availableQuantity\":10000,\"inOffer\":true,\"ppum\":\"$1.190 x litro\",\"ppumListPrice\":\"$1.350 x litro\",\"saving\":\"Ahorras $160\"},\"promotion\":{\"hasSavings\":false,\"name\":\"\",\"type\":\"\",\"descriptionCode\":0,\"descriptionMessage\":\"\",\"pri"
+    },
     {
      "tipo": "vtex",
      "url": "https://www.unimarc.cl/api/catalog_system/pub/products/search?ft=leche%20entera&_from=0&_to=29",
      "status": 500,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "",
+     "largo": 21,
+     "inicio": "Internal Server Error",
+     "pistas": []
     },
     {
      "tipo": "vtex-is",
      "url": "https://www.unimarc.cl/api/io/_v/api/intelligent-search/product_search/?query=leche%20entera&count=30&page=1&locale=es-CL",
      "status": 500,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "",
+     "largo": 21,
+     "inicio": "Internal Server Error",
+     "pistas": []
     },
     {
      "tipo": "web",
      "url": "https://www.unimarc.cl/search?q=leche%20entera",
      "status": 200,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "Unimarc",
+     "largo": 35139,
+     "inicio": "<!DOCTYPE html><html><head><head><meta charSet=\"utf-8\"/><title>Unimarc</title><meta name=\"description\" content=\"\"/><meta property=\"og:type\" content=\"website\"/><meta property=\"og:site_name\" content=\"Unimarc.cl\"/><meta name=\"robots\" content=\"noindex,follow\"/><meta property=\"og:title\" content=\"Unimarc\"",
+     "pistas": [
+      "https://www.unimarc.cl/search",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyDE9qovkvsvIAg-IOJY7_YPo4guCvSzjnE&amp;libraries=places,geometry",
+      "/_next/static/chunks/pages/search-6dfde3baec086f52.js",
+      "https://fonts.googleapis.com",
+      "/search"
+     ]
     }
    ],
    "muestras": [],
@@ -1020,14 +1172,26 @@
      "url": "https://www.tottus.cl/tottus-cl/buscar?Ntt=leche%20entera",
      "status": 403,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "Just a moment...",
+     "largo": 5896,
+     "inicio": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scal",
+     "pistas": [
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_tk=s.D7xD.jddYUqDSGXuuf_Jp50s4w2vdRizlScLV9JY8-1795493729-1.0.1.1-YXn5rHcEccypHEWkJSaLxNpfCokTYPVM16LY_yivBrQ",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_f_tk=s.D7xD.jddYUqDSGXuuf_Jp50s4w2vdRizlScLV9JY8-1795493729-1.0.1.1-YXn5rHcEccypHEWkJSaLxNpfCokTYPVM16LY_yivBrQ",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_rt_tk=s.D7xD.jddYUqDSGXuuf_Jp50s4w2vdRizlScLV9JY8-1795493729-1.0.1.1-YXn5rHcEccypHEWkJSaLxNpfCokTYPVM16LY_yivBrQ"
+     ]
     },
     {
      "tipo": "web",
      "url": "https://www.tottus.cl/buscar?Ntt=leche%20entera",
      "status": 526,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "",
+     "largo": 1102,
+     "inicio": "{\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-526/\",\"title\":\"Error 526: Invalid SSL certificate\",\"status\":526,\"detail\":\"The TLS certificate presented by the origin web server failed validation. The certificate is expired, self-signed",
+     "pistas": []
     }
    ],
    "muestras": [],
@@ -1363,14 +1527,33 @@
      "url": "https://salcobrand.cl/search_result?query=paracetamol",
      "status": 200,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "Salcobrand",
+     "largo": 26807,
+     "inicio": "<!DOCTYPE html><html lang=\"es\"><head data-hook=\"inside_head\"><meta charset=\"utf-8\" /><meta content=\"width=device-width, initial-scale=1.0, maximum-scale=1\" name=\"viewport\" /><meta content=\"telephone=no\" name=\"format-detection\" /><title>Salcobrand</title><!-- Inicio del aviso de consentimiento de coo",
+     "pistas": [
+      "https://salcobrand.cl/search_result",
+      "https://www.google.com/recaptcha/api.js",
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyCta4HWx0TZXTqOr9B26fCALLmbf-o8ML4&amp;libraries=places,marker&amp;region=CL",
+      "https://databot-api.herokuapp.com/dist_files/databot.js",
+      "/catalogos",
+      "/mi-salcobrand-productos",
+      "https://static.salcobrand.cl/packs/search_bar-ff1dc97598e259983d34.js",
+      "https://salcobrand.cl/products/daily-biotic-3-bx-bariatrico",
+      "https://static.salcobrand.cl/packs/search_result-1e680be496e9eec09370.js"
+     ],
+     "algolia": "ass=\"nav navbar-nav shop-menu shop-menu-btn\"><li class=\"mobile-menu\"><nav class=\"new-nav\" id=\"nav-menu\"></nav></li></ul></nav></div></div><div class=\"algolia__searchbar container__hidden-mobile\" id=\"algolia-search-bar\"></div><div class=\"icon-menu\"><ul class=\"navbar-nav navbar-right list-inline icons-list\"><li class=\"user-options hidden-lg hidden-md\"><span></span></li><li class=\"user-options hidden"
     },
     {
      "tipo": "web",
      "url": "https://salcobrand.cl/search?q=paracetamol",
      "status": 404,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "Página no encontrada",
+     "largo": 4467,
+     "inicio": "<!DOCTYPE html> <html> <head> <title>Página no encontrada</title> <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"> <style> body { color: #fff; text-align: center; font-family: arial, sans-serif; margin: 0; padding: 0; } header { ",
+     "pistas": []
     }
    ],
    "muestras": [],
@@ -1384,7 +1567,43 @@
      "url": "https://www.farmaciasahumada.cl/search?q=paracetamol",
      "status": 200,
      "productos": 0,
-     "ejemplos": []
+     "ejemplos": [],
+     "titulo": "\n        paracetamol | Farmacias Ahumada\n    ",
+     "largo": 934867,
+     "inicio": "<!DOCTYPE html> <html lang=\"\"> <head> <!--[if gt IE 9]><!--> <script>//common/scripts.isml</script> <script defer type=\"text/javascript\" src=\"/on/demandware.static/Sites-ahumada-cl-Site/-/default/v1795489338008/js/main.js\"></script> <script defer type=\"text/javascript\" src=\"/on/demandware.stati",
+     "pistas": [
+      "/on/demandware.static/Sites-ahumada-cl-Site/-/default/v1795489338008/js/search.js",
+      "https://www.farmaciasahumada.cl/search?q=paracetamol",
+      "https://www.google.com/recaptcha/api.js?render=explicit&amp;hl=es",
+      "/search?cgid=undefined",
+      "/search",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/SearchServices-GetSuggestions?q=",
+      "/dermocosmetica/capilar",
+      "/dermocosmetica/capilar/shampoo",
+      "/dermocosmetica/capilar/acondicionador",
+      "/dermocosmetica/capilar/tratamiento-capilar",
+      "https://www.farmaciasahumada.cl/productos-club-mi-bebe",
+      "/belleza/cuidado-capilar",
+      "/belleza/cuidado-capilar/shampoo",
+      "/belleza/cuidado-capilar/acondicionador",
+      "/belleza/cuidado-capilar/cremas-y-tratamientos",
+      "/belleza/cuidado-capilar/tinturas",
+      "/belleza/cuidado-capilar/aceite-capilar",
+      "/belleza/cuidado-capilar/styling",
+      "/higiene-y-cuidado-personal/cuidado-hombre/cuidado-capilar",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=abril-25",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=especial-analgesicos-cabri25",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=especial-antigripales-cabri25",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=especial-jarabes-cabri25",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=mailing-abril-mab",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=tapsin-mab25",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=url-abril",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=analgesicos-antigripales-ab25",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=campana-infantil-ab25",
+      "/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q=paracetamol&amp;cgid=ahumada"
+     ],
+     "muestra": "s-39823.html\"}]} </script> </head> <body> <div class=\"page\" data-action=\"Search-Show\" data-querystring=\"q=paracetamol\" > <header class=\"header-content\"> <a href=\"#maincontent\" class=\"skip\" aria-label=\"Skip to main content\">Skip to main content</a> <a href=\"#footercontent\" class=\"skip\" aria-label=\"Skip to footer content\">Skip to footer content</a> <div class=\"header-banner banner-promotion slide-up d-none position-relative\"> <div class=\"container p-0\"> <div class=\"d-flex justify-content-center\"> <div></div> <div class=\"content w-100 m-0\"> <div class=\"html-slot-container\"> <div id=\"header-banner-promotion\" class=\"header-promotion\"> <div class=\"pre-header-slider\"> <div class=\"pre-header-message\"> <span class=\"pre-header-text\">Despacho Gratis en compras sobre $39.990 📦</span> </div> </div> </div> <style> #header-banner-promotion { overflow-x: visible !important; } @media (max-width: 767px) { .close { font-size: 1.3rem !important; } } .header-banner .content { padding-top: 0.2125em !important; padding-bottom: "
     }
    ],
    "muestras": [],
