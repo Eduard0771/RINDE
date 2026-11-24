@@ -95,6 +95,10 @@ function coincide(pp, c) {
     if (mismos.length) { if (!mismos.some(x => near(x.v, pp.sz.v))) return -1; }
     else if (!(pp.granel && pp.sz.u === 'g' && !cs.some(x => x.u !== 'mg'))) return -1; // sin tamaño visible: no arriesgamos un precio equivocado
   }
+  if (pp.sz && pp.sz.u !== 'un' && !/pack|\bx\s*\d/.test(pp.foldAll)) {
+    const cuenta = cs.filter(x => x.u === 'un').some(x => x.v > 1);
+    if (cuenta || /\b(pack|six ?pack|display|caja de \d+)\b/.test(ft)) return -1;
+  }
   const extra = cw.filter(w => !tienePalabra(pp.ws.concat(words(pp.brand)), w)).length;
   return 10 - faltan * 2 - extra * 0.3;
 }
@@ -304,7 +308,9 @@ function algoliaFuente(base, pagina) {
         .filter(u => /pack|search|algolia|application|main|app/i.test(u)).slice(0, 12);
       const textos = [r.body];
       for (const u of scripts) { try { textos.push((await pide(u)).body); } catch {} }
+      st.snips = [];
       for (const t of textos) {
+        for (const m of t.matchAll(/algolia|sb_variant_|x-algolia|ALGOLIA/g)) if (st.snips.length < 8) st.snips.push(t.slice(Math.max(0, m.index - 200), m.index + 250).replace(/\s+/g, ' '));
         const a = t.match(/(?:applicationId|appId|app_id|ALGOLIA_APP(?:LICATION)?_ID|algoliaAppId)["']?\s*[:=]\s*["']([A-Z0-9]{10})["']/i);
         const k = t.match(/(?:searchApiKey|search_api_key|apiKey|api_key|ALGOLIA_(?:SEARCH_)?(?:API_)?KEY|algoliaApiKey|searchKey)["']?\s*[:=]\s*["']([a-f0-9]{32})["']/i);
         if (a && !st.app) st.app = a[1];
@@ -313,7 +319,15 @@ function algoliaFuente(base, pagina) {
         for (const m of t.matchAll(/["']((?:[a-z0-9]+_)*(?:product|products|variant|variants|sku|skus|catalog|search)(?:_[a-z0-9]+)*)["']/gi)) st.idx.push(m[1]);
         for (const m of t.matchAll(/indexName["']?\s*[:=]\s*["']([\w.-]{3,80})["']/g)) st.idx.unshift(m[1]);
       }
-      st.idx = [...new Set(st.idx)].slice(0, 12);
+      if (!st.app || !st.key) for (const t of textos) { // última opción: cualquier ID de 10 letras y clave de 32 caracteres cerca de "algolia"
+        for (const m of t.matchAll(/algolia/gi)) {
+          const w = t.slice(Math.max(0, m.index - 1500), m.index + 1500);
+          if (!st.app) st.app = (w.match(/["']([A-Z0-9]{10})["']/) || [])[1] || '';
+          if (!st.key) st.key = (w.match(/["']([a-f0-9]{32})["']/) || [])[1] || '';
+        }
+      }
+      for (const ix of [...st.idx]) if (/_$/.test(ix)) st.idx.unshift(ix + 'production', ix + 'prod', ix + 'cl');
+      st.idx = [...new Set(st.idx.filter(x => !/_$/.test(x)))].slice(0, 14);
       st.scripts = scripts.length;
       if (!st.app || !st.key) throw new Error(`no encontré la clave de Algolia (${scripts.length} scripts revisados)`);
       // elegir el índice que responde con productos
@@ -337,7 +351,8 @@ function algoliaFuente(base, pagina) {
   return f;
 }
 
-function decode(s) { return s.replace(/&quot;|&#34;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'); }
+const ENT = { aacute: 'á', eacute: 'é', iacute: 'í', oacute: 'ó', uacute: 'ú', ntilde: 'ñ', Aacute: 'Á', Eacute: 'É', Iacute: 'Í', Oacute: 'Ó', Uacute: 'Ú', Ntilde: 'Ñ', uuml: 'ü', nbsp: ' ', reg: '®', deg: '°' };
+function decode(s) { return s.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n)).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16))).replace(/&([a-z]+);/gi, (m, n) => ENT[n] || m).replace(/&quot;|&#34;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'); }
 function jsonDeHtml(html) {
   const out = [];
   const intenta = t => { try { out.push(JSON.parse(t)); return true; } catch { return false; } };
@@ -472,7 +487,7 @@ async function eligeFuente(id, cad, diag) {
         const k = b.search(/algolia|applicationId|appId/i);
         if (k >= 0) d.algolia = b.slice(Math.max(0, k - 150), k + 250).replace(/\s+/g, ' ');
       }
-    } catch (e) { d.error = String(e.message || e).slice(0, 200); if (f.st) d.algolia = { app: f.st.app, tieneClave: !!f.st.key, indices: f.st.idx, scripts: f.st.scripts }; }
+    } catch (e) { d.error = String(e.message || e).slice(0, 200); if (f.st) d.algolia = { app: f.st.app, tieneClave: !!f.st.key, indices: f.st.idx, scripts: f.st.scripts, trozos: f.st.snips }; }
     diag.pruebas.push(d);
     log(`  ${id} · ${f.tipo}: ${d.error ? 'error ' + d.error : `HTTP ${d.status}, ${d.productos} productos`}`);
     if (d.productos > 0) return f;
