@@ -312,7 +312,7 @@ const cruzVerdeApi = {
 const CADENAS = {
   jumbo: { tipo: 'super', fuentes: [vtex('https://www.jumbo.cl'), vtexIS('https://www.jumbo.cl'), web('https://www.jumbo.cl', '/busqueda?ft={q}'), web('https://www.jumbo.cl', '/search?q={q}')] },
   santaisabel: { tipo: 'super', fuentes: [vtex('https://www.santaisabel.cl'), vtexIS('https://www.santaisabel.cl'), web('https://www.santaisabel.cl', '/busqueda?ft={q}'), web('https://www.santaisabel.cl', '/search?q={q}')] },
-  lider: { tipo: 'super', fuentes: [liderBff, web('https://super.lider.cl', '/search?q={q}'), web('https://www.lider.cl', '/supermercado/search?query={q}')] },
+  lider: { tipo: 'super', pausa: 3500, fuentes: [liderBff, web('https://super.lider.cl', '/search?q={q}'), web('https://www.lider.cl', '/supermercado/search?query={q}')] },
   unimarc: { tipo: 'super', fuentes: [vtex('https://www.unimarc.cl'), vtexIS('https://www.unimarc.cl'), web('https://www.unimarc.cl', '/search?q={q}')] },
   tottus: { tipo: 'super', fuentes: [web('https://www.tottus.cl', '/tottus-cl/buscar?Ntt={q}'), web('https://www.tottus.cl', '/buscar?Ntt={q}')] },
   acuenta: { tipo: 'super', fuentes: [vtex('https://www.acuenta.cl'), web('https://www.acuenta.cl', '/search?q={q}')] },
@@ -361,6 +361,7 @@ async function recolectaCadena(id, cad, productos, diag) {
       items = r.items;
       fallos = r.status >= 400 ? fallos + 1 : 0;
     } catch (e) { fallos++; }
+    if (fallos >= 3 && fallos < 12) await sleep(20000); // la página pide calma: esperar y seguir
     if (fallos >= 12) { diag.estado = `cortado tras ${n} búsquedas (la página dejó de responder)`; break; }
     const ok = [];
     for (const c of items) { if (c.agotado) continue; const sc = coincide(p, c); if (sc >= 0) ok.push({ c, sc }); }
@@ -376,7 +377,7 @@ async function recolectaCadena(id, cad, productos, diag) {
       if (diag.muestras.length < 40) diag.muestras.push({ id: p.id, rinde: `${p.brand} · ${p.name} · ${p.size}`, tienda: mejor.name, precio: mejor.v });
     } else if (diag.sin.length < 60) diag.sin.push(`${p.id} (${items.length} resultados)`);
     if (n % 50 === 0) log(`  ${id}: ${n}/${todos.length} buscados, ${Object.keys(res).length} con precio`);
-    await sleep(PAUSA);
+    await sleep(cad.pausa || PAUSA);
   }
   diag.buscados = n; diag.conPrecio = Object.keys(res).length;
   diag.estado = diag.estado || 'ok';
