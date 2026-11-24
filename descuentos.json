@@ -1,6 +1,209 @@
 {
-  "actualizado": "2026-11-24",
-  "nota": "Descuentos de tarjetas verificados por el equipo en la página de beneficios de cada banco. days: 0=domingo, 1=lunes ... 6=sábado (vacío = todos los días). pct = % de descuento, tope y min en pesos. Las reglas vencidas (hasta) se ignoran solas. Copia el ejemplo dentro de reglas con datos reales.",
-  "ejemplo": {"card": "bestado", "chains": ["unimarc"], "days": [4], "pct": 15, "tope": 8000, "min": 0, "desde": "2026-12-01", "hasta": "2026-12-31", "fuente": "https://link-a-la-pagina-del-beneficio"},
-  "reglas": []
+ "actualizado": "2026-11-24",
+ "nota": "Descuentos de tarjetas verificados por el equipo en la página de beneficios de cada banco. days: 0=domingo, 1=lunes ... 6=sábado (vacío = todos los días). pct = % de descuento, tope y min en pesos. Las reglas vencidas (hasta) se ignoran solas. Copia el ejemplo dentro de reglas con datos reales.",
+ "reglas": [
+  {
+   "banco": "scotiabank",
+   "card": "scotia-deb",
+   "chains": [
+    "cruzverde"
+   ],
+   "days": [],
+   "pct": 25,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.scotiabankchile.cl/beneficios",
+   "texto": "Dcto. · En medicamentos y vitaminas. · CRUZVERDEAON25 · 25% Dcto. En medicamentos y vitaminas (Incluye multivitamínicos y minerales). Beneficio exclusivo para clientes Scotia que pertenezcan al Club Cruz Verde y paguen en locales físicos con sus Tarjetas Scoti",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "revisar": "no se detectaron los días",
+   "id": "07d074a216-scotia-deb"
+  },
+  {
+   "banco": "scotiabank",
+   "card": "scotia",
+   "chains": [
+    "cruzverde"
+   ],
+   "days": [],
+   "pct": 25,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.scotiabankchile.cl/beneficios",
+   "texto": "Dcto. · En medicamentos y vitaminas. · CRUZVERDEAON25 · 25% Dcto. En medicamentos y vitaminas (Incluye multivitamínicos y minerales). Beneficio exclusivo para clientes Scotia que pertenezcan al Club Cruz Verde y paguen en locales físicos con sus Tarjetas Scoti",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "revisar": "no se detectaron los días",
+   "id": "07d074a216-scotia"
+  },
+  {
+   "banco": "bancoestado",
+   "card": "bestado",
+   "chains": [
+    "simi"
+   ],
+   "days": [],
+   "pct": 30,
+   "tope": 24000,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.bancoestado.cl/content/bancoestado-public/cl/es/home/home/todosuma---bancoestado-personas/todos-beneficios/dr-simi---beneficios-bancoestado.html",
+   "texto": "Estado de Solicitud · Inicio · Beneficios BancoEstado · Farmacias del Dr. Simi · Usa tus Tarjetas BancoEstado y obtén: · Detalle · 30% de descuento en compras realizadas en Farmacias Dr. Simi, pagando con Tarjetas BancoEstado o Rutpay. Beneficio válido exclusi",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "revisar": "no se detectaron los días",
+   "id": "3f3d322f0e-bestado"
+  },
+  {
+   "banco": "bancoestado",
+   "card": "bestado",
+   "chains": [
+    "simi"
+   ],
+   "days": [
+    1
+   ],
+   "pct": 30,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.bancoestado.cl/content/bancoestado-public/cl/es/home/home/todosuma---bancoestado-personas/todos-beneficios/dr-simi---beneficios-bancoestado.html",
+   "texto": "Pagando con Tarjetas BancoEstado o Rutpay. · Pagando con Tarjetas BancoEstado o Rutpay. · Visitar Sitio · Promoción consiste en un 30% de descuento los días lunes 16, 23 y 30 de noviembre de 2026, pagando con Tarjetas de Débito, Crédito o Rutpay BancoEstado, d",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "id": "78e0ec4f57-bestado"
+  },
+  {
+   "banco": "bancoestado",
+   "card": "bestado-cr",
+   "chains": [
+    "simi"
+   ],
+   "days": [
+    1
+   ],
+   "pct": 30,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.bancoestado.cl/content/bancoestado-public/cl/es/home/home/todosuma---bancoestado-personas/todos-beneficios/dr-simi---beneficios-bancoestado.html",
+   "texto": "Pagando con Tarjetas BancoEstado o Rutpay. · Pagando con Tarjetas BancoEstado o Rutpay. · Visitar Sitio · Promoción consiste en un 30% de descuento los días lunes 16, 23 y 30 de noviembre de 2026, pagando con Tarjetas de Débito, Crédito o Rutpay BancoEstado, d",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "id": "78e0ec4f57-bestado-cr"
+  },
+  {
+   "banco": "bancoestado",
+   "card": "bestado",
+   "chains": [
+    "ahumada"
+   ],
+   "days": [
+    5
+   ],
+   "pct": 30,
+   "tope": 25000,
+   "min": 0,
+   "hasta": "2026-11-30",
+   "fuente": "https://www.bancoestado.cl/content/bancoestado-public/cl/es/home/home/todosuma---bancoestado-personas/todos-beneficios/farmacias-ahumada---beneficios-bancoestado.html",
+   "texto": "Estado de Solicitud · Inicio · Beneficios BancoEstado · Farmacias Ahumada · Usa tus Tarjetas BancoEstado y obtén: · Detalle · 30% de descuento en medicamentos, vitaminas, dermocosmética y productos de mundo bebé seleccionados, pagando con Tarjetas de Crédito o",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "id": "3bb5fb4d43-bestado"
+  },
+  {
+   "banco": "bancoestado",
+   "card": "bestado-cr",
+   "chains": [
+    "ahumada"
+   ],
+   "days": [
+    5
+   ],
+   "pct": 30,
+   "tope": 25000,
+   "min": 0,
+   "hasta": "2026-11-30",
+   "fuente": "https://www.bancoestado.cl/content/bancoestado-public/cl/es/home/home/todosuma---bancoestado-personas/todos-beneficios/farmacias-ahumada---beneficios-bancoestado.html",
+   "texto": "Estado de Solicitud · Inicio · Beneficios BancoEstado · Farmacias Ahumada · Usa tus Tarjetas BancoEstado y obtén: · Detalle · 30% de descuento en medicamentos, vitaminas, dermocosmética y productos de mundo bebé seleccionados, pagando con Tarjetas de Crédito o",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "id": "3bb5fb4d43-bestado-cr"
+  },
+  {
+   "banco": "cencosud",
+   "card": "cencosud",
+   "chains": [
+    "jumbo",
+    "cruzverde"
+   ],
+   "days": [],
+   "pct": 25,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.tarjetacencosud.cl/publico/beneficios/landing/cruz-verde",
+   "texto": "25% dcto en Farmacia Cruz Verde | Tarjeta Cencosud Scotiabank · Menú de Navegación Moderno y Accesible · -- · Tarjeta Cencosud Scotiabank · Seguros Cencosud Scotiabank · Jumbo · Paris",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "revisar": "no se detectaron los días",
+   "id": "ee83f8f917-cencosud"
+  },
+  {
+   "banco": "cencosud",
+   "card": "cencosud",
+   "chains": [
+    "jumbo"
+   ],
+   "days": [],
+   "pct": 30,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.tarjetacencosud.cl/publico/beneficios/landing/la-cava-jumbo",
+   "texto": "La Cava Jumbo: hasta 30% de descuento | Tarjeta Cencosud Scotiabank · Menú de Navegación Moderno y Accesible · -- · Tarjeta Cencosud Scotiabank · Seguros Cencosud Scotiabank · Jumbo · Paris",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "revisar": "no se detectaron los días; el % dice \"hasta\": confirmar el porcentaje real",
+   "id": "2015cf937e-cencosud"
+  },
+  {
+   "banco": "falabella",
+   "card": "falabella-deb",
+   "chains": [
+    "ahumada"
+   ],
+   "days": [],
+   "pct": 25,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.bancofalabella.cl/descuentos/detalle/farmacias-ahumada-medicamentos",
+   "texto": "Cerrar · Lo más buscado · Elite - Beneficios Regiones - Beneficios Restaurantes Antojos Mercado Viajes · Farmacias ahumada medicamentos · Farmacias ahumada medicamentos · 25% · Sin Tope · LU · MA · MI",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "revisar": "no se detectaron los días",
+   "id": "c69bbbbeae-falabella-deb"
+  },
+  {
+   "banco": "falabella",
+   "card": "cmr",
+   "chains": [
+    "ahumada"
+   ],
+   "days": [],
+   "pct": 25,
+   "tope": 0,
+   "min": 0,
+   "hasta": "",
+   "fuente": "https://www.bancofalabella.cl/descuentos/detalle/farmacias-ahumada-medicamentos",
+   "texto": "Cerrar · Lo más buscado · Elite - Beneficios Regiones - Beneficios Restaurantes Antojos Mercado Viajes · Farmacias ahumada medicamentos · Farmacias ahumada medicamentos · 25% · Sin Tope · LU · MA · MI",
+   "detectado": "2026-11-24",
+   "auto": true,
+   "revisar": "no se detectaron los días",
+   "id": "c69bbbbeae-cmr"
+  }
+ ]
 }
