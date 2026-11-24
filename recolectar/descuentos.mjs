@@ -13,7 +13,7 @@ const DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(DIR, '..');
 const OVERRIDE = process.env.RINDE_HOST_OVERRIDE || '';
 const PAUSA = +(process.env.RINDE_PAUSA_MS || 1200);
-const MAX_LINKS = +(process.env.RINDE_MAX_LINKS || 30);
+const MAX_LINKS = +(process.env.RINDE_MAX_LINKS || 40);
 const HOY = new Date().toISOString().slice(0, 10);
 const UA = 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36';
 const sleep = ms => new Promise(r => setTimeout(r, ms));
@@ -37,7 +37,7 @@ const BANCOS = {
   },
   santander: {
     nombre: 'Santander',
-    inicio: [1, 2, 3, 4, 5].map(n => `https://banco.santander.cl/beneficios/promociones?page=${n}`),
+    inicio: Array.from({ length: 20 }, (_, i) => `https://banco.santander.cl/beneficios/promociones?page=${i + 1}`),
     seguir: /\/beneficios\/promociones\/[a-z0-9-]+/i,
     tarjetas: { debito: ['santander-deb'], credito: ['santander'] },
   },
@@ -55,7 +55,7 @@ const BANCOS = {
   },
   bci: {
     nombre: 'Bci / Lider Bci',
-    inicio: ['https://www.bci.cl/beneficios', 'https://www.bci.cl/personas/beneficios'],
+    inicio: ['https://www.bci.cl/beneficios', 'https://www.bci.cl/beneficios/beneficios-bci'],
     seguir: /beneficio/i,
     tarjetas: { debito: ['bci-deb'], credito: ['bci-cr'] },
   },
@@ -235,13 +235,18 @@ async function leeBanco(id, B, diag) {
         .filter(x => /api|graphql|\.json|beneficio|promocion|descuento|contentful|strapi|cms|wp-json|algolia/i.test(x) && !/\.(png|jpe?g|svg|webp|gif|css|woff2?)(\?|$)/i.test(x)))].slice(0, 25);
     }
     if (B.inicio.includes(u)) {
-      const base = new URL(u);
-      for (const m of res.body.matchAll(/<a\b[^>]*href="([^"#]+)"[^>]*>([\s\S]{0,300}?)<\/a>/gi)) {
-        let href; try { href = new URL(decode(m[1]), u).href; } catch { continue; }
-        if (new URL(href).host !== base.host || vistos.has(href) || cola.includes(href)) continue;
-        const txt = fold(m[2].replace(/<[^>]+>/g, ' ') + ' ' + href);
-        if (B.seguir.test(href) && (/supermercado|farmacia|super |descuento/.test(txt) || CADENAS.some(([, re]) => re.test(txt)))) cola.push(href);
-      }
+      // Links a cada beneficio: de etiquetas <a> y también de textos JSON dentro de la página (sitios hechos con JavaScript)
+      const base = new URL(u), cands = new Map();
+      const mira = (raw, texto) => {
+        let href; try { href = new URL(decode(raw).replace(/\\\//g, '/').replace(/\\+$/, ''), u).href.split('#')[0]; } catch { return; }
+        if (new URL(href).host !== base.host || vistos.has(href) || cola.includes(href) || !B.seguir.test(href)) return;
+        const txt = fold(texto + ' ' + href).replace(/[-_/]+/g, ' ');
+        const p = CADENAS.some(([, re]) => re.test(txt)) ? 2 : /supermercado|farmacia/.test(txt) ? 1 : 0;
+        if (p) cands.set(href, Math.max(p, cands.get(href) || 0));
+      };
+      for (const m of res.body.matchAll(/<a\b[^>]*href="([^"#]+)"[^>]*>([\s\S]{0,300}?)<\/a>/gi)) mira(m[1], m[2].replace(/<[^>]+>/g, ' '));
+      for (const m of res.body.matchAll(/["'](\/[^"'\s<>]{3,200}|https?:\/\/[^"'\s<>]{6,200})["']/g)) mira(m[1], '');
+      [...cands.entries()].sort((a, b) => b[1] - a[1]).forEach(([h]) => cola.push(h));
     }
     await sleep(PAUSA);
   }
