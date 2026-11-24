@@ -1,0 +1,30 @@
+name: Precios reales
+
+on:
+  schedule:
+    - cron: '0 10 * * *'   # todos los días a las 07:00 de Chile (verano)
+  workflow_dispatch:        # botón "Run workflow" para correrlo a mano
+
+permissions:
+  contents: write
+
+concurrency: precios
+
+jobs:
+  recolectar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Buscar precios en la web de cada cadena
+        run: node recolectar/recolectar.mjs
+      - name: Guardar precios.json en el repositorio
+        run: |
+          git config user.name "rinde-precios"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add precios.json recolectar/diagnostico.json
+          git diff --cached --quiet || git commit -m "Precios del día $(date -u +%F)"
+          git push

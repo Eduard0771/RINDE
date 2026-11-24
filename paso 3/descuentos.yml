@@ -1,0 +1,35 @@
+name: Descuentos de bancos
+
+on:
+  schedule:
+    - cron: '0 11 * * 1'   # todos los lunes a las 08:00 de Chile (verano)
+  workflow_dispatch:        # botón "Run workflow" para correrlo a mano
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency: descuentos
+
+jobs:
+  leer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Leer páginas oficiales de beneficios de cada banco
+        run: node recolectar/descuentos.mjs
+      - name: Proponer cambios para aprobar
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: descuentos-semana
+          delete-branch: true
+          add-paths: |
+            descuentos.json
+            recolectar/descuentos-diagnostico.json
+          commit-message: Descuentos de bancos detectados esta semana
+          title: Descuentos de bancos para revisar
+          body-path: recolectar/descuentos-pr.md
