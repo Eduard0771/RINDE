@@ -151,7 +151,13 @@ function fechaDe(f) {
   }
   m = f.match(/(?:hasta|vence|al)\s+(?:el\s+)?(\d{1,2})[\/-](\d{1,2})[\/-](\d{2,4})/);
   if (m) { const y = m[3].length === 2 ? 2000 + +m[3] : +m[3]; return `${y}-${String(+m[2]).padStart(2, '0')}-${String(+m[1]).padStart(2, '0')}`; }
-  return '';
+  // sin "hasta": se usa la fecha más lejana que aparezca ("lunes 16, 23 y 30 de noviembre de 2026")
+  let max = '';
+  for (const x of f.matchAll(/(\d{1,2})\s+de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)(?:\s+(?:de|del)\s+(\d{4}))?/g)) {
+    const mes = MESES.indexOf(x[2]); let y = x[3] ? +x[3] : hoy.getFullYear(); if (!x[3] && mes < hoy.getMonth() - 6) y++;
+    const d = `${y}-${String(mes + 1).padStart(2, '0')}-${String(+x[1]).padStart(2, '0')}`; if (d > max) max = d;
+  }
+  return max;
 }
 function diasDe(f) {
   if (/todos los dias|todos los días|cualquier dia|7 dias/.test(f)) return [0, 1, 2, 3, 4, 5, 6];
@@ -162,6 +168,8 @@ function diasDe(f) {
     for (let k = a; ; k = (k + 1) % 7) { set.add(k); if (k === b) break; }
   }
   for (const [n, k] of DIAS) if (new RegExp(`\\b${n}(s|es)?\\b`).test(f)) set.add(k);
+  const AB = { lu: 1, ma: 2, mi: 3, ju: 4, vi: 5, sa: 6, do: 0 };
+  for (const seg of f.split(' · ')) { const t = seg.trim(); if (t in AB) set.add(AB[t]); }
   return [...set].sort();
 }
 function interpreta(bloque, banco, fuente) {
@@ -181,6 +189,10 @@ function interpreta(bloque, banco, fuente) {
     if (d < dist && d <= 2) { dist = d; pct = +m[1]; }
   });
   if (!pct) return null;
+  // cadenas: solo las que están cerca del % (no las del menú de la página)
+  const iPct = segs.findIndex(x => new RegExp(`(^|\\D)${pct}\\s?%`).test(x));
+  const cerca = CADENAS.filter(([, re]) => segs.some((x, i) => Math.abs(i - iPct) <= 3 && re.test(x.replace(/lider ?bci/g, '')))).map(([id]) => id);
+  if (cerca.length) chains.splice(0, chains.length, ...cerca);
   if (pct < 2 || pct > 60) return null;
   const tm = f.match(/tope[^$\d]{0,40}\$\s?([\d.]+)/) || f.match(/maximo de descuento[^$\d]{0,20}\$\s?([\d.]+)/);
   const mm = f.match(/compras? (?:minima|sobre|desde|superiores? a|mayores? a|igual o superior a)[^$\d]{0,25}\$\s?([\d.]+)/) || f.match(/monto minimo[^$\d]{0,25}\$\s?([\d.]+)/);
