@@ -313,7 +313,13 @@ const CADENAS = {
   jumbo: { tipo: 'super', fuentes: [vtex('https://www.jumbo.cl'), vtexIS('https://www.jumbo.cl'), web('https://www.jumbo.cl', '/busqueda?ft={q}'), web('https://www.jumbo.cl', '/search?q={q}')] },
   santaisabel: { tipo: 'super', fuentes: [vtex('https://www.santaisabel.cl'), vtexIS('https://www.santaisabel.cl'), web('https://www.santaisabel.cl', '/busqueda?ft={q}'), web('https://www.santaisabel.cl', '/search?q={q}')] },
   lider: { tipo: 'super', pausa: 3500, fuentes: [liderBff, web('https://super.lider.cl', '/search?q={q}'), web('https://www.lider.cl', '/supermercado/search?query={q}')] },
-  unimarc: { tipo: 'super', fuentes: [vtex('https://www.unimarc.cl'), vtexIS('https://www.unimarc.cl'), web('https://www.unimarc.cl', '/search?q={q}')] },
+  unimarc: { tipo: 'super', fuentes: [{
+      tipo: 'unimarc-bff', base: 'https://www.unimarc.cl',
+      pedir: q => pide('https://bff-unimarc-ecommerce.unimarc.cl/catalog/product/search', {
+        method: 'POST', headers: { 'content-type': 'application/json', origin: 'https://www.unimarc.cl', referer: 'https://www.unimarc.cl/', source: 'web', version: '1.0.0' },
+        body: JSON.stringify({ from: '0', orderBy: '', searching: decodeURIComponent(q), to: '39', userTriggered: true, promotionsOnly: false }),
+      }),
+    }, vtex('https://www.unimarc.cl'), vtexIS('https://www.unimarc.cl'), web('https://www.unimarc.cl', '/search?q={q}')] },
   tottus: { tipo: 'super', fuentes: [web('https://www.tottus.cl', '/tottus-cl/buscar?Ntt={q}'), web('https://www.tottus.cl', '/buscar?Ntt={q}')] },
   acuenta: { tipo: 'super', fuentes: [vtex('https://www.acuenta.cl'), web('https://www.acuenta.cl', '/search?q={q}')] },
   cruzverde: { tipo: 'farm', fuentes: [cruzVerdeApi, web('https://www.cruzverde.cl', '/search?q={q}')] },
@@ -325,8 +331,8 @@ const PRUEBA_Q = { super: 'leche entera', farm: 'paracetamol' };
 
 async function buscar(f, q) {
   const res = f.pedir ? await f.pedir(q) : await pide(f.url(q));
-  if (res.status >= 400) return { status: res.status, items: [] };
-  return { status: res.status, items: lee(res, f.base) };
+  if (res.status >= 400) return { status: res.status, items: [], body: res.body };
+  return { status: res.status, items: lee(res, f.base), body: res.body };
 }
 
 async function eligeFuente(id, cad, diag) {
@@ -336,6 +342,18 @@ async function eligeFuente(id, cad, diag) {
       if (f.preparar) await f.preparar();
       const r = await buscar(f, encodeURIComponent(PRUEBA_Q[cad.tipo]));
       d.status = r.status; d.productos = r.items.length; d.ejemplos = r.items.slice(0, 4).map(x => `${x.name} · $${x.v}`);
+      if (!r.items.length && r.body) { // pistas para ajustar esta cadena
+        const b = r.body;
+        d.titulo = (b.match(/<title[^>]*>([^<]{0,120})/i) || [])[1] || '';
+        d.largo = b.length;
+        d.inicio = b.slice(0, 300).replace(/\s+/g, ' ');
+        d.pistas = [...new Set([...b.matchAll(/["'(]((?:https?:)?\/\/[^"'()\s]{6,200}|\/[^"'()\s]{3,200})["')]/g)].map(m => m[1])
+          .filter(x => /api|bff|graphql|search|busca|catalog|product|algolia|\.json/i.test(x) && !/\.(png|jpe?g|svg|webp|gif|css|woff2?|ico)(\?|$)/i.test(x)))].slice(0, 30);
+        const i = b.search(/\$\s?\d{1,3}(\.\d{3})+/);
+        if (i >= 0) d.muestra = b.slice(Math.max(0, i - 900), i + 300).replace(/\s+/g, ' ');
+        const k = b.search(/algolia|applicationId|appId/i);
+        if (k >= 0) d.algolia = b.slice(Math.max(0, k - 150), k + 250).replace(/\s+/g, ' ');
+      }
     } catch (e) { d.error = String(e.message || e).slice(0, 160); }
     diag.pruebas.push(d);
     log(`  ${id} · ${f.tipo}: ${d.error ? 'error ' + d.error : `HTTP ${d.status}, ${d.productos} productos`}`);
