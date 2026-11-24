@@ -138,6 +138,8 @@ function bloquesTexto(lineas) {
 }
 
 /* ---------- interpretar un beneficio ---------- */
+const limpia = t => decode(String(t)).replace(/<[^>]*>/g, ' ').replace(/\\[rnt]/g, ' ').replace(/[\w:-]+="[^"]*"/g, ' ')
+  .replace(/["{}\[\]<>]+/g, ' ').replace(/(\s*·\s*)+/g, ' · ').replace(/\s+/g, ' ').trim();
 const num = s => +String(s).replace(/\./g, '').replace(/,\d+$/, '');
 function fechaDe(f) {
   const hoy = new Date();
@@ -163,7 +165,7 @@ function diasDe(f) {
   return [...set].sort();
 }
 function interpreta(bloque, banco, fuente) {
-  const f = fold(bloque);
+  const f = fold(limpia(bloque));
   const sinCard = f.replace(/lider ?bci/g, '');
   const chains = CADENAS.filter(([, re]) => re.test(sinCard)).map(([id]) => id);
   if (!chains.length || chains.length > 4) return null;
@@ -198,7 +200,7 @@ function interpreta(bloque, banco, fuente) {
   const r = {
     banco, card: null, cards, chains, days, pct,
     tope: tm ? num(tm[1]) : 0, min: mm ? num(mm[1]) : 0,
-    hasta, fuente, texto: bloque.replace(/\s+/g, ' ').slice(0, 260), detectado: HOY, auto: true,
+    hasta, fuente, texto: limpia(bloque).slice(0, 260), detectado: HOY, auto: true,
   };
   if (devolucion) r.tipo = 'devolución';
   if (soloOnline) r.soloOnline = true;
@@ -226,6 +228,12 @@ async function leeBanco(id, B, diag) {
     let n = 0;
     for (const b of bloques) { const r = interpreta(b.t, id, u); if (r && !reglas.has(r.id)) { if (b.debil) r.debil = true; reglas.set(r.id, r); n++; } }
     d.beneficios = n;
+    if (!n) { // pistas para ajustar: título, tamaño y direcciones de datos que usa la página
+      d.titulo = (res.body.match(/<title[^>]*>([^<]{0,120})/i) || [])[1] || '';
+      d.largo = res.body.length;
+      d.pistas = [...new Set([...res.body.matchAll(/["'(]((?:https?:)?\/\/[^"'()\s]{6,200}|\/[^"'()\s]{3,200})["')]/g)].map(m => m[1])
+        .filter(x => /api|graphql|\.json|beneficio|promocion|descuento|contentful|strapi|cms|wp-json|algolia/i.test(x) && !/\.(png|jpe?g|svg|webp|gif|css|woff2?)(\?|$)/i.test(x)))].slice(0, 25);
+    }
     if (B.inicio.includes(u)) {
       const base = new URL(u);
       for (const m of res.body.matchAll(/<a\b[^>]*href="([^"#]+)"[^>]*>([\s\S]{0,300}?)<\/a>/gi)) {
@@ -257,6 +265,26 @@ async function main() {
     console.log(`✔ ${B.nombre}: ${leidos.has(id) ? (nuevas[id] || []).length + ' beneficios en super/farmacia' : 'no se pudo leer'}`);
   }));
 
+  // Un mismo beneficio suele aparecer varias veces en la página (título, detalle, legal): se juntan en una sola regla
+  for (const id of Object.keys(nuevas)) {
+    const g = new Map();
+    for (const r of nuevas[id]) {
+      const k = [r.cards.join(), r.chains.join(), r.pct, r.fuente].join('|');
+      const a = g.get(k);
+      if (!a) { g.set(k, { ...r }); continue; }
+      if (!a.days.length && r.days.length) a.days = r.days;
+      a.tope = Math.max(a.tope, r.tope); a.min = Math.max(a.min, r.min);
+      if (!a.hasta && r.hasta) a.hasta = r.hasta;
+      if (r.soloOnline === undefined) delete a.soloOnline;
+      if (r.texto.length > a.texto.length && /\d\s?%/.test(r.texto)) a.texto = r.texto;
+    }
+    nuevas[id] = [...g.values()].map(r => {
+      const rev = String(r.revisar || '').split('; ').filter(x => x && !(x.includes('días') && r.days.length));
+      if (rev.length) r.revisar = rev.join('; '); else delete r.revisar;
+      r.id = crypto.createHash('sha1').update([r.banco, r.cards.join(), r.chains.join(), r.pct, r.fuente].join('|')).digest('hex').slice(0, 10);
+      return r;
+    });
+  }
   // Expandir a una regla por tarjeta (la app usa una tarjeta por regla)
   const detectadas = [];
   for (const id of Object.keys(nuevas)) for (const r of nuevas[id]) for (const c of r.cards) {
