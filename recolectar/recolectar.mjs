@@ -126,6 +126,8 @@ function preciosDe(o, depth = 0, acc = { now: [], list: [], card: {} }) {
     if (v && typeof v === 'object' && !Array.isArray(v)) { preciosDe(v, depth + 1, acc); continue; }
     if (Array.isArray(v) && v.some(x => x && typeof x === 'object')) { preciosDe(v, depth + 1, acc); continue; }
     if (!/price|precio/i.test(k)) continue;
+    if (/ppum|perunit|unitprice|pricePerUnit|porUnidad/i.test(k)) continue;
+    if (typeof v === 'string' && /\bx\s*(kg|kilo|litro|lt|l|un|unidad|100)/i.test(v)) continue;
     const etiqueta = tipo + ' ' + k;
     const val = clp(v);
     if (!okPrecio(val)) continue;
@@ -139,7 +141,7 @@ function preciosDe(o, depth = 0, acc = { now: [], list: [], card: {} }) {
 }
 
 const NAMEK = ['productName', 'displayName', 'nameComplete', 'name', 'title', 'productTitle', 'nombre'];
-const IMGK = /^(image|imageUrl|images|defaultImage|mediaUrls|thumbnail|img|imagen|imagenes|picture|photo|mainImage)$/i;
+const IMGK = /^(image|imageUrl|image_url|imageURL|thumbnail_url|photo_url|img_url|images|defaultImage|mediaUrls|thumbnail|img|imagen|imagenes|picture|photo|mainImage)$/i;
 const EANK = /^(ean|ean13|gtin|gtin13|gtin14|gtin8|barcode|upc|codigoBarra|codigo_barra|ean_code)$/i;
 const URLK = /^(url|link|href|productUrl|pdpUrl|linkText)$/i;
 const BRANDK = /^(brand|marca|brandName)$/i;
@@ -229,6 +231,112 @@ function leeVtex(arr, base) {
   return out;
 }
 
+// Unimarc (BFF): {availableProducts:[{price:{price:"$1.190",listPrice:"$1.350"}, item:{...}}]}
+function leeUnimarc(j, base) {
+  const out = [];
+  for (const p of j.availableProducts || []) {
+    if (!p || typeof p !== 'object') continue;
+    const pr = p.price || {};
+    const v = clp(pr.price);
+    if (!okPrecio(v)) continue;
+    const l = clp(pr.listPrice || pr.priceWithoutDiscount);
+    // los datos del producto pueden venir en p.item, p.product o en p mismo
+    const it = [p.item, p.product, p.sku, p].find(x => x && typeof x === 'object' && (x.nameComplete || x.name || x.productName || x.description)) || p;
+    const name = it.nameComplete || it.productName || it.name || it.description || '';
+    if (!name) continue;
+    const eanRaw = it.ean || it.ean13 || buscaClave(it, EANK);
+    let img = primerTexto(it.images || it.image || it.imageUrl || buscaClave(it, IMGK));
+    if (img && img.startsWith('//')) img = 'https:' + img;
+    let url = it.detailUrl || it.slug || it.linkText || it.url || '';
+    if (url && !/^https?:/.test(url)) url = url.startsWith('/') ? base + url : `${base}/product/${url}`;
+    out.push({
+      name, brand: primerTexto(it.brand || it.brandName || ''), v, l: l && l > v ? l : null, card: {},
+      ean: eanRaw != null && /^\d{8,14}$/.test(String(eanRaw).trim()) ? String(eanRaw).trim() : null,
+      img: /^https?:\/\//.test(img) ? vtexImg(img) : '', url,
+      extra: [it.netContent, it.netContentLevelSmall, it.measurementUnit && it.unitMultiplier ? `${it.unitMultiplier} ${it.measurementUnit}` : ''].filter(Boolean).join(' '),
+      agotado: pr.availableQuantity === 0,
+    });
+  }
+  return out;
+}
+
+// Salesforce Commerce Cloud (Farmacias Ahumada): tarjetas <div class="product" data-pid="..."> en el HTML
+function txt(h) { return decode((h || '').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim(); }
+function leeSFCC(html, base) {
+  const out = [];
+  const partes = html.split(/<div[^>]+class="[^"]*\bproduct\b[^"]*"[^>]*data-pid=|<div[^>]+data-pid=[^>]+class="[^"]*\bproduct\b/i).slice(1);
+  for (const t0 of partes.slice(0, 60)) {
+    const t = t0.slice(0, 12000);
+    // datos de analítica que suelen venir en un atributo JSON
+    let g = null;
+    const gm = t.match(/data-(?:gtm[\w-]*|product[\w-]*|analytics[\w-]*|impression[\w-]*)=(?:'([^']{20,})'|"([^"]{20,})")/i);
+    if (gm) { try { g = JSON.parse(decode(gm[1] || gm[2])); if (Array.isArray(g)) g = g[0]; } catch { g = null; } }
+    const name = txt((t.match(/class="[^"]*(?:pdp-link|product-name|tile-name|product-tile__name)[^"]*"[^>]*>([\s\S]{0,400}?)<\/(?:a|div|h\d|p|span)>/i) || [])[1])
+      || (g && (g.name || g.item_name)) || decode((t.match(/<img[^>]+alt="([^"]{3,200})"/i) || [])[1] || '');
+    if (!name) continue;
+    const ventas = t.match(/class="[^"]*\bsales\b[^"]*"[\s\S]{0,300}?content="([\d.]+)"/i) || t.match(/class="[^"]*\bvalue\b[^"]*"[^>]*content="([\d.]+)"/i);
+    let v = ventas ? Math.round(parseFloat(ventas[1])) : null;
+    if (!okPrecio(v) && g) v = clp(g.price || g.item_price);
+    if (!okPrecio(v)) { const m = txt(t.match(/class="[^"]*\bsales\b[^"]*"[^>]*>([\s\S]{0,200}?)<\/span>/i)?.[1]); v = clp(m); }
+    if (!okPrecio(v)) continue;
+    const lista = t.match(/class="[^"]*(?:strike-through|\blist\b)[^"]*"[\s\S]{0,300}?content="([\d.]+)"/i);
+    const l = lista ? Math.round(parseFloat(lista[1])) : null;
+    let img = (t.match(/<img[^>]+(?:data-src|src)="([^"]+\.(?:jpe?g|png|webp)[^"]*)"/i) || [])[1] || '';
+    img = decode(img); if (img.startsWith('//')) img = 'https:' + img; else if (img.startsWith('/')) img = base + img;
+    let url = decode((t.match(/<a[^>]+href="([^"]+\.html[^"]*)"/i) || t.match(/<a[^>]+href="(\/[^"#]{4,})"/i) || [])[1] || '');
+    if (url.startsWith('/')) url = base + url;
+    const brand = txt((t.match(/class="[^"]*(?:brand)[^"]*"[^>]*>([\s\S]{0,200}?)<\/(?:a|div|span|p)>/i) || [])[1]) || (g && (g.brand || g.item_brand)) || '';
+    out.push({ name, brand, v, l: l && l > v ? l : null, card: {}, ean: null, img, url, extra: '', agotado: false });
+  }
+  return out;
+}
+
+// Algolia (Salcobrand): la clave pública de búsqueda está en el JavaScript de la página
+function algoliaFuente(base, pagina) {
+  const st = { app: '', key: '', idx: [], cual: '' };
+  const f = {
+    tipo: 'algolia', base, st,
+    async preparar() {
+      if (st.app) return;
+      const r = await pide(base + pagina);
+      const scripts = [...new Set([...r.body.matchAll(/src="([^"]+\.js[^"]*)"/g)].map(m => m[1]))]
+        .map(u => u.startsWith('//') ? 'https:' + u : u.startsWith('/') ? base + u : u)
+        .filter(u => /pack|search|algolia|application|main|app/i.test(u)).slice(0, 12);
+      const textos = [r.body];
+      for (const u of scripts) { try { textos.push((await pide(u)).body); } catch {} }
+      for (const t of textos) {
+        const a = t.match(/(?:applicationId|appId|app_id|ALGOLIA_APP(?:LICATION)?_ID|algoliaAppId)["']?\s*[:=]\s*["']([A-Z0-9]{10})["']/i);
+        const k = t.match(/(?:searchApiKey|search_api_key|apiKey|api_key|ALGOLIA_(?:SEARCH_)?(?:API_)?KEY|algoliaApiKey|searchKey)["']?\s*[:=]\s*["']([a-f0-9]{32})["']/i);
+        if (a && !st.app) st.app = a[1];
+        if (k && !st.key) st.key = k[1];
+        if (!st.app) { const m = t.match(/algoliasearch\(\s*["']([A-Z0-9]{10})["']\s*,\s*["']([a-f0-9]{32})["']/i); if (m) { st.app = m[1]; st.key = m[2]; } }
+        for (const m of t.matchAll(/["']((?:[a-z0-9]+_)*(?:product|products|variant|variants|sku|skus|catalog|search)(?:_[a-z0-9]+)*)["']/gi)) st.idx.push(m[1]);
+        for (const m of t.matchAll(/indexName["']?\s*[:=]\s*["']([\w.-]{3,80})["']/g)) st.idx.unshift(m[1]);
+      }
+      st.idx = [...new Set(st.idx)].slice(0, 12);
+      st.scripts = scripts.length;
+      if (!st.app || !st.key) throw new Error(`no encontré la clave de Algolia (${scripts.length} scripts revisados)`);
+      // elegir el índice que responde con productos
+      for (const ix of st.idx) {
+        try {
+          const rr = await this.consulta(ix, PRUEBA_Q.farm);
+          if (rr.status < 400 && /"hits":\[\{/.test(rr.body)) { st.cual = ix; break; }
+        } catch {}
+      }
+      if (!st.cual) throw new Error(`Algolia ${st.app}: ningún índice respondió (${st.idx.join(', ')})`);
+    },
+    consulta(ix, q) {
+      return pide(`https://${st.app.toLowerCase()}-dsn.algolia.net/1/indexes/${encodeURIComponent(ix)}/query`, {
+        method: 'POST',
+        headers: { 'x-algolia-application-id': st.app, 'x-algolia-api-key': st.key, 'content-type': 'application/json', origin: base, referer: base + '/' },
+        body: JSON.stringify({ query: q, hitsPerPage: 30 }),
+      });
+    },
+    pedir(q) { return this.consulta(st.cual, decodeURIComponent(q)); },
+  };
+  return f;
+}
+
 function decode(s) { return s.replace(/&quot;|&#34;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'); }
 function jsonDeHtml(html) {
   const out = [];
@@ -273,8 +381,11 @@ function lee(res, base) {
     let j; try { j = JSON.parse(b); } catch { return []; }
     if (Array.isArray(j) && j.length && j[0] && Array.isArray(j[0].items)) return leeVtex(j, base);
     if (j && Array.isArray(j.products) && j.products[0] && Array.isArray(j.products[0].items)) return leeVtex(j.products, base);
+    if (j && Array.isArray(j.availableProducts)) { const u = leeUnimarc(j, base); if (u.length) return u; }
+    if (j && Array.isArray(j.hits)) for (const h of j.hits) if (h && h.objectID && !h.url && (h.slug || h.handle)) h.url = `${base}/products/${h.slug || h.handle}`;
     return escanea(j);
   }
+  if (/data-pid=/.test(res.body)) { const sf = leeSFCC(res.body, base); if (sf.length) return sf; }
   const blobs = jsonDeHtml(res.body);
   const out = [];
   for (const j of blobs) {
@@ -312,7 +423,7 @@ const cruzVerdeApi = {
 const CADENAS = {
   jumbo: { tipo: 'super', fuentes: [vtex('https://www.jumbo.cl'), vtexIS('https://www.jumbo.cl'), web('https://www.jumbo.cl', '/busqueda?ft={q}'), web('https://www.jumbo.cl', '/search?q={q}')] },
   santaisabel: { tipo: 'super', fuentes: [vtex('https://www.santaisabel.cl'), vtexIS('https://www.santaisabel.cl'), web('https://www.santaisabel.cl', '/busqueda?ft={q}'), web('https://www.santaisabel.cl', '/search?q={q}')] },
-  lider: { tipo: 'super', pausa: 3500, fuentes: [liderBff, web('https://super.lider.cl', '/search?q={q}'), web('https://www.lider.cl', '/supermercado/search?query={q}')] },
+  lider: { tipo: 'super', pausa: 5000, descanso: 120000, fuentes: [liderBff, web('https://super.lider.cl', '/search?q={q}'), web('https://www.lider.cl', '/supermercado/search?query={q}')] },
   unimarc: { tipo: 'super', fuentes: [{
       tipo: 'unimarc-bff', base: 'https://www.unimarc.cl',
       pedir: q => pide('https://bff-unimarc-ecommerce.unimarc.cl/catalog/product/search', {
@@ -323,8 +434,10 @@ const CADENAS = {
   tottus: { tipo: 'super', fuentes: [web('https://www.tottus.cl', '/tottus-cl/buscar?Ntt={q}'), web('https://www.tottus.cl', '/buscar?Ntt={q}')] },
   acuenta: { tipo: 'super', fuentes: [vtex('https://www.acuenta.cl'), web('https://www.acuenta.cl', '/search?q={q}')] },
   cruzverde: { tipo: 'farm', fuentes: [cruzVerdeApi, web('https://www.cruzverde.cl', '/search?q={q}')] },
-  salcobrand: { tipo: 'farm', fuentes: [vtex('https://salcobrand.cl'), web('https://salcobrand.cl', '/search_result?query={q}'), web('https://salcobrand.cl', '/search?q={q}')] },
-  ahumada: { tipo: 'farm', fuentes: [web('https://www.farmaciasahumada.cl', '/search?q={q}')] },
+  salcobrand: { tipo: 'farm', fuentes: [algoliaFuente('https://salcobrand.cl', '/search_result?query=paracetamol'), web('https://salcobrand.cl', '/search_result?query={q}'), web('https://salcobrand.cl', '/search?q={q}')] },
+  ahumada: { tipo: 'farm', fuentes: [
+    web('https://www.farmaciasahumada.cl', '/on/demandware.store/Sites-ahumada-cl-Site/default/Search-ShowAjax?q={q}'),
+    web('https://www.farmaciasahumada.cl', '/search?q={q}')] },
   simi: { tipo: 'farm', fuentes: [vtex('https://www.drsimi.cl'), vtexIS('https://www.drsimi.cl'), web('https://www.drsimi.cl', '/{q}?_q={q}&map=ft')] },
 };
 const PRUEBA_Q = { super: 'leche entera', farm: 'paracetamol' };
@@ -342,6 +455,9 @@ async function eligeFuente(id, cad, diag) {
       if (f.preparar) await f.preparar();
       const r = await buscar(f, encodeURIComponent(PRUEBA_Q[cad.tipo]));
       d.status = r.status; d.productos = r.items.length; d.ejemplos = r.items.slice(0, 4).map(x => `${x.name} · $${x.v}`);
+      if (f.st) d.algolia = { app: f.st.app, indice: f.st.cual, indices: f.st.idx, scripts: f.st.scripts };
+      if (r.items.length) d.ejemplo = r.items[0];
+      if (r.body && /availableProducts/.test(r.body)) { try { d.unimarcItem = JSON.stringify(JSON.parse(r.body).availableProducts[0]).slice(0, 3000); } catch {} }
       if (!r.items.length && r.body) { // pistas para ajustar esta cadena
         const b = r.body;
         d.titulo = (b.match(/<title[^>]*>([^<]{0,120})/i) || [])[1] || '';
@@ -351,10 +467,12 @@ async function eligeFuente(id, cad, diag) {
           .filter(x => /api|bff|graphql|search|busca|catalog|product|algolia|\.json/i.test(x) && !/\.(png|jpe?g|svg|webp|gif|css|woff2?|ico)(\?|$)/i.test(x)))].slice(0, 30);
         const i = b.search(/\$\s?\d{1,3}(\.\d{3})+/);
         if (i >= 0) d.muestra = b.slice(Math.max(0, i - 900), i + 300).replace(/\s+/g, ' ');
+        const pidI = b.search(/data-pid=/);
+        if (pidI >= 0) d.tarjeta = b.slice(pidI, pidI + 2500).replace(/\s+/g, ' ');
         const k = b.search(/algolia|applicationId|appId/i);
         if (k >= 0) d.algolia = b.slice(Math.max(0, k - 150), k + 250).replace(/\s+/g, ' ');
       }
-    } catch (e) { d.error = String(e.message || e).slice(0, 160); }
+    } catch (e) { d.error = String(e.message || e).slice(0, 200); if (f.st) d.algolia = { app: f.st.app, tieneClave: !!f.st.key, indices: f.st.idx, scripts: f.st.scripts }; }
     diag.pruebas.push(d);
     log(`  ${id} · ${f.tipo}: ${d.error ? 'error ' + d.error : `HTTP ${d.status}, ${d.productos} productos`}`);
     if (d.productos > 0) return f;
@@ -379,7 +497,8 @@ async function recolectaCadena(id, cad, productos, diag) {
       items = r.items;
       fallos = r.status >= 400 ? fallos + 1 : 0;
     } catch (e) { fallos++; }
-    if (fallos >= 3 && fallos < 12) await sleep(20000); // la página pide calma: esperar y seguir
+    if (fallos >= 3 && fallos < 12) await sleep(cad.descanso || 20000); // la página pide calma: esperar y seguir
+    if (cad.descanso && n % 60 === 0) await sleep(cad.descanso); // cadenas sensibles: descanso cada 60 búsquedas
     if (fallos >= 12) { diag.estado = `cortado tras ${n} búsquedas (la página dejó de responder)`; break; }
     const ok = [];
     for (const c of items) { if (c.agotado) continue; const sc = coincide(p, c); if (sc >= 0) ok.push({ c, sc }); }
@@ -422,6 +541,16 @@ async function main() {
   const limite = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
   const out = { v: 1, actualizado: new Date().toISOString(), cadenas: {}, p: {} };
   const pon = (pid, cad, e) => { (out.p[pid] = out.p[pid] || { c: {} }).c[cad] = e; };
+  const conserva = (id, saltar) => {
+    let n = 0;
+    for (const [pid, x] of Object.entries((viejo && viejo.p) || {})) if (x.c && x.c[id] && x.c[id].d >= limite && !(saltar && saltar[pid])) {
+      pon(pid, id, x.c[id]); n++;
+      const pp = out.p[pid];
+      if (x.e) pp.e = [...new Set([...(pp.e || []), ...x.e])];
+      if (x.i && !pp.i) pp.i = x.i;
+    }
+    return n;
+  };
   for (const id of Object.keys(CADENAS)) {
     const r = resultados[id];
     if (r && Object.keys(r).length) {
@@ -436,6 +565,9 @@ async function main() {
         if (c.ean) pp.e = [...new Set([...(pp.e || []), c.ean])];
         if (c.img && !pp.i) pp.i = c.img;
       }
+      const extra = conserva(id, r);
+      out.cadenas[id].n += extra;
+      if (extra) out.cadenas[id].conservados = extra;
     } else if (viejo && viejo.cadenas && viejo.cadenas[id] && viejo.cadenas[id].fecha >= limite) {
       out.cadenas[id] = { ...viejo.cadenas[id], conservado: true };
       for (const [pid, x] of Object.entries(viejo.p || {})) if (x.c && x.c[id] && x.c[id].d >= limite) {
