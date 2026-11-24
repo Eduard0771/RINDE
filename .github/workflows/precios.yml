@@ -3,7 +3,12 @@ name: Precios reales
 on:
   schedule:
     - cron: '0 10 * * *'   # todos los días a las 07:00 de Chile (verano)
-  workflow_dispatch:        # botón "Run workflow" para correrlo a mano
+  workflow_dispatch:        # botón "Ejecutar flujo de trabajo" para correrlo a mano
+    inputs:
+      cadenas:
+        description: 'Prueba rápida solo de estas cadenas (ej: unimarc,tottus). Vacío = todas.'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -20,7 +25,14 @@ jobs:
         with:
           node-version: 20
       - name: Buscar precios en la web de cada cadena
-        run: node recolectar/recolectar.mjs
+        env:
+          CADENAS: ${{ inputs.cadenas }}
+        run: |
+          if [ -n "$CADENAS" ]; then
+            node recolectar/recolectar.mjs --prueba "--cadenas=$CADENAS"
+          else
+            node recolectar/recolectar.mjs
+          fi
       - name: Guardar precios.json en el repositorio
         run: |
           git config user.name "rinde-precios"
