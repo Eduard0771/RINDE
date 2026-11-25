@@ -1,5 +1,5 @@
 {
- "fecha": "2026-11-24T22:01:51.688Z",
+ "fecha": "2026-11-25T21:17:54.129Z",
  "prueba": false,
  "cadenas": {
   "jumbo": {
@@ -11,17 +11,16 @@
      "productos": 0,
      "ejemplos": [],
      "titulo": "Jumbo.cl | Supermercado de Chile",
-     "largo": 757445,
-     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4a6vi\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
+     "largo": 757561,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwvjvpkg\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
      "pistas": [
       "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
+      "/.well-known/ai-plugin.json\\",
       "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
       "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
       "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
       "https://api.whatsapp.com/send/?phone=56941540961\\",
       "https://be-reg-groceries-bff-jumbo.*\\",
-      "/.well-known/ai-plugin.json\\",
-      "https://www.jumbo.cl/api/catalog_system/pub/products/search\\",
       "/experiencias-jumbo/productos-importados\\",
       "/experiencias-jumbo/productos-importados/productos-alemanes\\",
       "/experiencias-jumbo/productos-importados/productos-espanoles\\",
@@ -43,7 +42,8 @@
       "/belleza-y-cuidado-personal/cuidado-capilar/coloracion-y-tintura-de-pelo\\",
       "/belleza-y-cuidado-personal/cuidado-capilar/fijadores-lacas-y-ceras\\",
       "/busca?fq=H%3A29288\\",
-      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\"
+      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\",
+      "/busca?fq=H%3A30014\\"
      ]
     },
     {
@@ -53,17 +53,16 @@
      "productos": 0,
      "ejemplos": [],
      "titulo": "Jumbo.cl | Supermercado de Chile",
-     "largo": 757537,
-     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4a6vi\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
+     "largo": 757653,
+     "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwvjvpkg\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
      "pistas": [
-      "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
       "/.well-known/ai-plugin.json\\",
+      "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
       "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
       "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
       "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
       "https://api.whatsapp.com/send/?phone=56941540961\\",
       "https://be-reg-groceries-bff-jumbo.*\\",
-      "https://www.jumbo.cl/api/io/_v/api/intelligent-search/product_search\\",
       "/experiencias-jumbo/productos-importados\\",
       "/experiencias-jumbo/productos-importados/productos-alemanes\\",
       "/experiencias-jumbo/productos-importados/productos-espanoles\\",
@@ -85,7 +84,8 @@
       "/belleza-y-cuidado-personal/cuidado-capilar/coloracion-y-tintura-de-pelo\\",
       "/belleza-y-cuidado-personal/cuidado-capilar/fijadores-lacas-y-ceras\\",
       "/busca?fq=H%3A29288\\",
-      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\"
+      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\",
+      "/busca?fq=H%3A30014\\"
      ]
     },
     {
@@ -96,8 +96,8 @@
      "ejemplos": [
       "Leche Colun Entera 1 L · $1080",
       "Leche Cuisine & Co Entera 1 L · $1200",
-      "Leche Surlat Entera 1 L · $1070",
-      "Leche Soprole Entera Natural 1 L · $1100"
+      "Leche Soprole Entera Natural 1 L · $1100",
+      "Leche Soprole Proteína Natural 1 L · $2288"
      ],
      "ejemplo": {
       "name": "Leche Colun Entera 1 L",
@@ -250,7 +250,7 @@
      "id": "fideos-int",
      "rinde": "Carozzi · Spaghetti Integral · 400 g",
      "tienda": "Pasta Spaghetti Carozzi Integral 400 g",
-     "precio": 1170
+     "precio": 1090
     },
     {
      "id": "aceite",
@@ -316,7 +316,7 @@
      "id": "palta",
      "rinde": "Granel · Palta Hass · 1 kg",
      "tienda": "Palta Hass Malla 1 kg",
-     "precio": 3990
+     "precio": 3550
     },
     {
      "id": "lechuga",
@@ -362,30 +362,30 @@
     "yog-pro (74 resultados)",
     "quesillo (60 resultados)",
     "queso-crema (56 resultados)",
-    "huevos1 (59 resultados)",
-    "coca-zero (44 resultados)",
+    "huevos1 (62 resultados)",
+    "coca-zero (40 resultados)",
     "fanta-zero (32 resultados)",
-    "nectar-light (64 resultados)",
+    "nectar-light (67 resultados)",
     "zuko (36 resultados)",
-    "agua2 (68 resultados)",
-    "te1 (99 resultados)",
-    "cafe2 (70 resultados)",
+    "agua2 (74 resultados)",
+    "te1 (102 resultados)",
+    "cafe2 (64 resultados)",
     "chocapic (40 resultados)",
-    "fitness (59 resultados)",
-    "avena (60 resultados)",
-    "granola (71 resultados)",
+    "fitness (58 resultados)",
+    "avena (63 resultados)",
+    "granola (68 resultados)",
     "merm (59 resultados)",
-    "merm-sa (63 resultados)",
+    "merm-sa (60 resultados)",
     "pan2 (40 resultados)",
     "pan-int (56 resultados)",
     "aceite2 (70 resultados)",
-    "oliva (74 resultados)",
+    "oliva (71 resultados)",
     "azucar (59 resultados)",
-    "stevia (67 resultados)",
-    "sal (63 resultados)",
+    "stevia (70 resultados)",
+    "sal (60 resultados)",
     "atun1 (52 resultados)",
-    "atun2 (52 resultados)",
-    "mayo-l (48 resultados)",
+    "atun2 (55 resultados)",
+    "mayo-l (54 resultados)",
     "manzana (48 resultados)",
     "pollo1 (32 resultados)",
     "pollo2 (60 resultados)",
@@ -396,8 +396,8 @@
     "arroz-gall (58 resultados)",
     "ramitas (32 resultados)",
     "mani (58 resultados)",
-    "sahne (54 resultados)",
-    "barra (79 resultados)",
+    "sahne (44 resultados)",
+    "barra (76 resultados)",
     "cloro (40 resultados)",
     "shampoo (54 resultados)",
     "desodorante (114 resultados)",
@@ -415,11 +415,11 @@
     "queso-chanco (68 resultados)",
     "queso-fresco (52 resultados)",
     "queso-crema2 (56 resultados)",
-    "margarina (59 resultados)"
+    "margarina (62 resultados)"
    ],
    "fuente": "web",
    "buscados": 344,
-   "conPrecio": 144,
+   "conPrecio": 145,
    "estado": "ok"
   },
   "santaisabel": {
@@ -431,7 +431,7 @@
      "productos": 0,
      "ejemplos": [],
      "titulo": "SantaIsabel.cl | Supermercado de Chile",
-     "largo": 553008,
+     "largo": 553180,
      "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4jr8d\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.santaisabel.cl/_next/static/chunks/3h68ui0o0u1v",
      "pistas": [
       "https://www.santaisabel.cl/busqueda?ft={search_term_string}\\",
@@ -472,11 +472,11 @@
      "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwu4jr8d\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.santaisabel.cl/_next/static/chunks/3h68ui0o0u1v",
      "pistas": [
       "https://www.santaisabel.cl/busqueda?ft={search_term_string}\\",
-      "/.well-known/ai-plugin.json\\",
       "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20Santa%20Isabel.cl\\",
       "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20avance\\",
       "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
       "https://api.whatsapp.com/send/?phone=56950131501\\",
+      "/.well-known/ai-plugin.json\\",
       "/busca?fq=H%3A7530\\",
       "/busca?fq=H%3A9370\\",
       "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
@@ -540,7 +540,7 @@
      "id": "leche-lonco",
      "rinde": "Loncoleche · Leche Entera · 1 L",
      "tienda": "Leche Loncoleche Entera 1 L",
-     "precio": 1050
+     "precio": 990
     },
     {
      "id": "leche-sl",
@@ -552,7 +552,7 @@
      "id": "leche-desc",
      "rinde": "Loncoleche · Leche Descremada · 1 L",
      "tienda": "Leche Loncoleche Descremada 1 L",
-     "precio": 1050
+     "precio": 990
     },
     {
      "id": "queso-gauda",
@@ -588,7 +588,7 @@
      "id": "cafe",
      "rinde": "Nescafé · Café Instantáneo Tradición · 170 g",
      "tienda": "Café Instantáneo Nescafé Tradición Tarro 170 g",
-     "precio": 8850
+     "precio": 8150
     },
     {
      "id": "manjar1",
@@ -683,14 +683,14 @@
     {
      "id": "tomate",
      "rinde": "Granel · Tomate · 1 kg",
-     "tienda": "Tomate Larga Vida Malla 1 kg",
-     "precio": 2090
+     "tienda": "Salsa de Tomate Maggi Tuco con Carne 980 g",
+     "precio": 6350
     },
     {
      "id": "papa",
      "rinde": "Granel · Papa en Malla · 2 kg",
      "tienda": "Papa Malla 2 kg",
-     "precio": 3950
+     "precio": 2590
     },
     {
      "id": "palta",
@@ -767,13 +767,13 @@
    ],
    "sin": [
     "leche-choc (60 resultados)",
-    "yog-fru (44 resultados)",
+    "yog-fru (40 resultados)",
     "yog-gri (12 resultados)",
     "yog-pro (40 resultados)",
     "quesillo (44 resultados)",
-    "queso-crema (36 resultados)",
-    "huevos1 (8 resultados)",
-    "huevos2 (12 resultados)",
+    "queso-crema (32 resultados)",
+    "huevos1 (12 resultados)",
+    "huevos2 (16 resultados)",
     "coca (16 resultados)",
     "coca-zero (20 resultados)",
     "fanta (28 resultados)",
@@ -789,11 +789,11 @@
     "granola (28 resultados)",
     "merm (36 resultados)",
     "merm-sa (40 resultados)",
-    "pan2 (16 resultados)",
+    "pan2 (20 resultados)",
     "pan-int (32 resultados)",
     "aceite2 (32 resultados)",
     "oliva (28 resultados)",
-    "azucar (32 resultados)",
+    "azucar (28 resultados)",
     "stevia (52 resultados)",
     "sal (32 resultados)",
     "atun1 (28 resultados)",
@@ -802,12 +802,12 @@
     "salsa2 (36 resultados)",
     "mayo-l (32 resultados)",
     "manzana (28 resultados)",
-    "pollo1 (24 resultados)",
-    "pollo2 (24 resultados)",
+    "pollo1 (32 resultados)",
+    "pollo2 (32 resultados)",
     "vienesas (36 resultados)",
     "vienesas-pavo (8 resultados)",
     "jamon (28 resultados)",
-    "triton (4 resultados)",
+    "triton (8 resultados)",
     "arroz-gall (36 resultados)",
     "papas (16 resultados)",
     "ramitas (20 resultados)",
@@ -825,11 +825,11 @@
     "leche-polvo2 (36 resultados)",
     "leche-almendra (32 resultados)",
     "leche-evap (28 resultados)",
-    "yog-nat (32 resultados)"
+    "yog-nat (28 resultados)"
    ],
    "fuente": "web",
    "buscados": 344,
-   "conPrecio": 123,
+   "conPrecio": 125,
    "estado": "ok"
   },
   "lider": {
@@ -849,7 +849,7 @@
      "tipo": "web",
      "url": "https://super.lider.cl/search?q=leche%20entera",
      "status": 200,
-     "productos": 42,
+     "productos": 43,
      "ejemplos": [
       "Leche Entera Natural Caja 1 l 1 L · $1090",
       "Leche Entera Sin Lactosa con Tapa 1 L · $1110",
@@ -1054,8 +1054,8 @@
     {
      "id": "platano",
      "rinde": "Granel · Plátano · 1 kg",
-     "tienda": "Leche Plátano Caja",
-     "precio": 520
+     "tienda": "Plátano Unidad",
+     "precio": 261
     },
     {
      "id": "manzana",
@@ -1100,10 +1100,10 @@
      "precio": 287
     },
     {
-     "id": "papas",
-     "rinde": "Lay's · Papas Fritas Corte Americano · 180 g",
-     "tienda": "Papas Fritas lay's corte americano sabor cheddar 180 g",
-     "precio": 2350
+     "id": "molida",
+     "rinde": "Granel · Carne Molida 4% Grasa · 500 g",
+     "tienda": "Carne Molida 10% Grasa 500 g",
+     "precio": 4750
     },
     {
      "id": "papel",
@@ -1121,7 +1121,7 @@
     "quesillo (5 resultados)",
     "queso-crema (40 resultados)",
     "huevos1 (39 resultados)",
-    "fanta (25 resultados)",
+    "fanta (31 resultados)",
     "fanta-zero (39 resultados)",
     "nectar-light (40 resultados)",
     "zuko (40 resultados)",
@@ -1145,13 +1145,13 @@
     "mayo-l (40 resultados)",
     "pollo1 (40 resultados)",
     "pollo2 (40 resultados)",
-    "molida (0 resultados)",
     "vienesas (0 resultados)",
     "vienesas-pavo (0 resultados)",
     "jamon (0 resultados)",
     "triton (0 resultados)",
     "soda (0 resultados)",
     "arroz-gall (0 resultados)",
+    "papas (0 resultados)",
     "ramitas (31 resultados)",
     "mani (40 resultados)",
     "sahne (40 resultados)",
@@ -1168,7 +1168,7 @@
     "leche-polvo2 (40 resultados)",
     "leche-almendra (39 resultados)",
     "leche-avena (34 resultados)",
-    "leche-evap (17 resultados)",
+    "leche-evap (19 resultados)",
     "crema2 (40 resultados)",
     "yog-nat (40 resultados)",
     "yog-batido-vain (40 resultados)",
@@ -1176,7 +1176,7 @@
    ],
    "fuente": "web",
    "buscados": 344,
-   "conPrecio": 142,
+   "conPrecio": 143,
    "estado": "ok"
   },
   "unimarc": {
@@ -1188,8 +1188,8 @@
      "productos": 29,
      "ejemplos": [
       "Leche entera natural Colun sin tapa 1 L · $1190",
-      "Leche Soprole entera natural 1 L · $1150",
       "Leche entera Loncoleche sin tapa 1 L · $1090",
+      "Leche Soprole entera natural 1 L · $1190",
       "Leche entera sin lactosa Colun con tapa 1 L · $1290"
      ],
      "ejemplo": {
@@ -1218,7 +1218,7 @@
      "id": "leche-soprole",
      "rinde": "Soprole · Leche Entera · 1 L",
      "tienda": "Leche Soprole entera natural 1 L",
-     "precio": 1150
+     "precio": 1190
     },
     {
      "id": "leche-lonco",
@@ -1326,7 +1326,7 @@
      "id": "fideos-int",
      "rinde": "Carozzi · Spaghetti Integral · 400 g",
      "tienda": "Pasta spaghetti integral Carozzi 400 g",
-     "precio": 1000
+     "precio": 1190
     },
     {
      "id": "aceite",
@@ -1337,8 +1337,8 @@
     {
      "id": "lentejas",
      "rinde": "Banquete · Lentejas · 1 kg",
-     "tienda": "Lentejas Banquete 6 mm 1 Kg",
-     "precio": 3400
+     "tienda": "Lentejas Banquete 4 mm 1 Kg",
+     "precio": 3990
     },
     {
      "id": "porotos",
@@ -1350,7 +1350,7 @@
      "id": "salsa1",
      "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
      "tienda": "Salsa de tomate Pomarola italiana 200 g",
-     "precio": 870
+     "precio": 850
     },
     {
      "id": "salsa2",
@@ -1385,7 +1385,7 @@
     {
      "id": "palta",
      "rinde": "Granel · Palta Hass · 1 kg",
-     "tienda": "Palta hass granel 500 g",
+     "tienda": "Palta hass chilena granel 500 g",
      "precio": 3245
     },
     {
@@ -1528,9 +1528,9 @@
      "largo": 5896,
      "inicio": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scal",
      "pistas": [
-      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_tk=rS1HDTFOkYusYYZ6JjR95npifSvBhQRCm2L4EfnU2Fs-1795552334-1.0.1.1-Aj4xzRqPsxWnseGj3cHXKGqJ2xod8Py34HOcq2Qr3gU",
-      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_f_tk=rS1HDTFOkYusYYZ6JjR95npifSvBhQRCm2L4EfnU2Fs-1795552334-1.0.1.1-Aj4xzRqPsxWnseGj3cHXKGqJ2xod8Py34HOcq2Qr3gU",
-      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_rt_tk=rS1HDTFOkYusYYZ6JjR95npifSvBhQRCm2L4EfnU2Fs-1795552334-1.0.1.1-Aj4xzRqPsxWnseGj3cHXKGqJ2xod8Py34HOcq2Qr3gU"
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_tk=kEJbQUcLcHIR5wOVKJeeirdVu4YNLtB3d57I4qd5BdE-1795636157-1.0.1.1-HlfiLYzCcz_xa0DF.FnR_z1MnNeaRwQp8i6YBNVW9LU",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_f_tk=kEJbQUcLcHIR5wOVKJeeirdVu4YNLtB3d57I4qd5BdE-1795636157-1.0.1.1-HlfiLYzCcz_xa0DF.FnR_z1MnNeaRwQp8i6YBNVW9LU",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_rt_tk=kEJbQUcLcHIR5wOVKJeeirdVu4YNLtB3d57I4qd5BdE-1795636157-1.0.1.1-HlfiLYzCcz_xa0DF.FnR_z1MnNeaRwQp8i6YBNVW9LU"
      ]
     },
     {
@@ -2202,7 +2202,7 @@
     "amlodipino (17 resultados)",
     "clotrimazol (0 resultados)",
     "diclofenaco-gel (0 resultados)",
-    "voltaren (20 resultados)",
+    "voltaren (21 resultados)",
     "antigripal2 (1 resultados)",
     "jarabe-tos (3 resultados)",
     "ambroxol (1 resultados)",
