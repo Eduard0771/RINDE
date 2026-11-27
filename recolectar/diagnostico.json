@@ -1,5 +1,5 @@
 {
- "fecha": "2026-11-26T20:57:19.806Z",
+ "fecha": "2026-11-27T20:52:33.193Z",
  "prueba": false,
  "cadenas": {
   "jumbo": {
@@ -14,13 +14,13 @@
      "largo": 757561,
      "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwvjvpkg\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
      "pistas": [
+      "/.well-known/ai-plugin.json\\",
       "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
       "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
       "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
       "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
       "https://api.whatsapp.com/send/?phone=56941540961\\",
       "https://be-reg-groceries-bff-jumbo.*\\",
-      "/.well-known/ai-plugin.json\\",
       "https://www.jumbo.cl/api/catalog_system/pub/products/search\\",
       "/experiencias-jumbo/productos-importados\\",
       "/experiencias-jumbo/productos-importados/productos-alemanes\\",
@@ -57,13 +57,12 @@
      "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwvjvpkg\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.jumbo.cl/_next/static/chunks/3h68ui0o0u1vh.js?d",
      "pistas": [
       "https://www.jumbo.cl/busqueda?ft={search_term_string}\\",
-      "/.well-known/ai-plugin.json\\",
       "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20JUMBO.cl\\",
       "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20avance\\",
       "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=jumbo_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
       "https://api.whatsapp.com/send/?phone=56941540961\\",
       "https://be-reg-groceries-bff-jumbo.*\\",
-      "https://www.jumbo.cl/api/io/_v/api/intelligent-search/product_search\\",
+      "/.well-known/ai-plugin.json\\",
       "/experiencias-jumbo/productos-importados\\",
       "/experiencias-jumbo/productos-importados/productos-alemanes\\",
       "/experiencias-jumbo/productos-importados/productos-espanoles\\",
@@ -85,7 +84,8 @@
       "/belleza-y-cuidado-personal/cuidado-capilar/coloracion-y-tintura-de-pelo\\",
       "/belleza-y-cuidado-personal/cuidado-capilar/fijadores-lacas-y-ceras\\",
       "/busca?fq=H%3A29288\\",
-      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\"
+      "/hogar-electro-y-libreria/libreria-y-escolares/lapices-plumones-y-destacadores\\",
+      "/busca?fq=H%3A30014\\"
      ]
     },
     {
@@ -356,34 +356,34 @@
     }
    ],
    "sin": [
-    "leche-choc (82 resultados)",
+    "leche-choc (79 resultados)",
     "yog-fru (51 resultados)",
     "yog-gri (55 resultados)",
-    "yog-pro (78 resultados)",
+    "yog-pro (75 resultados)",
     "quesillo (48 resultados)",
     "queso-crema (60 resultados)",
     "huevos1 (51 resultados)",
-    "coca-zero (52 resultados)",
+    "coca-zero (48 resultados)",
     "fanta-zero (32 resultados)",
     "nectar-light (64 resultados)",
-    "zuko (44 resultados)",
-    "agua2 (71 resultados)",
-    "te1 (96 resultados)",
+    "zuko (40 resultados)",
+    "agua2 (68 resultados)",
+    "te1 (99 resultados)",
     "cafe2 (67 resultados)",
     "chocapic (40 resultados)",
-    "fitness (59 resultados)",
+    "fitness (55 resultados)",
     "avena (60 resultados)",
-    "granola (67 resultados)",
+    "granola (64 resultados)",
     "merm (52 resultados)",
-    "merm-sa (63 resultados)",
+    "merm-sa (60 resultados)",
     "pan2 (48 resultados)",
     "pan-int (60 resultados)",
     "aceite2 (73 resultados)",
-    "oliva (72 resultados)",
+    "oliva (75 resultados)",
     "azucar (51 resultados)",
     "stevia (66 resultados)",
-    "sal (67 resultados)",
-    "atun1 (58 resultados)",
+    "sal (70 resultados)",
+    "atun1 (55 resultados)",
     "atun2 (63 resultados)",
     "mayo-l (62 resultados)",
     "manzana (48 resultados)",
@@ -397,7 +397,7 @@
     "ramitas (32 resultados)",
     "mani (54 resultados)",
     "sahne (40 resultados)",
-    "barra (82 resultados)",
+    "barra (79 resultados)",
     "cloro (62 resultados)",
     "shampoo (66 resultados)",
     "desodorante (114 resultados)",
@@ -406,20 +406,20 @@
     "panal1 (12 resultados)",
     "leche-svelty (55 resultados)",
     "leche-polvo2 (55 resultados)",
-    "leche-almendra (70 resultados)",
+    "leche-almendra (67 resultados)",
     "leche-evap (52 resultados)",
     "yog-nat (36 resultados)",
     "yog-pack (75 resultados)",
     "postre-leche (51 resultados)",
     "flan (44 resultados)",
     "queso-chanco (68 resultados)",
-    "queso-fresco (52 resultados)",
+    "queso-fresco (60 resultados)",
     "queso-crema2 (60 resultados)",
     "margarina (63 resultados)"
    ],
    "fuente": "web",
    "buscados": 344,
-   "conPrecio": 146,
+   "conPrecio": 145,
    "estado": "ok"
   },
   "santaisabel": {
@@ -468,15 +468,16 @@
      "productos": 0,
      "ejemplos": [],
      "titulo": "SantaIsabel.cl | Supermercado de Chile",
-     "largo": 553245,
+     "largo": 553589,
      "inicio": "<!DOCTYPE html><html data-dpl-id=\"bmwwtgkg8\" id=\"__next_error__\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5\"/><link rel=\"preload\" as=\"script\" fetchPriority=\"low\" href=\"https://assets.santaisabel.cl/_next/static/chunks/3h68ui0o0u1v",
      "pistas": [
-      "/.well-known/ai-plugin.json\\",
       "https://www.santaisabel.cl/busqueda?ft={search_term_string}\\",
       "https://www.puntoscencosud.cl/puntos/catalogo?utm_source=Catalogo%20Online\\u0026utm_medium=referral\\u0026utm_campaign=UDN%20Santa%20Isabel.cl\\",
       "https://www.tarjetacencosud.cl/publico/producto/avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20avance\\",
       "https://www.tarjetacencosud.cl/publico/producto/super-avance/landing/simulador?utm_medium=header%20tarjeta\\u0026utm_source=sisa_cl\\u0026utm_campaign=simula%20tu%20super%20avance\\",
       "https://api.whatsapp.com/send/?phone=56950131501\\",
+      "/.well-known/ai-plugin.json\\",
+      "https://www.santaisabel.cl/api/io/_v/api/intelligent-search/product_search\\",
       "/busca?fq=H%3A7530\\",
       "/busca?fq=H%3A9370\\",
       "/limpieza/pisos-y-muebles/limpia-alfombras-y-tapices\\",
@@ -494,8 +495,7 @@
       "/cuidado-personal-y-bebe/cuidado-capilar/fijadores-lacas-y-ceras\\",
       "/cuidado-personal-y-bebe/cuidado-capilar/coloracion-tintura-de-pelo\\",
       "/busca?fq=H%3A9373\\",
-      "/busca?fq=H%3A1420\\u0026nombre_promo=MENU-productos-cuisine-03012023\\",
-      "https://www.santaisabel.cl/api/io/_v/api/intelligent-search/product_search\\"
+      "/busca?fq=H%3A1420\\u0026nombre_promo=MENU-productos-cuisine-03012023\\"
      ]
     },
     {
@@ -636,7 +636,7 @@
      "id": "fideos2",
      "rinde": "Lucchetti · Spaghetti N°5 · 400 g",
      "tienda": "Spaghetti N°5 Lucchetti 400 g",
-     "precio": 990
+     "precio": 740
     },
     {
      "id": "fideos-int",
@@ -663,12 +663,6 @@
      "precio": 2990
     },
     {
-     "id": "salsa1",
-     "rinde": "Pomarola · Salsa de Tomate Italiana · 200 g",
-     "tienda": "Salsa de Tomate Pomarola Italiana 200 g",
-     "precio": 623
-    },
-    {
      "id": "mayo",
      "rinde": "Hellmann's · Mayonesa · 372 g",
      "tienda": "Mayonesa Hellmann's Regular Doypack 372 g",
@@ -677,14 +671,14 @@
     {
      "id": "platano",
      "rinde": "Granel · Plátano · 1 kg",
-     "tienda": "Plátano Barraganette Granel",
-     "precio": 995
+     "tienda": "Nectarín Plátano Granel",
+     "precio": 1495
     },
     {
      "id": "tomate",
      "rinde": "Granel · Tomate · 1 kg",
-     "tienda": "Salsa de Tomate Maggi Tuco con Carne 980 g",
-     "precio": 6350
+     "tienda": "Tomate Cóctel Variedades Granel",
+     "precio": 1338
     },
     {
      "id": "papa",
@@ -701,8 +695,8 @@
     {
      "id": "lechuga",
      "rinde": "Granel · Lechuga Escarola · 1 un",
-     "tienda": "Lechuga Escarola 1 un.",
-     "precio": 1390
+     "tienda": "Ensalada Lechuga Escarola 180 g",
+     "precio": 1090
     },
     {
      "id": "cebolla",
@@ -729,16 +723,16 @@
      "precio": 1250
     },
     {
+     "id": "papas",
+     "rinde": "Lay's · Papas Fritas Corte Americano · 180 g",
+     "tienda": "Papas Fritas Lay's Corte Americano 180 g",
+     "precio": 1950
+    },
+    {
      "id": "super8",
      "rinde": "Nestlé · Super 8 · 29 g",
      "tienda": "Oblea Bañada Super 8 29 g",
      "precio": 570
-    },
-    {
-     "id": "papel",
-     "rinde": "Elite · Papel Higiénico Doble Hoja · 12 rollos",
-     "tienda": "Papel Higiénico Elite Ultra Suave Doble Hoja 25 m 12 un.",
-     "precio": 5990
     },
     {
      "id": "papel2",
@@ -755,7 +749,7 @@
     {
      "id": "deter1",
      "rinde": "Omo · Detergente Líquido · 3 L",
-     "tienda": "Detergente Líquido Omo Piel Sensible Doypack 3 L",
+     "tienda": "Detergente Líquido Omo Piel Sensible Recarga 3 L",
      "precio": 8358
     },
     {
@@ -763,12 +757,18 @@
      "rinde": "Popeye · Detergente Líquido · 3 L",
      "tienda": "Detergente Líquido Popeye Bebé Hipoalergénico 3 L",
      "precio": 16590
+    },
+    {
+     "id": "lavaloza",
+     "rinde": "Quix · Lavaloza Limón · 750 ml",
+     "tienda": "Lavaloza Líquido Quix Limón Botella 750 ml",
+     "precio": 3050
     }
    ],
    "sin": [
-    "leche-choc (60 resultados)",
+    "leche-choc (68 resultados)",
     "yog-fru (44 resultados)",
-    "yog-gri (12 resultados)",
+    "yog-gri (16 resultados)",
     "yog-pro (40 resultados)",
     "quesillo (52 resultados)",
     "queso-crema (40 resultados)",
@@ -776,19 +776,19 @@
     "huevos2 (16 resultados)",
     "coca (24 resultados)",
     "coca-zero (16 resultados)",
-    "fanta (44 resultados)",
-    "fanta-zero (28 resultados)",
+    "fanta (40 resultados)",
+    "fanta-zero (24 resultados)",
     "nectar-light (32 resultados)",
     "zuko (24 resultados)",
-    "agua2 (32 resultados)",
+    "agua2 (40 resultados)",
     "te1 (60 resultados)",
     "cafe2 (32 resultados)",
     "chocapic (28 resultados)",
-    "fitness (24 resultados)",
+    "fitness (20 resultados)",
     "avena (40 resultados)",
     "granola (28 resultados)",
-    "merm (36 resultados)",
-    "merm-sa (36 resultados)",
+    "merm (32 resultados)",
+    "merm-sa (32 resultados)",
     "pan2 (20 resultados)",
     "pan-int (32 resultados)",
     "aceite2 (40 resultados)",
@@ -798,38 +798,38 @@
     "sal (32 resultados)",
     "atun1 (36 resultados)",
     "atun2 (24 resultados)",
-    "porotos (52 resultados)",
-    "salsa2 (32 resultados)",
+    "porotos (48 resultados)",
+    "salsa1 (0 resultados)",
+    "salsa2 (28 resultados)",
     "mayo-l (32 resultados)",
     "manzana (36 resultados)",
-    "pollo1 (36 resultados)",
+    "pollo1 (40 resultados)",
     "pollo2 (24 resultados)",
     "vienesas (36 resultados)",
     "vienesas-pavo (8 resultados)",
     "jamon (28 resultados)",
-    "triton (12 resultados)",
-    "arroz-gall (32 resultados)",
-    "papas (16 resultados)",
-    "ramitas (20 resultados)",
+    "triton (20 resultados)",
+    "arroz-gall (36 resultados)",
+    "ramitas (28 resultados)",
     "mani (36 resultados)",
     "sahne (28 resultados)",
     "barra (12 resultados)",
-    "cloro (48 resultados)",
+    "papel (16 resultados)",
+    "cloro (56 resultados)",
     "shampoo (28 resultados)",
-    "desodorante (64 resultados)",
-    "jabon (36 resultados)",
+    "desodorante (72 resultados)",
+    "jabon (32 resultados)",
     "gel (4 resultados)",
-    "panal1 (4 resultados)",
+    "panal1 (8 resultados)",
     "panal2 (8 resultados)",
     "leche-svelty (44 resultados)",
     "leche-polvo2 (48 resultados)",
-    "leche-almendra (28 resultados)",
-    "leche-evap (32 resultados)",
-    "yog-nat (32 resultados)"
+    "leche-almendra (32 resultados)",
+    "leche-evap (32 resultados)"
    ],
    "fuente": "web",
    "buscados": 344,
-   "conPrecio": 126,
+   "conPrecio": 129,
    "estado": "ok"
   },
   "lider": {
@@ -887,7 +887,7 @@
      "id": "leche-lonco",
      "rinde": "Loncoleche · Leche Entera · 1 L",
      "tienda": "Leche Natural Entera Lonco Leche 1 L",
-     "precio": 1050
+     "precio": 990
     },
     {
      "id": "leche-sl",
@@ -899,7 +899,7 @@
      "id": "leche-desc",
      "rinde": "Loncoleche · Leche Descremada · 1 L",
      "tienda": "Leche Natural Descremada Lonco Leche 1 L",
-     "precio": 1050
+     "precio": 990
     },
     {
      "id": "mantequilla",
@@ -965,7 +965,7 @@
      "id": "arroz",
      "rinde": "Tucapel · Arroz Grado 1 · 1 kg",
      "tienda": "Arroz Grado 2 Grano Largo Bolsa 1 kg",
-     "precio": 1790
+     "precio": 1590
     },
     {
      "id": "arroz2",
@@ -1066,8 +1066,8 @@
     {
      "id": "tomate",
      "rinde": "Granel · Tomate · 1 kg",
-     "tienda": "Salsa de Tomate Natural Doypack",
-     "precio": 890
+     "tienda": "Salsa de Tomate Italiana Bolsa",
+     "precio": 780
     },
     {
      "id": "papa",
@@ -1100,10 +1100,10 @@
      "precio": 287
     },
     {
-     "id": "papas",
-     "rinde": "Lay's · Papas Fritas Corte Americano · 180 g",
-     "tienda": "Papas Fritas lay's corte americano sabor cheddar 180 g",
-     "precio": 2350
+     "id": "molida",
+     "rinde": "Granel · Carne Molida 4% Grasa · 500 g",
+     "tienda": "Carne Molida 10% Grasa 500 g",
+     "precio": 4750
     },
     {
      "id": "papel",
@@ -1113,15 +1113,15 @@
     }
    ],
    "sin": [
-    "leche-choc (0 resultados)",
+    "leche-choc (40 resultados)",
     "yog-fru (40 resultados)",
     "yog-gri (40 resultados)",
     "yog-pro (40 resultados)",
     "queso-gauda (40 resultados)",
-    "quesillo (5 resultados)",
+    "quesillo (6 resultados)",
     "queso-crema (40 resultados)",
-    "huevos1 (38 resultados)",
-    "fanta (31 resultados)",
+    "huevos1 (39 resultados)",
+    "fanta (24 resultados)",
     "fanta-zero (39 resultados)",
     "nectar-light (40 resultados)",
     "zuko (40 resultados)",
@@ -1133,25 +1133,25 @@
     "fitness (40 resultados)",
     "avena (40 resultados)",
     "granola (40 resultados)",
-    "merm (21 resultados)",
-    "merm-sa (40 resultados)",
+    "merm (22 resultados)",
+    "merm-sa (39 resultados)",
     "pan2 (39 resultados)",
     "pan-int (39 resultados)",
     "aceite2 (40 resultados)",
     "stevia (39 resultados)",
-    "atun1 (40 resultados)",
+    "atun1 (39 resultados)",
     "atun2 (40 resultados)",
     "salsa2 (40 resultados)",
     "mayo-l (39 resultados)",
     "pollo1 (40 resultados)",
     "pollo2 (40 resultados)",
-    "molida (0 resultados)",
     "vienesas (0 resultados)",
     "vienesas-pavo (0 resultados)",
     "jamon (0 resultados)",
     "triton (0 resultados)",
     "soda (0 resultados)",
     "arroz-gall (0 resultados)",
+    "papas (0 resultados)",
     "ramitas (32 resultados)",
     "mani (40 resultados)",
     "sahne (40 resultados)",
@@ -1161,7 +1161,7 @@
     "pasta (40 resultados)",
     "shampoo (40 resultados)",
     "jabon (40 resultados)",
-    "gel (36 resultados)",
+    "gel (35 resultados)",
     "panal1 (40 resultados)",
     "panal2 (40 resultados)",
     "leche-svelty (40 resultados)",
@@ -1169,14 +1169,14 @@
     "leche-almendra (39 resultados)",
     "leche-avena (34 resultados)",
     "leche-evap (29 resultados)",
+    "crema (40 resultados)",
     "crema2 (40 resultados)",
     "yog-nat (40 resultados)",
-    "yog-batido-vain (40 resultados)",
-    "yog-griego2 (40 resultados)"
+    "yog-batido-vain (40 resultados)"
    ],
    "fuente": "web",
    "buscados": 344,
-   "conPrecio": 144,
+   "conPrecio": 141,
    "estado": "ok"
   },
   "unimarc": {
@@ -1185,7 +1185,7 @@
      "tipo": "unimarc-bff",
      "url": "(API)",
      "status": 200,
-     "productos": 29,
+     "productos": 30,
      "ejemplos": [
       "Leche entera natural Colun sin tapa 1 L · $1190",
       "Leche entera Loncoleche sin tapa 1 L · $890",
@@ -1204,7 +1204,7 @@
       "extra": "1 litro 1 un 1 un",
       "agotado": false
      },
-     "unimarcItem": "{\"price\":{\"price\":\"$1.190\",\"listPrice\":\"$1.350\",\"priceWithoutDiscount\":\"$1.350\",\"rewardValue\":0,\"availableQuantity\":10000,\"inOffer\":true,\"ppum\":\"$1.190 x litro\",\"ppumListPrice\":\"$1.350 x litro\",\"saving\":\"Ahorras $160\"},\"promotion\":{\"hasSavings\":false,\"name\":\"\",\"type\":\"\",\"descriptionCode\":0,\"descriptionMessage\":\"\",\"price\":0,\"offerMessage\":false,\"saving\":0,\"ppum\":\"\",\"id\":\"2897\",\"pricePaymentsMethods\":[]},\"item\":{\"itemId\":\"2896\",\"sku\":\"2896\",\"nameComplete\":\"Leche entera natural Colun sin tapa 1 L\",\"ean\":\"7802920777542\",\"measurementUnit\":\"un\",\"complementName\":\"\",\"descriptionShort\":\"\",\"productId\":\"2897\",\"name\":\"Leche entera natural Colun sin tapa 1 L\",\"brand\":\"Colun\",\"brandId\":1105,\"description\":\"La leche entera de larga vida Colun es elaborada a partir de pura leche natural de vacas sanas que pastan en praderas verdes de la lluviosa región de los Rios de Chile. Producto sin gluten certificado por fundación convivir. Producto certificado Kosher.Características: Leches blancas - Colun - Entera - Sin gluten - Sin sellos - Envase tetra - Formato familiar - Contenido 1 L.\",\"categoryId\":\"465\",\"provider\":\"\",\"cartLimit\":999,\"volume\":\"\",\"container\":\"\",\"degrees\":\"\",\"mormonsGiftcard\":false,\"unitMultiplierUn\":1,\"measurementUnitUn\":\"litro\",\"unitMultiplier\":1,\"refId\":\"000000000000007390-UN\",\"measurement_Unit\":\"litro\",\"netContent\":\"1 litro\",\"netContentLevelSmall\":\"1 un\",\"images\":[\"https://unimarc.vtexassets.com/arquivos/ids/200220/000000000000007390-UN-01.jpg?v=638338607201470000\"],\"categories\":[\"/Lácteos, Huevos y Refrigerados/Leches y cremas/Leches blancas/\",\"/Lácteos, Huevos y Refrigerados/Leches y cremas/\",\"/Lácteos, Huevos y Refrigerados/\"],\"categorySlug\":\"lacteos-huevos-y-refrigerados/leches-y-cremas/leches-blancas\",\"collection\":[\"9128\",\"9568\",\"9787\",\"10148\",\"10185\",\"10192\",\"10193\",\"10195\",\"10286\",\"10336\",\"10385\",\"10399\",\"10453\"],\"slug\":\"/leche-entera-natural-colun-sin-tapa-1-l-2/p\"},\"coupon\":null,\"nonFood\":{\"weight\":\"\",\"material\":\"\",\"warranty\":\"\",\"instructions\":\"\",\"units\":\"\",\"capacity\":\"\",\"autonomy\":\"\",\"programmable\":\"\",\"speeds\":\"\",\"energyEfficiency\":\"\",\"model\":\"\",\"countryOfManufacture\":\"\",\"power\":\"\",\"voltage\":\"\",\"dimensions\":\"\",\"reviewBrand\":\"\"},\"priceDetail\":{\"promotionType\":\"percentage\",\"promotionName\":\"5510042026 CICLO52309A0601_LISTA_PRECIOS\",\"promotionId\":\"8ed0ab35-0b18-4e57-99b9-700dbfaf442a\",\"promotionalTagCode\":\"C011\",\"promotionalTagCodeOriginal\":\"C011\",\"promotionalTag\":{\"campaignId\":\"C011\",\"text\":\"Club Unimarc\",\"textColor\":\"#054453\",\"color\":\"#b9f2ff\"},\"listPrice\":\"$1.350\",\"ppumListPrice\":\"$1.350 x L\",\"discountPrice\":\"$1.190\",\"discountPpumPrice\":\"$1.190 x L\",\"discountPercentage\":12,\"promotionMessage\":null,\"itemsRequiredForPromotion\":null,\"combinationAvailable\":null,\"paymentMethod\":[],\"membership\":[]}}"
+     "unimarcItem": "{\"price\":{\"price\":\"$1.190\",\"listPrice\":\"$1.350\",\"priceWithoutDiscount\":\"$1.350\",\"rewardValue\":0,\"availableQuantity\":10000,\"inOffer\":true,\"ppum\":\"$1.190 x litro\",\"ppumListPrice\":\"$1.350 x litro\",\"saving\":\"Ahorras $160\"},\"promotion\":{\"hasSavings\":false,\"name\":\"\",\"type\":\"\",\"descriptionCode\":0,\"descriptionMessage\":\"\",\"price\":0,\"offerMessage\":false,\"saving\":0,\"ppum\":\"\",\"id\":\"2897\",\"pricePaymentsMethods\":[]},\"item\":{\"itemId\":\"2896\",\"sku\":\"2896\",\"nameComplete\":\"Leche entera natural Colun sin tapa 1 L\",\"ean\":\"7802920777542\",\"measurementUnit\":\"un\",\"complementName\":\"\",\"descriptionShort\":\"\",\"productId\":\"2897\",\"name\":\"Leche entera natural Colun sin tapa 1 L\",\"brand\":\"Colun\",\"brandId\":1105,\"description\":\"La leche entera de larga vida Colun es elaborada a partir de pura leche natural de vacas sanas que pastan en praderas verdes de la lluviosa región de los Rios de Chile. Producto sin gluten certificado por fundación convivir. Producto certificado Kosher.Características: Leches blancas - Colun - Entera - Sin gluten - Sin sellos - Envase tetra - Formato familiar - Contenido 1 L.\",\"categoryId\":\"465\",\"provider\":\"\",\"cartLimit\":999,\"volume\":\"\",\"container\":\"\",\"degrees\":\"\",\"mormonsGiftcard\":false,\"unitMultiplierUn\":1,\"measurementUnitUn\":\"litro\",\"unitMultiplier\":1,\"refId\":\"000000000000007390-UN\",\"measurement_Unit\":\"litro\",\"netContent\":\"1 litro\",\"netContentLevelSmall\":\"1 un\",\"images\":[\"https://unimarc.vtexassets.com/arquivos/ids/200220/000000000000007390-UN-01.jpg?v=638338607201470000\"],\"categories\":[\"/Lácteos, Huevos y Refrigerados/Leches y cremas/Leches blancas/\",\"/Lácteos, Huevos y Refrigerados/Leches y cremas/\",\"/Lácteos, Huevos y Refrigerados/\"],\"categorySlug\":\"lacteos-huevos-y-refrigerados/leches-y-cremas/leches-blancas\",\"collection\":[\"9128\",\"9568\",\"9787\",\"10148\",\"10185\",\"10192\",\"10193\",\"10195\",\"10286\",\"10336\",\"10385\",\"10399\",\"10453\"],\"slug\":\"/leche-entera-natural-colun-sin-tapa-1-l-2/p\"},\"coupon\":null,\"nonFood\":{\"weight\":\"\",\"material\":\"\",\"warranty\":\"\",\"instructions\":\"\",\"units\":\"\",\"capacity\":\"\",\"autonomy\":\"\",\"programmable\":\"\",\"speeds\":\"\",\"energyEfficiency\":\"\",\"model\":\"\",\"countryOfManufacture\":\"\",\"power\":\"\",\"voltage\":\"\",\"dimensions\":\"\",\"reviewBrand\":\"\"},\"priceDetail\":{\"promotionType\":\"percentage\",\"promotionName\":\"5510042026 CICLO52309A0601_LISTA_PRECIOS\",\"promotionId\":\"2d597aa1-bfc0-48fa-aba7-b74263c37b7d\",\"promotionalTagCode\":\"C011\",\"promotionalTagCodeOriginal\":\"C011\",\"promotionalTag\":{\"campaignId\":\"C011\",\"text\":\"Club Unimarc\",\"textColor\":\"#054453\",\"color\":\"#b9f2ff\"},\"listPrice\":\"$1.350\",\"ppumListPrice\":\"$1.350 x L\",\"discountPrice\":\"$1.190\",\"discountPpumPrice\":\"$1.190 x L\",\"discountPercentage\":12,\"promotionMessage\":null,\"itemsRequiredForPromotion\":null,\"combinationAvailable\":null,\"paymentMethod\":[],\"membership\":[]}}"
     }
    ],
    "muestras": [
@@ -1445,8 +1445,8 @@
     {
      "id": "deter1",
      "rinde": "Omo · Detergente Líquido · 3 L",
-     "tienda": "Detergente Omo matic multiacción líquido 3 L",
-     "precio": 15490
+     "tienda": "Detergente líquido Omo ultra power recarga 3 L",
+     "precio": 7950
     }
    ],
    "sin": [
@@ -1503,7 +1503,7 @@
     "panal1 (4 resultados)",
     "panal2 (40 resultados)",
     "leche-svelty (40 resultados)",
-    "leche-polvo2 (11 resultados)",
+    "leche-polvo2 (12 resultados)",
     "leche-almendra (0 resultados)",
     "leche-evap (7 resultados)",
     "yog-nat (9 resultados)",
@@ -1513,7 +1513,7 @@
    ],
    "fuente": "unimarc-bff",
    "buscados": 344,
-   "conPrecio": 133,
+   "conPrecio": 132,
    "estado": "ok"
   },
   "tottus": {
@@ -1528,9 +1528,9 @@
      "largo": 5896,
      "inicio": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scal",
      "pistas": [
-      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_tk=bGVX8CrmiFnNJcWqmheSKu5W4x0zOAi4wKxsd0UE_OY-1795721270-1.0.1.1-cb5wEjX1D.lUO3Otar4dJKlveSSXNK99dFf1mpvNM1k",
-      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_f_tk=bGVX8CrmiFnNJcWqmheSKu5W4x0zOAi4wKxsd0UE_OY-1795721270-1.0.1.1-cb5wEjX1D.lUO3Otar4dJKlveSSXNK99dFf1mpvNM1k",
-      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_rt_tk=bGVX8CrmiFnNJcWqmheSKu5W4x0zOAi4wKxsd0UE_OY-1795721270-1.0.1.1-cb5wEjX1D.lUO3Otar4dJKlveSSXNK99dFf1mpvNM1k"
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_tk=NHUrsS93cckIeoqJkGZowAjnu6s8mvGWB4FiURZF1gY-1795807387-1.0.1.1-N5K5t0q_rpvs6KKLFJRYXMo6EcZFXU1wsXLULpaxsgo",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_f_tk=NHUrsS93cckIeoqJkGZowAjnu6s8mvGWB4FiURZF1gY-1795807387-1.0.1.1-N5K5t0q_rpvs6KKLFJRYXMo6EcZFXU1wsXLULpaxsgo",
+      "/tottus-cl/buscar?Ntt=leche%20entera\\u0026__cf_chl_rt_tk=NHUrsS93cckIeoqJkGZowAjnu6s8mvGWB4FiURZF1gY-1795807387-1.0.1.1-N5K5t0q_rpvs6KKLFJRYXMo6EcZFXU1wsXLULpaxsgo"
      ]
     },
     {
@@ -1575,9 +1575,9 @@
      "productos": 40,
      "ejemplos": [
       "Xumadol Paracetamol 1000 mg 20 Comprimidos · $7690",
-      "Paracetamol 100 mg Gotas 15 mL · $2152",
-      "Tramadol Clorhidrato 100 mg / mL Solución para Gotas Orales 20 mL · $4792",
-      "Betacort Cassara Betametasona 0,5 mg / mL Solucion Oral para Gotas 30 mL · $20632"
+      "Paracetamol 100 mg Gotas 15 mL · $2421",
+      "Tramadol Clorhidrato 100 mg / mL Solución para Gotas Orales 20 mL · $5391",
+      "Betacort Cassara Betametasona 0,5 mg / mL Solucion Oral para Gotas 30 mL · $23211"
      ],
      "ejemplo": {
       "name": "Xumadol Paracetamol 1000 mg 20 Comprimidos",
@@ -1610,31 +1610,31 @@
      "id": "para-gen",
      "rinde": "Genérico · Paracetamol 500 mg · 16 comprimidos · 16 un",
      "tienda": "Paracetamol 500 mg 16 Comprimidos",
-     "precio": 672
+     "precio": 756
     },
     {
      "id": "ibu-gen",
      "rinde": "Genérico · Ibuprofeno 400 mg · 20 comprimidos · 20 un",
      "tienda": "Ibuprofeno 400 mg 20 Comprimidos",
-     "precio": 1264
+     "precio": 1422
     },
     {
      "id": "ibupirac",
      "rinde": "Ibupirac · Ibupirac 400 mg · 20 comprimidos · 20 un",
      "tienda": "Ibupirac LC Ibuprofeno 400 mg 20 Cápsulas Blandas",
-     "precio": 4992
+     "precio": 5616
     },
     {
      "id": "lora-gen",
      "rinde": "Genérico · Loratadina 10 mg · 30 comprimidos · 30 un",
      "tienda": "Loratadina 10 mg 30 Comprimidos",
-     "precio": 1104
+     "precio": 1242
     },
     {
      "id": "omepra",
      "rinde": "Genérico · Omeprazol 20 mg · 30 cápsulas · 30 un",
      "tienda": "Omeprazol 20 mg 30 Cápsulas con Gránulos",
-     "precio": 2152
+     "precio": 2421
     },
     {
      "id": "losartan",
@@ -1646,13 +1646,13 @@
      "id": "protector",
      "rinde": "Eucerin · Protector Solar FPS 50 · 50 ml",
      "tienda": "Protector Solar Cc Creme  Fps 50+ 50  mL",
-     "precio": 15114
+     "precio": 12595
     },
     {
      "id": "cepillo",
      "rinde": "Colgate · Cepillo de Dientes Suave · 2 un · 2 un",
      "tienda": "Cepillo De Dientes Total Whitening Suave 2 U",
-     "precio": 4990
+     "precio": 5593
     },
     {
      "id": "enjuague",
@@ -1661,34 +1661,28 @@
      "precio": 8043
     },
     {
-     "id": "toallas-higienicas",
-     "rinde": "Kotex · Toallas Higiénicas · 16 un · 16 un",
-     "tienda": "Toalla Higiénica Kotex Ultradiscreta Suave 16 un",
-     "precio": 2890
-    },
-    {
      "id": "ibu-600",
      "rinde": "Genérico · Ibuprofeno 600 mg · 20 comprimidos · 20 un",
      "tienda": "Ibuprofeno 600 mg 20 Comprimidos",
-     "precio": 1752
+     "precio": 1971
     },
     {
      "id": "naproxeno",
      "rinde": "Genérico · Naproxeno 550 mg · 10 comprimidos · 10 un",
      "tienda": "Naproxeno de Sodio 550 mg 10 Comprimidos Recubiertos",
-     "precio": 2392
+     "precio": 2691
     },
     {
      "id": "ketoprofeno",
      "rinde": "Genérico · Ketoprofeno 100 mg · 20 cápsulas · 20 un",
      "tienda": "Relatene Ketoprofeno 100 mg 20 Comprimidos Recubiertos",
-     "precio": 7512
+     "precio": 8451
     },
     {
      "id": "aspirina",
      "rinde": "Bayer · Aspirina 500 mg · 20 comprimidos · 20 un",
      "tienda": "Aspirina Adulto Ácido Acetilsalicílico 500 mg 20 Comprimidos",
-     "precio": 2832
+     "precio": 3186
     },
     {
      "id": "cetirizina",
@@ -1706,25 +1700,25 @@
      "id": "aerius",
      "rinde": "Aerius · Aerius 5 mg · 30 comprimidos · 30 un",
      "tienda": "Aerius Desloratadina 5 mg 30 Comprimidos Recubierto",
-     "precio": 16974
+     "precio": 25461
     },
     {
      "id": "loperamida",
      "rinde": "Genérico · Loperamida 2 mg · 6 comprimidos · 6 un",
      "tienda": "Loperamida 2 mg 6 Comprimidos",
-     "precio": 952
+     "precio": 1071
     },
     {
      "id": "suero-oral",
      "rinde": "Genérico · Sales de Rehidratación Oral · 4 sobres · 4 un",
      "tienda": "Sales para Rehidratación 90 Cloruro de Sodio 3,5 gr Polvo para Suspensión Oral 4 Sobres Sabor Limón",
-     "precio": 5752
+     "precio": 6471
     },
     {
      "id": "metformina",
      "rinde": "Genérico · Metformina 850 mg · 30 comprimidos · 30 un",
      "tienda": "Metformina 850 mg 30 Comprimidos",
-     "precio": 2712
+     "precio": 3051
     },
     {
      "id": "enalapril",
@@ -1736,7 +1730,7 @@
      "id": "atorvastatina",
      "rinde": "Genérico · Atorvastatina 20 mg · 30 comprimidos · 30 un",
      "tienda": "Atorvastatina 20 mg 30 Comprimidos",
-     "precio": 2072
+     "precio": 2331
     },
     {
      "id": "lipitor",
@@ -1748,31 +1742,31 @@
      "id": "amlodipino",
      "rinde": "Genérico · Amlodipino 10 mg · 30 comprimidos · 30 un",
      "tienda": "Amlodipino 10 mg 30 Comprimidos",
-     "precio": 2016
+     "precio": 2268
     },
     {
      "id": "sertralina",
      "rinde": "Genérico · Sertralina 50 mg · 30 comprimidos · 30 un",
      "tienda": "Sertralina 50 mg 30 Comprimidos",
-     "precio": 2872
+     "precio": 3231
     },
     {
      "id": "amoxicilina",
      "rinde": "Genérico · Amoxicilina 500 mg · 21 cápsulas · 21 un",
      "tienda": "Amoxicilina 500 mg 21 Cápsulas",
-     "precio": 3992
+     "precio": 4491
     },
     {
      "id": "clotrimazol",
      "rinde": "Genérico · Clotrimazol Crema 1% · 20 g",
      "tienda": "Clotrimazol 1% Crema Tópica 20 gr",
-     "precio": 1592
+     "precio": 1791
     },
     {
      "id": "ambroxol",
      "rinde": "Genérico · Ambroxol Jarabe 30 mg/5 ml · 100 ml",
      "tienda": "Tocalm Adulto Ambroxol 30 mg/5mL Jarabe 100 mL",
-     "precio": 3432
+     "precio": 3590
     },
     {
      "id": "multivitaminico",
@@ -1808,7 +1802,7 @@
    "sin": [
     "shampoo (13 resultados)",
     "jabon (6 resultados)",
-    "gel (4 resultados)",
+    "gel (3 resultados)",
     "panal1 (1 resultados)",
     "panal2 (2 resultados)",
     "kitadol (3 resultados)",
@@ -1819,20 +1813,21 @@
     "mascarilla (1 resultados)",
     "termometro (2 resultados)",
     "papel-3 (0 resultados)",
-    "panuelos (7 resultados)",
+    "panuelos (0 resultados)",
     "desinfectante (0 resultados)",
     "toallas-humedas (2 resultados)",
     "pasta-dental2 (3 resultados)",
     "pasta-dental3 (5 resultados)",
-    "hilo-dental (1 resultados)",
+    "hilo-dental (3 resultados)",
     "shampoo2 (0 resultados)",
-    "shampoo3 (5 resultados)",
+    "shampoo3 (1 resultados)",
     "acondicionador (10 resultados)",
     "jabon-barra (1 resultados)",
     "desodorante2 (0 resultados)",
     "desodorante3 (9 resultados)",
-    "tampones (4 resultados)",
-    "afeitadora (21 resultados)",
+    "toallas-higienicas (5 resultados)",
+    "tampones (2 resultados)",
+    "afeitadora (17 resultados)",
     "panal3 (1 resultados)",
     "panal-adulto (1 resultados)",
     "leche-formula (1 resultados)",
@@ -1860,16 +1855,15 @@
     "gotas-ojos (1 resultados)",
     "vitd (1 resultados)",
     "alcohol-70 (4 resultados)",
-    "agua-oxigenada (2 resultados)",
-    "parches (9 resultados)",
+    "agua-oxigenada (1 resultados)",
+    "parches (7 resultados)",
     "gasa (0 resultados)",
     "preservativos (2 resultados)",
-    "protector2 (15 resultados)",
-    "protector-gen (38 resultados)"
+    "protector2 (9 resultados)"
    ],
    "fuente": "cruzverde-api",
    "buscados": 99,
-   "conPrecio": 35,
+   "conPrecio": 34,
    "estado": "ok"
   },
   "salcobrand": {
@@ -1915,7 +1909,7 @@
      "productos": 0,
      "ejemplos": [],
      "titulo": "Salcobrand",
-     "largo": 26807,
+     "largo": 26951,
      "inicio": "<!DOCTYPE html><html lang=\"es\"><head data-hook=\"inside_head\"><meta charset=\"utf-8\" /><meta content=\"width=device-width, initial-scale=1.0, maximum-scale=1\" name=\"viewport\" /><meta content=\"telephone=no\" name=\"format-detection\" /><title>Salcobrand</title><!-- Inicio del aviso de consentimiento de coo",
      "pistas": [
       "https://salcobrand.cl/search_result",
@@ -1925,7 +1919,6 @@
       "/catalogos",
       "/mi-salcobrand-productos",
       "https://static.salcobrand.cl/packs/search_bar-ff1dc97598e259983d34.js",
-      "https://salcobrand.cl/products/daily-biotic-3-bx-bariatrico",
       "https://static.salcobrand.cl/packs/search_result-1e680be496e9eec09370.js"
      ],
      "algolia": "ass=\"nav navbar-nav shop-menu shop-menu-btn\"><li class=\"mobile-menu\"><nav class=\"new-nav\" id=\"nav-menu\"></nav></li></ul></nav></div></div><div class=\"algolia__searchbar container__hidden-mobile\" id=\"algolia-search-bar\"></div><div class=\"icon-menu\"><ul class=\"navbar-nav navbar-right list-inline icons-list\"><li class=\"user-options hidden-lg hidden-md\"><span></span></li><li class=\"user-options hidden"
@@ -1954,15 +1947,15 @@
      "status": 200,
      "productos": 22,
      "ejemplos": [
-      "Paracetamol 500 mg x 16 Comprimidos · $618",
-      "Paracetamol 500mg. Caja 16 Comp.Ad. · $618",
-      "Gesidol Paracetamol 1gr 20 Comprimidos · $6990",
-      "Paracetamol 100 mg/mL x 15 mL Solución Oral Para Gotas · $2420"
+      "Paracetamol 500 mg x 16 Comprimidos · $1559",
+      "Paracetamol 500mg. Caja 16 Comp.Ad. · $1559",
+      "Gesidol Paracetamol 1gr 20 Comprimidos · $10509",
+      "Paracetamol 100 mg/mL x 15 mL Solución Oral Para Gotas · $3249"
      ],
      "ejemplo": {
       "name": "Paracetamol 500 mg x 16 Comprimidos",
       "brand": "Chile",
-      "v": 618,
+      "v": 1559,
       "l": null,
       "card": {},
       "ean": null,
@@ -1990,7 +1983,7 @@
      "id": "para-gen",
      "rinde": "Genérico · Paracetamol 500 mg · 16 comprimidos · 16 un",
      "tienda": "Paracetamol 500 mg x 16 Comprimidos",
-     "precio": 618
+     "precio": 1559
     },
     {
      "id": "kitadol",
@@ -2002,19 +1995,19 @@
      "id": "ibu-gen",
      "rinde": "Genérico · Ibuprofeno 400 mg · 20 comprimidos · 20 un",
      "tienda": "Ibuprofeno 400 mg x 20 Comprimidos Recubiertos ASCEND",
-     "precio": 1430
+     "precio": 2449
     },
     {
      "id": "ibupirac",
      "rinde": "Ibupirac · Ibupirac 400 mg · 20 comprimidos · 20 un",
      "tienda": "Ibupirac LC 400 mg x 20 Cápsulas Blandas",
-     "precio": 4990
+     "precio": 6649
     },
     {
      "id": "losartan",
      "rinde": "Genérico · Losartán 50 mg · 30 comprimidos · 30 un",
      "tienda": "Losartan Potasico 50 mg x 30 Comprimidos Recubiertos",
-     "precio": 1528
+     "precio": 1799
     },
     {
      "id": "protector",
@@ -2056,55 +2049,49 @@
      "id": "ibu-600",
      "rinde": "Genérico · Ibuprofeno 600 mg · 20 comprimidos · 20 un",
      "tienda": "Ibuprofeno 600 mg x 20 Comprimidos CHILE",
-     "precio": 1721
+     "precio": 3849
     },
     {
      "id": "naproxeno",
      "rinde": "Genérico · Naproxeno 550 mg · 10 comprimidos · 10 un",
      "tienda": "Naproxeno Sodico 550 mg x 10 Comprimidos Recubiertos ANDROMACO S.A.",
-     "precio": 2506
+     "precio": 4249
     },
     {
      "id": "cetirizina",
      "rinde": "Genérico · Cetirizina 10 mg · 30 comprimidos · 30 un",
      "tienda": "Cetirizina Diclorhidrato 10 mg x 30 Comprimidos Recubiertos",
-     "precio": 3598
-    },
-    {
-     "id": "desloratadina",
-     "rinde": "Genérico · Desloratadina 5 mg · 30 comprimidos · 30 un",
-     "tienda": "Desloratadina 5 mg x 30 Comprimidos Recubiertos ASCEND",
-     "precio": 8049
+     "precio": 4799
     },
     {
      "id": "aerius",
      "rinde": "Aerius · Aerius 5 mg · 30 comprimidos · 30 un",
      "tienda": "Aerius 5 mg x 30 Comprimidos Recubiertos",
-     "precio": 16990
+     "precio": 28769
     },
     {
      "id": "loperamida",
      "rinde": "Genérico · Loperamida 2 mg · 6 comprimidos · 6 un",
      "tienda": "Loperamida Clorhidrato 2 mg x 6 Comprimidos CHILE",
-     "precio": 876
+     "precio": 1949
     },
     {
      "id": "metformina",
      "rinde": "Genérico · Metformina 850 mg · 30 comprimidos · 30 un",
      "tienda": "Metformina 850 mg Caja x 30 Comprimidos Recubiertos",
-     "precio": 3050
+     "precio": 3869
     },
     {
      "id": "enalapril",
      "rinde": "Genérico · Enalapril 10 mg · 30 comprimidos · 30 un",
      "tienda": "ENALTEN Enalapril maleato 10 mg 30 comprimidos",
-     "precio": 20144
+     "precio": 23699
     },
     {
      "id": "lipitor",
      "rinde": "Lipitor · Lipitor 20 mg · 30 comprimidos · 30 un",
      "tienda": "Lipitor 20 mg x 30 Comprimidos Recubiertos",
-     "precio": 53519
+     "precio": 89199
     },
     {
      "id": "sertralina",
@@ -2134,13 +2121,13 @@
      "id": "melatonina",
      "rinde": "Genérico · Melatonina 3 mg · 30 comprimidos · 30 un",
      "tienda": "Melatonina 3 mg Arama Natural Products 30 Cápsulas",
-     "precio": 7566
+     "precio": 8899
     },
     {
      "id": "test-embarazo",
      "rinde": "Genérico · Test de Embarazo · 1 un",
      "tienda": "Test de Embarazo Baby Test 1 un",
-     "precio": 4995
+     "precio": 6719
     },
     {
      "id": "crema-manos",
@@ -2168,7 +2155,7 @@
     "desinfectante (0 resultados)",
     "pasta-dental2 (1 resultados)",
     "pasta-dental3 (5 resultados)",
-    "hilo-dental (10 resultados)",
+    "hilo-dental (15 resultados)",
     "shampoo2 (5 resultados)",
     "shampoo3 (2 resultados)",
     "acondicionador (1 resultados)",
@@ -2177,7 +2164,7 @@
     "desodorante3 (3 resultados)",
     "tampones (4 resultados)",
     "panal3 (1 resultados)",
-    "panal-adulto (17 resultados)",
+    "panal-adulto (16 resultados)",
     "leche-formula (0 resultados)",
     "compota (0 resultados)",
     "papilla (0 resultados)",
@@ -2190,30 +2177,30 @@
     "aspirina (0 resultados)",
     "aspirina-gen (2 resultados)",
     "zyrtec (1 resultados)",
+    "desloratadina (12 resultados)",
     "omeprazol-28 (1 resultados)",
-    "lansoprazol (2 resultados)",
+    "lansoprazol (1 resultados)",
     "famotidina (1 resultados)",
     "sal-fruta (2 resultados)",
-    "viadil (3 resultados)",
+    "viadil (2 resultados)",
     "suero-oral (1 resultados)",
     "atorvastatina (6 resultados)",
     "levotiroxina (3 resultados)",
     "amlodipino (17 resultados)",
-    "clotrimazol (1 resultados)",
+    "clotrimazol (0 resultados)",
     "diclofenaco-gel (0 resultados)",
-    "voltaren (23 resultados)",
+    "voltaren (21 resultados)",
     "antigripal2 (1 resultados)",
     "jarabe-tos (3 resultados)",
     "ambroxol (1 resultados)",
     "pastillas-garganta (1 resultados)",
     "suero-fisiologico (2 resultados)",
     "gotas-ojos (3 resultados)",
-    "vitd (1 resultados)",
-    "omega3 (11 resultados)"
+    "vitd (1 resultados)"
    ],
    "fuente": "web",
    "buscados": 99,
-   "conPrecio": 29,
+   "conPrecio": 28,
    "estado": "ok"
   },
   "simi": {
@@ -2430,7 +2417,7 @@
     "kitadol (8 resultados)",
     "para-inf (18 resultados)",
     "clarityne (0 resultados)",
-    "tapsin (9 resultados)",
+    "tapsin (8 resultados)",
     "vitc (2 resultados)",
     "mascarilla (0 resultados)",
     "termometro (2 resultados)",
@@ -2458,7 +2445,7 @@
     "compota (0 resultados)",
     "papilla (0 resultados)",
     "shampoo-bebe (0 resultados)",
-    "para-1g (30 resultados)",
+    "para-1g (0 resultados)",
     "panadol (4 resultados)",
     "ibu-inf (22 resultados)",
     "ketoprofeno (30 resultados)",
@@ -2476,7 +2463,7 @@
     "levotiroxina (24 resultados)",
     "diclofenaco-gel (7 resultados)",
     "voltaren (1 resultados)",
-    "antigripal2 (5 resultados)",
+    "antigripal2 (4 resultados)",
     "jarabe-tos (14 resultados)",
     "pastillas-garganta (7 resultados)",
     "suero-fisiologico (1 resultados)"
